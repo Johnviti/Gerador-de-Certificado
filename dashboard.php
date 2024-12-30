@@ -68,11 +68,25 @@ $stmt = $conn->query("SELECT id, nome, email, nivel FROM usuarios");
 $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Dados simulados do relatório
-$data = [
-    ['user_name' => 'João Silva', 'date' => '2024-12-10', 'event_name' => 'Workshop PHP', 'certificates' => 15],
-    ['user_name' => 'Maria Oliveira', 'date' => '2024-12-12', 'event_name' => 'Curso Laravel', 'certificates' => 20],
-    ['user_name' => 'Pedro Santos', 'date' => '2024-12-15', 'event_name' => 'Palestra Segurança', 'certificates' => 10],
-];
+// $data = [
+//     ['user_name' => 'João Silva', 'date' => '2024-12-10', 'event_name' => 'Workshop PHP', 'certificates' => 15],
+//     ['user_name' => 'Maria Oliveira', 'date' => '2024-12-12', 'event_name' => 'Curso Laravel', 'certificates' => 20],
+//     ['user_name' => 'Pedro Santos', 'date' => '2024-12-15', 'event_name' => 'Palestra Segurança', 'certificates' => 10],
+// ];
+
+try {
+    // Consulta SQL
+    $query = $conn->query("SELECT nome AS user_name, data_inicio AS date, evento AS event_name, certificado_gerado AS certificates FROM nomes");
+
+    // Prepara e executa a consulta
+    $data = $query->fetchAll(PDO::FETCH_ASSOC);
+
+} catch (PDOException $e) {
+    echo "Erro na conexão: " . $e->getMessage();
+    $data = []; // Garante que $data está definido, mesmo em caso de erro
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -115,14 +129,26 @@ $data = [
                     </tr>
                 </thead>
                 <tbody>
+                <?php if (!empty($data)): ?>
                     <?php foreach ($data as $row): ?>
                         <tr>
                             <td><?php echo htmlspecialchars($row['user_name']); ?></td>
-                            <td><?php echo htmlspecialchars($row['date']); ?></td>
+                            <td>
+                                <?php 
+                                // Formatar a data para dd/mm/aa
+                                $formattedDate = DateTime::createFromFormat('Y-m-d', $row['date'])->format('d/m/Y');
+                                echo htmlspecialchars($formattedDate); 
+                                ?>
+                            </td>
                             <td><?php echo htmlspecialchars($row['event_name']); ?></td>
                             <td><?php echo htmlspecialchars($row['certificates']); ?></td>
                         </tr>
                     <?php endforeach; ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="4">Nenhum dado encontrado.</td>
+                    </tr>
+                <?php endif; ?>
                 </tbody>
             </table>
         </div>

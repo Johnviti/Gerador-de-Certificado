@@ -11,29 +11,50 @@ if (!isset($_SESSION['user_id'])) {
 $error = null;
 $success = null;
 
-// Salvar os modelos no banco de dados
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         $textos_editados = [];
-        foreach ($_POST['textos'] as $id => $texto) {
-            $nome_modelo = trim($_POST['nomes_modelos'][$id]);
+        
+        // Coletar dados enviados
+        foreach ($_POST['textos'] as $index => $texto) {
+            $nome_modelo = trim($_POST['nomes_modelos'][$index]);
+            
             if (!empty($nome_modelo) && !empty($texto)) {
                 $textos_editados[$nome_modelo] = trim($texto);
             }
         }
 
-        // Insere ou atualiza os textos no banco de dados
         foreach ($textos_editados as $nome_modelo => $texto) {
+            // Verificar se o modelo jÃ¡ existe pelo nome
             $stmt = $conn->prepare("
-                INSERT INTO modelos_textos (nome_modelo, texto_certificado) 
-                VALUES (:nome_modelo, :texto_certificado)
-                ON DUPLICATE KEY UPDATE texto_certificado = :texto_certificado
+                SELECT * FROM textos_certificados 
+                WHERE nome_modelo = :nome_modelo
             ");
             $stmt->bindParam(':nome_modelo', $nome_modelo);
-            $stmt->bindParam(':texto_certificado', $texto);
             $stmt->execute();
-        }
+            $existingModel = $stmt->fetch(PDO::FETCH_ASSOC);
 
+            if ($existingModel) {
+                // Atualizar se jÃ¡ existir
+                $stmt = $conn->prepare("
+                    UPDATE textos_certificados 
+                    SET texto_certificado = :texto_certificado
+                    WHERE nome_modelo = :nome_modelo
+                ");
+                $stmt->bindParam(':nome_modelo', $nome_modelo);
+                $stmt->bindParam(':texto_certificado', $texto);
+                $stmt->execute();
+            } else {
+                // Inserir novo registro se nÃ£o existir
+                $stmt = $conn->prepare("
+                    INSERT INTO textos_certificados (nome_modelo, texto_certificado) 
+                    VALUES (:nome_modelo, :texto_certificado)
+                ");
+                $stmt->bindParam(':nome_modelo', $nome_modelo);
+                $stmt->bindParam(':texto_certificado', $texto);
+                $stmt->execute();
+            }
+        }
         $success = "Textos salvos com sucesso!";
     } catch (PDOException $e) {
         $error = "Erro ao salvar os textos: " . $e->getMessage();
@@ -42,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // Recupera os textos do banco de dados
 try {
-    $stmt = $conn->query("SELECT nome_modelo, texto_certificado FROM modelos_textos");
+    $stmt = $conn->query("SELECT nome_modelo, texto_certificado FROM textos_certificados");
     $textos_predefinidos = $stmt->fetchAll(PDO::FETCH_KEY_PAIR);
 } catch (PDOException $e) {
     $textos_predefinidos = [];
@@ -111,7 +132,7 @@ $textos_predefinidos[''] = '';
         <div class="alert alert-success"><?= htmlspecialchars($success) ?></div>
     <?php endif; ?>
 
-    <!-- Formulário Dinâmico -->
+    <!-- Formulï¿½rio Dinï¿½mico -->
     <form method="POST">
         <table class="table table-striped table-hover">
             <thead>
@@ -127,11 +148,11 @@ $textos_predefinidos[''] = '';
                         <tr>
                             <td>
                                 <input type="text" name="nomes_modelos[<?= $index ?>]" class="form-control"
-                                       value="<?= htmlspecialchars($nome_modelo) ?>">
+                                    value="<?= htmlspecialchars($nome_modelo) ?>">
                             </td>
                             <td>
                                 <textarea name="textos[<?= $index ?>]" class="form-control"
-                                          rows="3"><?= htmlspecialchars($texto) ?></textarea>
+                                        rows="3"><?= htmlspecialchars($texto) ?></textarea>
                             </td>
                         </tr>
                         <?php $index++; ?>
