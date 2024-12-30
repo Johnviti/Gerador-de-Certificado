@@ -1,0 +1,1384 @@
+[19-May-2024 10:35:46 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'alim6689_cert.users' doesn't exist in /home2/alim6689/salutebbc.online/cer/Nova pasta/register.php:13
+Stack trace:
+#0 /home2/alim6689/salutebbc.online/cer/Nova pasta/register.php(13): PDOStatement->execute()
+#1 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/register.php on line 13
+[19-May-2024 10:40:14 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/alim6689/salutebbc.online/cer/Nova pasta/header.php:4) in /home2/alim6689/salutebbc.online/cer/Nova pasta/register.php on line 14
+[19-May-2024 10:40:25 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/alim6689/salutebbc.online/cer/Nova pasta/header.php:4) in /home2/alim6689/salutebbc.online/cer/Nova pasta/login.php on line 16
+[19-May-2024 11:40:51 America/Fortaleza] PHP Warning:  imagecreatefrompng(certificado/modelo): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/texto.php on line 12
+[19-May-2024 11:40:51 America/Fortaleza] PHP Fatal error:  Uncaught TypeError: imagecolorallocate(): Argument #1 ($image) must be of type GdImage, bool given in /home2/alim6689/salutebbc.online/cer/Nova pasta/texto.php:13
+Stack trace:
+#0 /home2/alim6689/salutebbc.online/cer/Nova pasta/texto.php(13): imagecolorallocate(false, 0, 0, 0)
+#1 /home2/alim6689/salutebbc.online/cer/Nova pasta/texto.php(45): gerarCertificado('MARCIA', 'certificado/mod...')
+#2 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/texto.php on line 13
+[19-May-2024 11:46:41 America/Fortaleza] PHP Warning:  Undefined array key "certificado_id" in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 53
+[19-May-2024 11:46:41 America/Fortaleza] PHP Warning:  Undefined array key "participante_id" in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 54
+[19-May-2024 11:46:41 America/Fortaleza] PHP Warning:  Trying to access array offset on value of type bool in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 66
+[19-May-2024 11:46:41 America/Fortaleza] PHP Warning:  Trying to access array offset on value of type bool in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 67
+[19-May-2024 11:46:44 America/Fortaleza] PHP Warning:  Undefined array key "modelo" in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 16
+[19-May-2024 11:46:44 America/Fortaleza] PHP Warning:  Trying to access array offset on value of type bool in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 25
+[19-May-2024 11:46:44 America/Fortaleza] PHP Warning:  Trying to access array offset on value of type bool in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 25
+[19-May-2024 11:46:47 America/Fortaleza] PHP Warning:  Undefined array key "modelo" in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 16
+[19-May-2024 11:46:47 America/Fortaleza] PHP Warning:  Trying to access array offset on value of type bool in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 25
+[19-May-2024 11:46:47 America/Fortaleza] PHP Warning:  Trying to access array offset on value of type bool in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 25
+[19-May-2024 11:50:41 America/Fortaleza] PHP Warning:  imagecreatefrompng(template.png): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 11
+[19-May-2024 11:50:41 America/Fortaleza] PHP Fatal error:  Uncaught TypeError: imagecolorallocate(): Argument #1 ($image) must be of type GdImage, bool given in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:12
+Stack trace:
+#0 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(12): imagecolorallocate(false, 0, 0, 0)
+#1 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(50): gerarCertificado('Leandro Alves F...', '   ola teste   ...')
+#2 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 12
+[19-May-2024 11:50:50 America/Fortaleza] PHP Warning:  imagecreatefrompng(template.png): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 11
+[19-May-2024 11:50:50 America/Fortaleza] PHP Fatal error:  Uncaught TypeError: imagecolorallocate(): Argument #1 ($image) must be of type GdImage, bool given in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:12
+Stack trace:
+#0 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(12): imagecolorallocate(false, 0, 0, 0)
+#1 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(50): gerarCertificado('Leandro Alves F...', '   ola teste   ...')
+#2 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 12
+[19-May-2024 11:50:59 America/Fortaleza] PHP Warning:  imagecreatefrompng(template.png): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 11
+[19-May-2024 11:50:59 America/Fortaleza] PHP Fatal error:  Uncaught TypeError: imagecolorallocate(): Argument #1 ($image) must be of type GdImage, bool given in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:12
+Stack trace:
+#0 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(12): imagecolorallocate(false, 0, 0, 0)
+#1 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(50): gerarCertificado('Leandro Alves F...', 'teste')
+#2 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 12
+[19-May-2024 11:54:28 America/Fortaleza] PHP Warning:  opendir(certificados): Failed to open directory: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 13
+[19-May-2024 11:54:36 America/Fortaleza] PHP Warning:  Undefined array key "modelo" in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 51
+[19-May-2024 11:54:36 America/Fortaleza] PHP Warning:  imagecreatefrompng(certificados/): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 26
+[19-May-2024 11:54:36 America/Fortaleza] PHP Fatal error:  Uncaught TypeError: imagecolorallocate(): Argument #1 ($image) must be of type GdImage, bool given in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:27
+Stack trace:
+#0 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(27): imagecolorallocate(false, 0, 0, 0)
+#1 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(66): gerarCertificado('Leandro Alves F...', '   ola teste   ...', 'certificados/')
+#2 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 27
+[19-May-2024 11:54:38 America/Fortaleza] PHP Warning:  opendir(certificados): Failed to open directory: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 13
+[19-May-2024 11:54:41 America/Fortaleza] PHP Warning:  Undefined array key "modelo" in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 51
+[19-May-2024 11:54:41 America/Fortaleza] PHP Warning:  imagecreatefrompng(certificados/): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 26
+[19-May-2024 11:54:41 America/Fortaleza] PHP Fatal error:  Uncaught TypeError: imagecolorallocate(): Argument #1 ($image) must be of type GdImage, bool given in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:27
+Stack trace:
+#0 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(27): imagecolorallocate(false, 0, 0, 0)
+#1 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(66): gerarCertificado('MARCIA', '   ola teste   ...', 'certificados/')
+#2 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 27
+[19-May-2024 11:54:43 America/Fortaleza] PHP Warning:  opendir(certificados): Failed to open directory: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 13
+[19-May-2024 11:55:30 America/Fortaleza] PHP Warning:  opendir(certificados): Failed to open directory: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 13
+[19-May-2024 11:55:42 America/Fortaleza] PHP Warning:  Undefined array key "modelo" in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 51
+[19-May-2024 11:55:42 America/Fortaleza] PHP Warning:  imagecreatefrompng(certificados/): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 26
+[19-May-2024 11:55:42 America/Fortaleza] PHP Fatal error:  Uncaught TypeError: imagecolorallocate(): Argument #1 ($image) must be of type GdImage, bool given in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:27
+Stack trace:
+#0 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(27): imagecolorallocate(false, 0, 0, 0)
+#1 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(66): gerarCertificado('Leandro Alves F...', '   testestestet...', 'certificados/')
+#2 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 27
+[19-May-2024 11:58:10 America/Fortaleza] PHP Warning:  require(fpdf/fpdf.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 11:58:10 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'fpdf/fpdf.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:4
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 11:58:13 America/Fortaleza] PHP Warning:  require(fpdf/fpdf.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 11:58:13 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'fpdf/fpdf.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:4
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 11:58:18 America/Fortaleza] PHP Warning:  require(fpdf/fpdf.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 11:58:18 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'fpdf/fpdf.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:4
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 11:58:58 America/Fortaleza] PHP Warning:  require(fpdf/fpdf.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 11:58:58 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'fpdf/fpdf.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:4
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:00:44 America/Fortaleza] PHP Warning:  require(fpdf/fpdf.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:00:44 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'fpdf/fpdf.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:4
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:00:45 America/Fortaleza] PHP Warning:  require(fpdf/fpdf.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:00:45 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'fpdf/fpdf.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:4
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:00:46 America/Fortaleza] PHP Warning:  require(fpdf/fpdf.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:00:46 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'fpdf/fpdf.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:4
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:00:47 America/Fortaleza] PHP Warning:  require(fpdf/fpdf.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:00:47 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'fpdf/fpdf.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:4
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:00:51 America/Fortaleza] PHP Warning:  require(fpdf/fpdf.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:00:51 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'fpdf/fpdf.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:4
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:01:10 America/Fortaleza] PHP Warning:  require(fpdf/fpdf.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:01:10 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'fpdf/fpdf.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:4
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:03:34 America/Fortaleza] PHP Warning:  require(fpdf/fpdf.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:03:34 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'fpdf/fpdf.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:4
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:08:55 America/Fortaleza] PHP Warning:  require(fpdf/fpdf.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:08:55 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'fpdf/fpdf.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:4
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:11:47 America/Fortaleza] PHP Warning:  require(fpdf/fpdf.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:11:47 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'fpdf/fpdf.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:4
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:11:49 America/Fortaleza] PHP Warning:  require(fpdf/fpdf.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:11:49 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'fpdf/fpdf.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:4
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:11:52 America/Fortaleza] PHP Warning:  require(fpdf/fpdf.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:11:52 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'fpdf/fpdf.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:4
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:11:54 America/Fortaleza] PHP Warning:  require(fpdf/fpdf.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:11:54 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'fpdf/fpdf.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:4
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:11:56 America/Fortaleza] PHP Warning:  require(fpdf/fpdf.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:11:56 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'fpdf/fpdf.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:4
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:12:33 America/Fortaleza] PHP Warning:  require(fpdf/fpdf.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:12:33 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'fpdf/fpdf.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:4
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:12:38 America/Fortaleza] PHP Warning:  require(fpdf/fpdf.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:12:38 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'fpdf/fpdf.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:4
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:13:42 America/Fortaleza] PHP Warning:  require(fpdf/fpdf.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:13:42 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'fpdf/fpdf.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:4
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:13:51 America/Fortaleza] PHP Warning:  require(fpdf/fpdf.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:13:51 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'fpdf/fpdf.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:4
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:16:16 America/Fortaleza] PHP Warning:  require(fpdf/fpdf.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:16:16 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'fpdf/fpdf.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:4
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 4
+[19-May-2024 12:17:10 America/Fortaleza] PHP Warning:  opendir(certificados): Failed to open directory: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 14
+[19-May-2024 12:18:36 America/Fortaleza] PHP Warning:  opendir(certificados): Failed to open directory: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 14
+[19-May-2024 12:20:59 America/Fortaleza] PHP Warning:  opendir(certificados): Failed to open directory: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 14
+[19-May-2024 12:25:23 America/Fortaleza] PHP Warning:  opendir(certificados): Failed to open directory: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 14
+[19-May-2024 12:26:08 America/Fortaleza] PHP Warning:  opendir(certificados): Failed to open directory: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 14
+[19-May-2024 12:29:51 America/Fortaleza] PHP Warning:  opendir(certificados): Failed to open directory: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 14
+[19-May-2024 12:33:11 America/Fortaleza] PHP Warning:  opendir(certificados): Failed to open directory: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 14
+[19-May-2024 12:33:19 America/Fortaleza] PHP Warning:  opendir(certificados): Failed to open directory: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 14
+[19-May-2024 12:33:47 America/Fortaleza] PHP Warning:  opendir(certificados): Failed to open directory: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 14
+[19-May-2024 12:34:10 America/Fortaleza] PHP Warning:  opendir(certificados): Failed to open directory: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 14
+[19-May-2024 12:41:17 America/Fortaleza] PHP Warning:  opendir(certificados): Failed to open directory: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/certificados.php on line 23
+[19-May-2024 12:41:48 America/Fortaleza] PHP Warning:  opendir(certificados): Failed to open directory: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/certificados.php on line 23
+[19-May-2024 12:41:59 America/Fortaleza] PHP Warning:  Trying to access array offset on value of type bool in /home2/alim6689/salutebbc.online/cer/Nova pasta/texto.php on line 41
+[19-May-2024 12:42:37 America/Fortaleza] PHP Warning:  opendir(certificados): Failed to open directory: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/certificados.php on line 23
+[19-May-2024 12:47:53 America/Fortaleza] PHP Warning:  opendir(certificados): Failed to open directory: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/certificados.php on line 23
+[19-May-2024 12:48:09 America/Fortaleza] PHP Warning:  opendir(certificados): Failed to open directory: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/certificados.php on line 23
+[19-May-2024 12:48:15 America/Fortaleza] PHP Warning:  opendir(certificados): Failed to open directory: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/certificados.php on line 23
+[19-May-2024 12:48:50 America/Fortaleza] PHP Warning:  opendir(certificados): Failed to open directory: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/certificados.php on line 23
+[19-May-2024 12:48:54 America/Fortaleza] PHP Warning:  opendir(certificados): Failed to open directory: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/certificados.php on line 23
+[19-May-2024 12:49:47 America/Fortaleza] PHP Warning:  opendir(certificados): Failed to open directory: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/certificados.php on line 23
+[19-May-2024 12:59:58 America/Fortaleza] PHP Warning:  fopen(): Remote host file access not supported, file://certificados/certificado_MARCIA.pdf in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/include/tcpdf_static.php on line 1811
+[19-May-2024 12:59:58 America/Fortaleza] PHP Warning:  fopen(file://certificados/certificado_MARCIA.pdf): Failed to open stream: no suitable wrapper could be found in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/include/tcpdf_static.php on line 1811
+[19-May-2024 13:03:10 America/Fortaleza] PHP Warning:  fopen(): Remote host file access not supported, file://certificados/certificado_maria_.pdf in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/include/tcpdf_static.php on line 1811
+[19-May-2024 13:03:10 America/Fortaleza] PHP Warning:  fopen(file://certificados/certificado_maria_.pdf): Failed to open stream: no suitable wrapper could be found in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/include/tcpdf_static.php on line 1811
+[19-May-2024 13:08:18 America/Fortaleza] PHP Warning:  fopen(): Remote host file access not supported, file://certificados/certificado_maria_.pdf in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/include/tcpdf_static.php on line 1811
+[19-May-2024 13:08:18 America/Fortaleza] PHP Warning:  fopen(file://certificados/certificado_maria_.pdf): Failed to open stream: no suitable wrapper could be found in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/include/tcpdf_static.php on line 1811
+[19-May-2024 14:29:21 America/Fortaleza] PHP Warning:  require_once(/home2/alim6689/salutebbc.online/cer/Nova pasta/vendor/autoload.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 9
+[19-May-2024 14:29:21 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alim6689/salutebbc.online/cer/Nova pasta/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:9
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 9
+[19-May-2024 14:29:24 America/Fortaleza] PHP Warning:  require_once(/home2/alim6689/salutebbc.online/cer/Nova pasta/vendor/autoload.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 9
+[19-May-2024 14:29:24 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alim6689/salutebbc.online/cer/Nova pasta/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:9
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 9
+[19-May-2024 14:29:29 America/Fortaleza] PHP Warning:  require_once(/home2/alim6689/salutebbc.online/cer/Nova pasta/vendor/autoload.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 9
+[19-May-2024 14:29:29 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alim6689/salutebbc.online/cer/Nova pasta/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:9
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 9
+[19-May-2024 14:32:22 America/Fortaleza] PHP Warning:  require_once(/home2/alim6689/salutebbc.online/cer/Nova pasta/vendor/autoload.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 10
+[19-May-2024 14:32:22 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alim6689/salutebbc.online/cer/Nova pasta/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:10
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 10
+[19-May-2024 14:32:25 America/Fortaleza] PHP Warning:  require_once(/home2/alim6689/salutebbc.online/cer/Nova pasta/vendor/autoload.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 10
+[19-May-2024 14:32:25 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alim6689/salutebbc.online/cer/Nova pasta/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:10
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 10
+[19-May-2024 14:32:27 America/Fortaleza] PHP Warning:  require_once(/home2/alim6689/salutebbc.online/cer/Nova pasta/vendor/autoload.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 10
+[19-May-2024 14:32:27 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alim6689/salutebbc.online/cer/Nova pasta/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:10
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 10
+[19-May-2024 14:32:27 America/Fortaleza] PHP Warning:  require_once(/home2/alim6689/salutebbc.online/cer/Nova pasta/vendor/autoload.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 10
+[19-May-2024 14:32:27 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alim6689/salutebbc.online/cer/Nova pasta/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:10
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 10
+[19-May-2024 14:32:28 America/Fortaleza] PHP Warning:  require_once(/home2/alim6689/salutebbc.online/cer/Nova pasta/vendor/autoload.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 10
+[19-May-2024 14:32:28 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alim6689/salutebbc.online/cer/Nova pasta/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:10
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 10
+[19-May-2024 14:32:31 America/Fortaleza] PHP Warning:  require_once(/home2/alim6689/salutebbc.online/cer/Nova pasta/vendor/autoload.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 10
+[19-May-2024 14:32:31 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alim6689/salutebbc.online/cer/Nova pasta/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:10
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 10
+[19-May-2024 14:35:26 America/Fortaleza] PHP Warning:  require_once(/home2/alim6689/salutebbc.online/cer/Nova pasta/vendor/autoload.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 10
+[19-May-2024 14:35:26 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alim6689/salutebbc.online/cer/Nova pasta/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:10
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 10
+[19-May-2024 14:36:32 America/Fortaleza] PHP Warning:  require_once(/home2/alim6689/salutebbc.online/cer/Nova pasta/vendor/autoload.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 10
+[19-May-2024 14:36:32 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alim6689/salutebbc.online/cer/Nova pasta/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:10
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 10
+[19-May-2024 14:36:36 America/Fortaleza] PHP Warning:  require_once(/home2/alim6689/salutebbc.online/cer/Nova pasta/vendor/autoload.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 10
+[19-May-2024 14:36:36 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alim6689/salutebbc.online/cer/Nova pasta/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:10
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 10
+[19-May-2024 14:46:53 America/Fortaleza] PHP Warning:  require_once(/home2/alim6689/salutebbc.online/cer/Nova pasta/vendor/autoload.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 11
+[19-May-2024 14:46:53 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alim6689/salutebbc.online/cer/Nova pasta/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:11
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 11
+[19-May-2024 14:50:08 America/Fortaleza] PHP Warning:  require_once(/home2/alim6689/salutebbc.online/cer/Nova pasta/vendor/autoload.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 11
+[19-May-2024 14:50:08 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alim6689/salutebbc.online/cer/Nova pasta/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:11
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 11
+[19-May-2024 14:50:09 America/Fortaleza] PHP Warning:  require_once(/home2/alim6689/salutebbc.online/cer/Nova pasta/vendor/autoload.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 11
+[19-May-2024 14:50:09 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alim6689/salutebbc.online/cer/Nova pasta/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:11
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 11
+[19-May-2024 14:50:10 America/Fortaleza] PHP Warning:  require_once(/home2/alim6689/salutebbc.online/cer/Nova pasta/vendor/autoload.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 11
+[19-May-2024 14:50:10 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alim6689/salutebbc.online/cer/Nova pasta/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:11
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 11
+[19-May-2024 15:00:30 America/Fortaleza] PHP Warning:  require_once(/home2/alim6689/salutebbc.online/cer/Nova pasta/vendor/autoload.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 11
+[19-May-2024 15:00:30 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alim6689/salutebbc.online/cer/Nova pasta/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:11
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 11
+[19-May-2024 15:09:19 America/Fortaleza] PHP Fatal error:  Uncaught ValueError: max(): Argument #1 ($value) must contain at least one element in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php:6412
+Stack trace:
+#0 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(6412): max(Array)
+#1 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(5985): TCPDF->Write(6.173611, 'O PRESENTE CERT...', '', 0, 'C', true, 0, false, true, 0, 0, Array)
+#2 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(52): TCPDF->MultiCell(267, 10, 'O PRESENTE CERT...', 0, 'C')
+#3 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(145): gerarCertificadoPDF('Maria Doida', '/home2/alim6689...')
+#4 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php on line 6412
+[19-May-2024 15:09:31 America/Fortaleza] PHP Fatal error:  Uncaught ValueError: max(): Argument #1 ($value) must contain at least one element in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php:6412
+Stack trace:
+#0 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(6412): max(Array)
+#1 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(5985): TCPDF->Write(6.173611, 'O PRESENTE CERT...', '', 0, 'C', true, 0, false, true, 0, 0, Array)
+#2 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(52): TCPDF->MultiCell(267, 10, 'O PRESENTE CERT...', 0, 'C')
+#3 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(145): gerarCertificadoPDF('MARCIA', '/home2/alim6689...')
+#4 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php on line 6412
+[19-May-2024 15:09:43 America/Fortaleza] PHP Fatal error:  Uncaught ValueError: max(): Argument #1 ($value) must contain at least one element in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php:6412
+Stack trace:
+#0 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(6412): max(Array)
+#1 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(5985): TCPDF->Write(6.173611, 'O PRESENTE CERT...', '', 0, 'C', true, 0, false, true, 0, 0, Array)
+#2 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(52): TCPDF->MultiCell(267, 10, 'O PRESENTE CERT...', 0, 'C')
+#3 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(145): gerarCertificadoPDF('MARCIA', '/home2/alim6689...')
+#4 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php on line 6412
+[19-May-2024 15:10:37 America/Fortaleza] PHP Fatal error:  Uncaught ValueError: max(): Argument #1 ($value) must contain at least one element in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php:6412
+Stack trace:
+#0 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(6412): max(Array)
+#1 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(5985): TCPDF->Write(6.173611, 'O PRESENTE CERT...', '', 0, 'C', true, 0, false, true, 0, 0, Array)
+#2 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(52): TCPDF->MultiCell(267, 10, 'O PRESENTE CERT...', 0, 'C')
+#3 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(145): gerarCertificadoPDF('MARCIA', '/home2/alim6689...')
+#4 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php on line 6412
+[19-May-2024 15:16:45 America/Fortaleza] PHP Fatal error:  Uncaught ValueError: max(): Argument #1 ($value) must contain at least one element in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php:6412
+Stack trace:
+#0 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(6412): max(Array)
+#1 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(5985): TCPDF->Write(6.173611, 'O PRESENTE CERT...', '', 0, 'C', true, 0, false, true, 0, 0, Array)
+#2 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(51): TCPDF->MultiCell(267, 10, 'O PRESENTE CERT...', 0, 'C')
+#3 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(144): gerarCertificadoPDF('MARCIA', '/home2/alim6689...')
+#4 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php on line 6412
+[19-May-2024 15:16:54 America/Fortaleza] PHP Fatal error:  Uncaught ValueError: max(): Argument #1 ($value) must contain at least one element in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php:6412
+Stack trace:
+#0 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(6412): max(Array)
+#1 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(5985): TCPDF->Write(6.173611, 'O PRESENTE CERT...', '', 0, 'C', true, 0, false, true, 0, 0, Array)
+#2 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(51): TCPDF->MultiCell(267, 10, 'O PRESENTE CERT...', 0, 'C')
+#3 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(144): gerarCertificadoPDF('Carla Higas', '/home2/alim6689...')
+#4 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php on line 6412
+[19-May-2024 15:20:43 America/Fortaleza] PHP Fatal error:  Uncaught ValueError: max(): Argument #1 ($value) must contain at least one element in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php:6412
+Stack trace:
+#0 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(6412): max(Array)
+#1 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(5985): TCPDF->Write(6.173611, 'O PRESENTE CERT...', '', 0, 'C', true, 0, false, true, 0, 0, Array)
+#2 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(52): TCPDF->MultiCell(267, 10, 'O PRESENTE CERT...', 0, 'C')
+#3 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(145): gerarCertificadoPDF('Carla Higas', '/home2/alim6689...')
+#4 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php on line 6412
+[19-May-2024 15:24:21 America/Fortaleza] PHP Fatal error:  Uncaught ValueError: max(): Argument #1 ($value) must contain at least one element in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php:6412
+Stack trace:
+#0 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(6412): max(Array)
+#1 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(5985): TCPDF->Write(6.173611, 'O PRESENTE CERT...', '', 0, 'C', true, 0, false, true, 0, 0, Array)
+#2 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(52): TCPDF->MultiCell(267, 10, 'O PRESENTE CERT...', 0, 'C')
+#3 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(145): gerarCertificadoPDF('Izadora Ferreir...', '/home2/alim6689...')
+#4 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php on line 6412
+[19-May-2024 15:26:47 America/Fortaleza] Modelo ID: 9, Participante ID: 9
+[19-May-2024 15:26:47 America/Fortaleza] PHP Deprecated:  Function utf8_decode() is deprecated in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 57
+[19-May-2024 15:26:47 America/Fortaleza] PHP Fatal error:  Uncaught ValueError: max(): Argument #1 ($value) must contain at least one element in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php:6412
+Stack trace:
+#0 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(6412): max(Array)
+#1 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(5985): TCPDF->Write(6.173611, 'O PRESENTE CERT...', '', 0, 'C', true, 0, false, true, 0, 0, Array)
+#2 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(57): TCPDF->MultiCell(267, 10, 'O PRESENTE CERT...', 0, 'C')
+#3 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(153): gerarCertificadoPDF('Marcia Hugo', '/home2/alim6689...')
+#4 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php on line 6412
+[19-May-2024 15:29:19 America/Fortaleza] Modelo ID: 9, Participante ID: 6
+[19-May-2024 15:29:19 America/Fortaleza] PHP Fatal error:  Uncaught ValueError: max(): Argument #1 ($value) must contain at least one element in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php:6412
+Stack trace:
+#0 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(6412): max(Array)
+#1 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(5985): TCPDF->Write(6.173611, 'O PRESENTE CERT...', '', 0, 'C', true, 0, false, true, 0, 0, Array)
+#2 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(58): TCPDF->MultiCell(267, 10, 'O PRESENTE CERT...', 0, 'C')
+#3 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(154): gerarCertificadoPDF('Pedro Jose', '/home2/alim6689...')
+#4 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php on line 6412
+[19-May-2024 15:31:30 America/Fortaleza] Modelo ID: 9, Participante ID: 3
+[19-May-2024 15:31:30 America/Fortaleza] PHP Fatal error:  Uncaught ValueError: max(): Argument #1 ($value) must contain at least one element in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php:6412
+Stack trace:
+#0 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(6412): max(Array)
+#1 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(5985): TCPDF->Write(6.173611, 'O PRESENTE CERT...', '', 0, 'C', true, 0, false, true, 0, 0, Array)
+#2 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(58): TCPDF->MultiCell(267, 10, 'O PRESENTE CERT...', 0, 'C')
+#3 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(154): gerarCertificadoPDF('maria ', '/home2/alim6689...')
+#4 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php on line 6412
+[19-May-2024 15:32:35 America/Fortaleza] Modelo ID: 9, Participante ID: 3
+[19-May-2024 15:32:35 America/Fortaleza] PHP Fatal error:  Uncaught ValueError: max(): Argument #1 ($value) must contain at least one element in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php:6412
+Stack trace:
+#0 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(6412): max(Array)
+#1 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(5985): TCPDF->Write(6.173611, 'O PRESENTE CERT...', '', 0, 'C', true, 0, false, true, 0, 0, Array)
+#2 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(58): TCPDF->MultiCell(267, 10, 'O PRESENTE CERT...', 0, 'C')
+#3 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(154): gerarCertificadoPDF('maria ', '/home2/alim6689...')
+#4 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php on line 6412
+[19-May-2024 15:33:07 America/Fortaleza] Modelo ID: 10, Participante ID: 5
+[19-May-2024 15:33:07 America/Fortaleza] PHP Fatal error:  Uncaught ValueError: max(): Argument #1 ($value) must contain at least one element in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php:6412
+Stack trace:
+#0 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(6412): max(Array)
+#1 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(5985): TCPDF->Write(6.173611, 'O PRESENTE CERT...', '', 0, 'C', true, 0, false, true, 0, 0, Array)
+#2 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(58): TCPDF->MultiCell(267, 10, 'O PRESENTE CERT...', 0, 'C')
+#3 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(154): gerarCertificadoPDF('Maria Doida', '/home2/alim6689...')
+#4 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php on line 6412
+[19-May-2024 15:35:43 America/Fortaleza] Modelo ID: 9, Participante ID: 4
+[19-May-2024 15:35:43 America/Fortaleza] PHP Fatal error:  Uncaught ValueError: max(): Argument #1 ($value) must contain at least one element in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php:6412
+Stack trace:
+#0 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(6412): max(Array)
+#1 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(5985): TCPDF->Write(6.173611, 'O PRESENTE CERT...', '', 0, 'C', true, 0, false, true, 0, 0, Array)
+#2 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(65): TCPDF->MultiCell(267, 10, 'O PRESENTE CERT...', 0, 'C', false, 1, 15.0, 110.0, true, 0, false, true, 0, 'T', false)
+#3 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(161): gerarCertificadoPDF('Leandro Silva', '/home2/alim6689...')
+#4 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php on line 6412
+[19-May-2024 16:37:34 America/Fortaleza] PHP Fatal error:  Uncaught ValueError: max(): Argument #1 ($value) must contain at least one element in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php:6412
+Stack trace:
+#0 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(6412): max(Array)
+#1 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(5985): TCPDF->Write(6.173611, 'O PRESENTE CERT...', '', 0, 'C', true, 0, false, true, 0, 0, Array)
+#2 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(56): TCPDF->MultiCell(277, 10, 'O PRESENTE CERT...', 0, 'C', 0, 1, 10.0, 130.0, true)
+#3 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(131): gerarCertificadoPDF('Jose pedro', '/home2/alim6689...')
+#4 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php on line 6412
+[19-May-2024 16:37:49 America/Fortaleza] PHP Fatal error:  Uncaught ValueError: max(): Argument #1 ($value) must contain at least one element in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php:6412
+Stack trace:
+#0 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(6412): max(Array)
+#1 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(5985): TCPDF->Write(6.173611, 'O PRESENTE CERT...', '', 0, 'C', true, 0, false, true, 0, 0, Array)
+#2 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(56): TCPDF->MultiCell(277, 10, 'O PRESENTE CERT...', 0, 'C', 0, 1, 10.0, 130.0, true)
+#3 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(131): gerarCertificadoPDF('MARCIA', '/home2/alim6689...')
+#4 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php on line 6412
+[19-May-2024 16:38:37 America/Fortaleza] PHP Fatal error:  Uncaught ValueError: max(): Argument #1 ($value) must contain at least one element in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php:6412
+Stack trace:
+#0 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(6412): max(Array)
+#1 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(5985): TCPDF->Write(6.173611, 'O PRESENTE CERT...', '', 0, 'C', true, 0, false, true, 0, 0, Array)
+#2 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(56): TCPDF->MultiCell(277, 10, 'O PRESENTE CERT...', 0, 'C', 0, 1, 10.0, 130.0, true)
+#3 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(131): gerarCertificadoPDF('MARCIA', '/home2/alim6689...')
+#4 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php on line 6412
+[19-May-2024 16:59:25 America/Fortaleza] PHP Fatal error:  Uncaught ValueError: max(): Argument #1 ($value) must contain at least one element in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php:6412
+Stack trace:
+#0 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(6412): max(Array)
+#1 /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php(5985): TCPDF->Write(6.173611, 'O PRESENTE CERT...', '', 0, 'C', true, 0, false, true, 0, 0, Array)
+#2 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(56): TCPDF->MultiCell(156.9, 89.6, 'O PRESENTE CERT...', 0, 'C', 0, 1)
+#3 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(103): gerarCertificadoPDF('MARCIA', '/home2/alim6689...')
+#4 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/tcpdf.php on line 6412
+[19-May-2024 17:31:57 America/Fortaleza] PHP Warning:  require_once(/home2/alim6689/salutebbc.online/cer/Nova pasta/config.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 9
+[19-May-2024 17:31:57 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alim6689/salutebbc.online/cer/Nova pasta/config.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:9
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 9
+[19-May-2024 17:32:00 America/Fortaleza] PHP Warning:  require_once(/home2/alim6689/salutebbc.online/cer/Nova pasta/config.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 9
+[19-May-2024 17:32:00 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alim6689/salutebbc.online/cer/Nova pasta/config.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:9
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 9
+[19-May-2024 17:32:02 America/Fortaleza] PHP Warning:  require_once(/home2/alim6689/salutebbc.online/cer/Nova pasta/config.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 9
+[19-May-2024 17:32:02 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alim6689/salutebbc.online/cer/Nova pasta/config.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:9
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 9
+[19-May-2024 17:32:06 America/Fortaleza] PHP Warning:  require_once(/home2/alim6689/salutebbc.online/cer/Nova pasta/config.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 9
+[19-May-2024 17:32:06 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alim6689/salutebbc.online/cer/Nova pasta/config.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:9
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 9
+[19-May-2024 17:51:56 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'certificado_gerado' in 'field list' in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:127
+Stack trace:
+#0 /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php(127): PDO->query('SELECT id, nome...')
+#1 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 127
+[19-May-2024 18:04:23 America/Fortaleza] PHP Warning:  Undefined variable $output_url in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 217
+[19-May-2024 18:04:23 America/Fortaleza] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 217
+[19-May-2024 18:04:23 America/Fortaleza] PHP Warning:  Undefined variable $output_url in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 218
+[19-May-2024 18:04:23 America/Fortaleza] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 218
+[19-May-2024 18:05:18 America/Fortaleza] PHP Warning:  Undefined variable $output_url in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 208
+[19-May-2024 18:05:18 America/Fortaleza] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 208
+[19-May-2024 18:05:18 America/Fortaleza] PHP Warning:  Undefined variable $output_url in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 209
+[19-May-2024 18:05:18 America/Fortaleza] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 209
+[19-May-2024 18:05:24 America/Fortaleza] PHP Warning:  Undefined variable $output_url in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 208
+[19-May-2024 18:05:24 America/Fortaleza] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 208
+[19-May-2024 18:05:24 America/Fortaleza] PHP Warning:  Undefined variable $output_url in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 209
+[19-May-2024 18:05:24 America/Fortaleza] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 209
+[19-May-2024 18:05:26 America/Fortaleza] PHP Warning:  Undefined variable $output_url in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 208
+[19-May-2024 18:05:26 America/Fortaleza] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 208
+[19-May-2024 18:05:26 America/Fortaleza] PHP Warning:  Undefined variable $output_url in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 209
+[19-May-2024 18:05:26 America/Fortaleza] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 209
+[19-May-2024 18:05:27 America/Fortaleza] PHP Warning:  Undefined variable $output_url in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 208
+[19-May-2024 18:05:27 America/Fortaleza] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 208
+[19-May-2024 18:05:27 America/Fortaleza] PHP Warning:  Undefined variable $output_url in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 209
+[19-May-2024 18:05:27 America/Fortaleza] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 209
+[19-May-2024 18:05:37 America/Fortaleza] PHP Warning:  Undefined variable $output_url in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 208
+[19-May-2024 18:05:37 America/Fortaleza] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 208
+[19-May-2024 18:05:37 America/Fortaleza] PHP Warning:  Undefined variable $output_url in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 209
+[19-May-2024 18:05:37 America/Fortaleza] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 209
+[19-May-2024 18:09:20 America/Fortaleza] PHP Warning:  Undefined variable $output_dir in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 208
+[19-May-2024 18:09:20 America/Fortaleza] PHP Warning:  Undefined variable $output_dir in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 209
+[19-May-2024 18:09:24 America/Fortaleza] PHP Warning:  Undefined variable $output_dir in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 208
+[19-May-2024 18:09:24 America/Fortaleza] PHP Warning:  Undefined variable $output_dir in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 209
+[19-May-2024 18:09:47 America/Fortaleza] PHP Warning:  Undefined variable $output_dir in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 208
+[19-May-2024 18:09:47 America/Fortaleza] PHP Warning:  Undefined variable $output_dir in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 209
+[19-May-2024 18:09:49 America/Fortaleza] PHP Warning:  Undefined variable $output_dir in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 208
+[19-May-2024 18:09:49 America/Fortaleza] PHP Warning:  Undefined variable $output_dir in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 209
+[19-May-2024 18:09:50 America/Fortaleza] PHP Warning:  Undefined variable $output_dir in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 208
+[19-May-2024 18:09:50 America/Fortaleza] PHP Warning:  Undefined variable $output_dir in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 209
+[19-May-2024 18:09:52 America/Fortaleza] PHP Warning:  Undefined variable $output_dir in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 208
+[19-May-2024 18:09:52 America/Fortaleza] PHP Warning:  Undefined variable $output_dir in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 209
+[19-May-2024 18:10:59 America/Fortaleza] PHP Warning:  Undefined variable $output_dir in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 208
+[19-May-2024 18:10:59 America/Fortaleza] PHP Warning:  Undefined variable $output_dir in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 209
+[19-May-2024 18:10:59 America/Fortaleza] PHP Warning:  Undefined variable $output_dir in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 208
+[19-May-2024 18:10:59 America/Fortaleza] PHP Warning:  Undefined variable $output_dir in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 209
+[19-May-2024 18:21:00 America/Fortaleza] PHP Warning:  require_once(PHPMailer/PHPMailer.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/enviar.php on line 10
+[19-May-2024 18:21:00 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'PHPMailer/PHPMailer.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/enviar.php:10
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/enviar.php on line 10
+[19-May-2024 18:23:28 America/Fortaleza] PHP Warning:  require_once(/home2/alim6689/salutebbc.online/cer/Nova pasta/PHPMailer/src/PHPMailer.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/enviar.php on line 10
+[19-May-2024 18:23:28 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alim6689/salutebbc.online/cer/Nova pasta/PHPMailer/src/PHPMailer.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/enviar.php:10
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/enviar.php on line 10
+[19-May-2024 18:23:33 America/Fortaleza] PHP Warning:  require_once(/home2/alim6689/salutebbc.online/cer/Nova pasta/PHPMailer/src/PHPMailer.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/enviar.php on line 10
+[19-May-2024 18:23:33 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alim6689/salutebbc.online/cer/Nova pasta/PHPMailer/src/PHPMailer.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/enviar.php:10
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/enviar.php on line 10
+[19-May-2024 18:23:34 America/Fortaleza] PHP Warning:  require_once(/home2/alim6689/salutebbc.online/cer/Nova pasta/PHPMailer/src/PHPMailer.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/enviar.php on line 10
+[19-May-2024 18:23:34 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alim6689/salutebbc.online/cer/Nova pasta/PHPMailer/src/PHPMailer.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/enviar.php:10
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/enviar.php on line 10
+[19-May-2024 18:23:35 America/Fortaleza] PHP Warning:  require_once(/home2/alim6689/salutebbc.online/cer/Nova pasta/PHPMailer/src/PHPMailer.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/enviar.php on line 10
+[19-May-2024 18:23:35 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alim6689/salutebbc.online/cer/Nova pasta/PHPMailer/src/PHPMailer.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/enviar.php:10
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/enviar.php on line 10
+[19-May-2024 18:38:36 America/Fortaleza] PHP Fatal error:  Cannot redeclare enviarEmailComCertificado() (previously declared in /home2/alim6689/salutebbc.online/cer/Nova pasta/enviar.php:17) in /home2/alim6689/salutebbc.online/cer/Nova pasta/header.php on line 126
+[19-May-2024 18:38:40 America/Fortaleza] PHP Fatal error:  Cannot redeclare enviarEmailComCertificado() (previously declared in /home2/alim6689/salutebbc.online/cer/Nova pasta/enviar.php:17) in /home2/alim6689/salutebbc.online/cer/Nova pasta/header.php on line 126
+[19-May-2024 19:46:11 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/register.php on line 3
+[19-May-2024 19:46:11 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/register.php:3
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/register.php on line 3
+[19-May-2024 19:46:39 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/register.php on line 3
+[19-May-2024 19:46:39 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/register.php:3
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/register.php on line 3
+[19-May-2024 19:49:55 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/register.php on line 3
+[19-May-2024 19:49:55 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/register.php:3
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/register.php on line 3
+[19-May-2024 19:50:00 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/index.php on line 3
+[19-May-2024 19:50:00 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/index.php:3
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/index.php on line 3
+[19-May-2024 19:50:10 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/index.php on line 3
+[19-May-2024 19:50:10 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/index.php:3
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/index.php on line 3
+[19-May-2024 19:50:13 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/index.php on line 3
+[19-May-2024 19:50:13 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/index.php:3
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/index.php on line 3
+[19-May-2024 19:50:16 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/index.php on line 3
+[19-May-2024 19:50:16 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/index.php:3
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/index.php on line 3
+[19-May-2024 19:52:52 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/index.php on line 3
+[19-May-2024 19:52:52 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/index.php:3
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/index.php on line 3
+[19-May-2024 19:52:54 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/index.php on line 3
+[19-May-2024 19:52:54 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/index.php:3
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/index.php on line 3
+[19-May-2024 19:52:58 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/index.php on line 3
+[19-May-2024 19:52:58 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/index.php:3
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/index.php on line 3
+[19-May-2024 19:53:00 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/index.php on line 3
+[19-May-2024 19:53:00 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/index.php:3
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/index.php on line 3
+[19-May-2024 20:14:18 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home2/alim6689/salutebbc.online/cer/Nova pasta/login.php on line 3
+[19-May-2024 20:14:18 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/salutebbc.online/cer/Nova pasta/login.php:3
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/salutebbc.online/cer/Nova pasta/login.php on line 3
+[19-May-2024 20:29:04 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/alim6689/salutebbc.online/cer/Nova pasta/header.php:1) in /home2/alim6689/salutebbc.online/cer/Nova pasta/enviar.php on line 12
+[19-May-2024 20:29:12 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/alim6689/salutebbc.online/cer/Nova pasta/header.php:1) in /home2/alim6689/salutebbc.online/cer/Nova pasta/dashboard.php on line 5
+[19-May-2024 20:29:14 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/alim6689/salutebbc.online/cer/Nova pasta/header.php:1) in /home2/alim6689/salutebbc.online/cer/Nova pasta/upload.php on line 6
+[19-May-2024 20:29:17 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/alim6689/salutebbc.online/cer/Nova pasta/header.php:1) in /home2/alim6689/salutebbc.online/cer/Nova pasta/dashboard.php on line 5
+[19-May-2024 21:14:00 America/Fortaleza] PHP Fatal error:  Cannot redeclare gerarCertificadoPDF() (previously declared in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:17) in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 300
+[19-May-2024 21:14:05 America/Fortaleza] PHP Fatal error:  Cannot redeclare gerarCertificadoPDF() (previously declared in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:17) in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 300
+[19-May-2024 21:14:07 America/Fortaleza] PHP Fatal error:  Cannot redeclare gerarCertificadoPDF() (previously declared in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:17) in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 300
+[19-May-2024 21:14:17 America/Fortaleza] PHP Fatal error:  Cannot redeclare gerarCertificadoPDF() (previously declared in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:17) in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 300
+[19-May-2024 21:14:46 America/Fortaleza] PHP Fatal error:  Cannot redeclare gerarCertificadoPDF() (previously declared in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:17) in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 300
+[19-May-2024 21:14:55 America/Fortaleza] PHP Fatal error:  Cannot redeclare gerarCertificadoPDF() (previously declared in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:17) in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 300
+[19-May-2024 21:15:07 America/Fortaleza] PHP Fatal error:  Cannot redeclare gerarCertificadoPDF() (previously declared in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:17) in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 300
+[19-May-2024 21:15:10 America/Fortaleza] PHP Fatal error:  Cannot redeclare gerarCertificadoPDF() (previously declared in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:17) in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 300
+[19-May-2024 21:15:12 America/Fortaleza] PHP Fatal error:  Cannot redeclare gerarCertificadoPDF() (previously declared in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php:17) in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 300
+[19-May-2024 21:28:06 America/Fortaleza] PHP Warning:  fopen(): Remote host file access not supported, file://certificados/certificado_Carla_Higas.pdf in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/include/tcpdf_static.php on line 1811
+[19-May-2024 21:28:06 America/Fortaleza] PHP Warning:  fopen(file://certificados/certificado_Carla_Higas.pdf): Failed to open stream: no suitable wrapper could be found in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/include/tcpdf_static.php on line 1811
+[19-May-2024 21:28:18 America/Fortaleza] PHP Warning:  fopen(): Remote host file access not supported, file://certificados/certificado_MARCIA.pdf in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/include/tcpdf_static.php on line 1811
+[19-May-2024 21:28:18 America/Fortaleza] PHP Warning:  fopen(file://certificados/certificado_MARCIA.pdf): Failed to open stream: no suitable wrapper could be found in /home2/alim6689/salutebbc.online/cer/Nova pasta/tcpdf/include/tcpdf_static.php on line 1811
+[19-May-2024 21:41:06 America/Fortaleza] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home2/alim6689/salutebbc.online/cer/Nova pasta/header.php on line 2
+[19-May-2024 21:41:23 America/Fortaleza] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home2/alim6689/salutebbc.online/cer/Nova pasta/header.php on line 2
+[19-May-2024 21:42:21 America/Fortaleza] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home2/alim6689/salutebbc.online/cer/Nova pasta/header.php on line 2
+[19-May-2024 21:42:49 America/Fortaleza] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home2/alim6689/salutebbc.online/cer/Nova pasta/header.php on line 2
+[19-May-2024 21:44:14 America/Fortaleza] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home2/alim6689/salutebbc.online/cer/Nova pasta/header.php on line 2
+[20-May-2024 08:12:08 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/alim6689/salutebbc.online/cer/Nova pasta/header.php:4) in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 12
+[20-May-2024 08:12:26 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/alim6689/salutebbc.online/cer/Nova pasta/header.php:4) in /home2/alim6689/salutebbc.online/cer/Nova pasta/gerar_certificado.php on line 12
+[05-Jun-2024 08:16:05 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/alim6689/unidasprojetos.online/certificados/header.php:4) in /home2/alim6689/unidasprojetos.online/certificados/enviar.php on line 12
+[26-Jun-2024 10:23:30 America/Fortaleza] PHP Fatal error:  Uncaught Error: Call to undefined function enviarEmailComCertificado() in /home2/alim6689/unidasprojetos.online/certificados/gerar_certificado.php:119
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/unidasprojetos.online/certificados/gerar_certificado.php on line 119
+[03-Jul-2024 09:39:24 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/alim6689/unidasprojetos.online/certificados/header.php:4) in /home2/alim6689/unidasprojetos.online/certificados/certificados.php on line 6
+[27-Aug-2024 16:09:08 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/alim6689/unidasprojetos.online/certificados/header.php:4) in /home2/alim6689/unidasprojetos.online/certificados/gerar_certificado.php on line 12
+[27-Aug-2024 16:09:14 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/alim6689/unidasprojetos.online/certificados/header.php:4) in /home2/alim6689/unidasprojetos.online/certificados/gerar_certificado.php on line 12
+[27-Aug-2024 16:09:20 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/alim6689/unidasprojetos.online/certificados/header.php:4) in /home2/alim6689/unidasprojetos.online/certificados/texto.php on line 6
+[27-Aug-2024 16:09:22 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home2/alim6689/unidasprojetos.online/certificados/login.php on line 3
+[27-Aug-2024 16:09:22 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alim6689/unidasprojetos.online/certificados/login.php:3
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/unidasprojetos.online/certificados/login.php on line 3
+[27-Aug-2024 16:09:26 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/alim6689/unidasprojetos.online/certificados/header.php:4) in /home2/alim6689/unidasprojetos.online/certificados/texto.php on line 6
+[27-Aug-2024 16:23:22 America/Fortaleza] PHP Fatal error:  Uncaught Error: Call to undefined function enviarEmailComCertificado() in /home2/alim6689/unidasprojetos.online/certificados/gerar_certificado.php:119
+Stack trace:
+#0 {main}
+  thrown in /home2/alim6689/unidasprojetos.online/certificados/gerar_certificado.php on line 119
+[27-Sep-2024 08:42:13 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/alim6689/unidasprojetos.online/certificados/header.php:4) in /home2/alim6689/unidasprojetos.online/certificados/certificados.php on line 6
+[28-Sep-2024 18:42:07 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/alim6689/unidasprojetos.online/certificados/header.php:4) in /home2/alim6689/unidasprojetos.online/certificados/dashboard.php on line 5
+[29-Sep-2024 11:00:53 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/alim6689/unidasprojetos.online/certificados/header.php:4) in /home2/alim6689/unidasprojetos.online/certificados/dashboard.php on line 5
+[29-Sep-2024 12:05:24 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/alim6689/unidasprojetos.online/certificados/header.php:4) in /home2/alim6689/unidasprojetos.online/certificados/dashboard.php on line 5
+[29-Sep-2024 12:41:31 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/alim6689/unidasprojetos.online/certificados/header.php:4) in /home2/alim6689/unidasprojetos.online/certificados/dashboard.php on line 5
+[30-Sep-2024 08:44:02 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/alim6689/unidasprojetos.online/certificados/header.php:4) in /home2/alim6689/unidasprojetos.online/certificados/dashboard.php on line 5
+[30-Sep-2024 08:52:57 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/alim6689/unidasprojetos.online/certificados/header.php:4) in /home2/alim6689/unidasprojetos.online/certificados/dashboard.php on line 5
+[30-Sep-2024 09:26:05 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/alim6689/unidasprojetos.online/certificados/header.php:4) in /home2/alim6689/unidasprojetos.online/certificados/dashboard.php on line 5
+[30-Sep-2024 09:55:58 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/alim6689/unidasprojetos.online/certificados/header.php:4) in /home2/alim6689/unidasprojetos.online/certificados/dashboard.php on line 5
+[11-Oct-2024 13:33:43 America/Fortaleza] PHP Fatal error:  Uncaught Error: Call to undefined function enviarEmailComCertificado() in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:119
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 119
+[11-Oct-2024 13:36:05 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1364 Field 'texto' doesn't have a default value in /home1/unidas90/certificados.unidasautogestao.com/certificados.php:17
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/certificados.php(17): PDOStatement->execute()
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 17
+[11-Oct-2024 13:41:56 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1364 Field 'texto' doesn't have a default value in /home1/unidas90/certificados.unidasautogestao.com/certificados.php:17
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/certificados.php(17): PDOStatement->execute()
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 17
+[11-Oct-2024 13:51:09 America/Fortaleza] PHP Fatal error:  Uncaught Error: Call to undefined function enviarEmailComCertificado() in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:119
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 119
+[11-Oct-2024 14:04:59 America/Fortaleza] PHP Deprecated:  Function strftime() is deprecated in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 57
+[11-Oct-2024 14:05:10 America/Fortaleza] PHP Deprecated:  Function strftime() is deprecated in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 57
+[11-Oct-2024 14:10:32 America/Fortaleza] PHP Deprecated:  Function strftime() is deprecated in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 57
+[11-Oct-2024 15:16:18 America/Fortaleza] PHP Fatal error:  Uncaught Error: Call to undefined function enviarEmailComCertificado() in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:129
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 129
+[11-Oct-2024 15:16:38 America/Fortaleza] PHP Fatal error:  Uncaught Error: Call to undefined function enviarEmailComCertificado() in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:129
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 129
+[11-Oct-2024 15:21:06 America/Fortaleza] PHP Warning:  require(/home2/alim6689/unidasprojetos.online/teste/PHPMailer-master/src/PHPMailer.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 12
+[11-Oct-2024 15:21:06 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alim6689/unidasprojetos.online/teste/PHPMailer-master/src/PHPMailer.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:12
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 12
+[11-Oct-2024 15:21:08 America/Fortaleza] PHP Warning:  require(/home2/alim6689/unidasprojetos.online/teste/PHPMailer-master/src/PHPMailer.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 12
+[11-Oct-2024 15:21:08 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alim6689/unidasprojetos.online/teste/PHPMailer-master/src/PHPMailer.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:12
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 12
+[11-Oct-2024 15:22:52 America/Fortaleza] PHP Warning:  require(/home1/unidas90/certificados.unidasautogestao.com/teste/PHPMailer-master/src/PHPMailer.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 12
+[11-Oct-2024 15:22:52 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home1/unidas90/certificados.unidasautogestao.com/teste/PHPMailer-master/src/PHPMailer.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:12
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 12
+[11-Oct-2024 15:23:06 America/Fortaleza] PHP Warning:  require(/home1/unidas90/certificados.unidasautogestao.com/teste/PHPMailer-master/src/PHPMailer.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 12
+[11-Oct-2024 15:23:06 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home1/unidas90/certificados.unidasautogestao.com/teste/PHPMailer-master/src/PHPMailer.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:12
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 12
+[11-Oct-2024 15:25:36 America/Fortaleza] PHP Warning:  require(/home1/unidas90/certificados.unidasautogestao.com/PHPMailer-master/src/PHPMailer.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 12
+[11-Oct-2024 15:25:36 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home1/unidas90/certificados.unidasautogestao.com/PHPMailer-master/src/PHPMailer.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:12
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 12
+[11-Oct-2024 15:26:55 America/Fortaleza] PHP Warning:  require(/home1/unidas90/certificados.unidasautogestao.com/PHPMailer-master/src/PHPMailer.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 12
+[11-Oct-2024 15:26:55 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home1/unidas90/certificados.unidasautogestao.com/PHPMailer-master/src/PHPMailer.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:12
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 12
+[11-Oct-2024 15:27:22 America/Fortaleza] PHP Fatal error:  Uncaught Error: Call to undefined function enviarEmailComCertificado() in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:129
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 129
+[11-Oct-2024 15:33:37 America/Fortaleza] PHP Warning:  require(/home1/unidas90/certificados.unidasautogestao.com/PHPMailer-master/src/PHPMailer.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 12
+[11-Oct-2024 15:33:37 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home1/unidas90/certificados.unidasautogestao.com/PHPMailer-master/src/PHPMailer.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:12
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 12
+[11-Oct-2024 15:33:39 America/Fortaleza] PHP Warning:  require(/home1/unidas90/certificados.unidasautogestao.com/PHPMailer-master/src/PHPMailer.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 12
+[11-Oct-2024 15:33:39 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home1/unidas90/certificados.unidasautogestao.com/PHPMailer-master/src/PHPMailer.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:12
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 12
+[11-Oct-2024 15:33:54 America/Fortaleza] PHP Warning:  require(/home1/unidas90/certificados.unidasautogestao.com/PHPMailer-master/src/PHPMailer.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 12
+[11-Oct-2024 15:33:54 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home1/unidas90/certificados.unidasautogestao.com/PHPMailer-master/src/PHPMailer.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:12
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 12
+[11-Oct-2024 15:35:29 America/Fortaleza] PHP Warning:  require(/home1/unidas90/certificados.unidasautogestao.com/PHPMailer/src/PHPMailer.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 12
+[11-Oct-2024 15:35:29 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home1/unidas90/certificados.unidasautogestao.com/PHPMailer/src/PHPMailer.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:12
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 12
+[11-Oct-2024 15:37:03 America/Fortaleza] PHP Warning:  require(/home1/unidas90/certificados.unidasautogestao.com/PHPMailer/src/PHPMailer.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 12
+[11-Oct-2024 15:37:03 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home1/unidas90/certificados.unidasautogestao.com/PHPMailer/src/PHPMailer.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:12
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 12
+[11-Oct-2024 15:37:05 America/Fortaleza] PHP Warning:  require(/home1/unidas90/certificados.unidasautogestao.com/PHPMailer/src/PHPMailer.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 12
+[11-Oct-2024 15:37:05 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home1/unidas90/certificados.unidasautogestao.com/PHPMailer/src/PHPMailer.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:12
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 12
+[11-Oct-2024 15:38:14 America/Fortaleza] PHP Warning:  require(/home1/unidas90/certificados.unidasautogestao.com/PHPMailer/src/PHPMailer.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 12
+[11-Oct-2024 15:38:14 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home1/unidas90/certificados.unidasautogestao.com/PHPMailer/src/PHPMailer.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:12
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 12
+[11-Oct-2024 15:38:17 America/Fortaleza] PHP Warning:  require(/home1/unidas90/certificados.unidasautogestao.com/PHPMailer/src/PHPMailer.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 12
+[11-Oct-2024 15:38:17 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home1/unidas90/certificados.unidasautogestao.com/PHPMailer/src/PHPMailer.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:12
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 12
+[11-Oct-2024 15:39:09 America/Fortaleza] PHP Warning:  Undefined array key "modelo_id" in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 127
+[11-Oct-2024 16:02:23 America/Fortaleza] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function gerarCertificadoPDF(), 3 passed in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 236 and exactly 4 expected in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:20
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(236): gerarCertificadoPDF('Leandro Silva', '/home1/unidas90...', 'Este certificad...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 20
+[11-Oct-2024 16:16:20 America/Fortaleza] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function gerarCertificadoPDF(), 3 passed in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 172 and exactly 4 expected in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:20
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(172): gerarCertificadoPDF('Leandro Silva', '/home1/unidas90...', 'Este certificad...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 20
+[11-Oct-2024 16:31:53 America/Fortaleza] PHP Parse error:  syntax error, unexpected character 0x00, expecting end of file in /home1/unidas90/certificados.unidasautogestao.com/Lobster-Regular.ttf on line 994
+[12-Oct-2024 10:26:27 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/certificados.unidasautogestao.com/header.php:4) in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 15
+[12-Oct-2024 10:26:29 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/login.php on line 3
+[12-Oct-2024 10:26:29 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/login.php:3
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/login.php on line 3
+[12-Oct-2024 13:33:43 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/certificados.unidasautogestao.com/header.php:4) in /home1/unidas90/certificados.unidasautogestao.com/texto.php on line 6
+[12-Oct-2024 13:33:45 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/login.php on line 3
+[12-Oct-2024 13:33:45 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/login.php:3
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/login.php on line 3
+[12-Oct-2024 15:11:00 America/Fortaleza] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function gerarCertificadoPDF(), 3 passed in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 190 and exactly 4 expected in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:23
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(190): gerarCertificadoPDF('Jose pedro', '/home1/unidas90...', '<p style="text-...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 23
+[12-Oct-2024 15:16:16 America/Fortaleza] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function gerarCertificadoPDF(), 3 passed in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 172 and exactly 4 expected in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:23
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(172): gerarCertificadoPDF('Marcia Hugo', '/home1/unidas90...', '<p style="text-...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 23
+[12-Oct-2024 15:20:28 America/Fortaleza] PHP Warning:  Undefined array key "nome_participante" in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 70
+[12-Oct-2024 15:20:28 America/Fortaleza] PHP Warning:  Undefined array key "modelo_certificado" in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 71
+[12-Oct-2024 15:20:28 America/Fortaleza] PHP Warning:  Undefined array key "texto_certificado" in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 72
+[12-Oct-2024 15:20:28 America/Fortaleza] PHP Warning:  Undefined array key "fonte_certificado" in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 73
+[12-Oct-2024 15:20:28 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'caminho' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:86
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(86): PDO->query('SELECT id, nome...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 86
+[12-Oct-2024 15:20:36 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'caminho' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:86
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(86): PDO->query('SELECT id, nome...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 86
+[12-Oct-2024 15:20:39 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'caminho' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:86
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(86): PDO->query('SELECT id, nome...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 86
+[12-Oct-2024 15:20:46 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'caminho' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:86
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(86): PDO->query('SELECT id, nome...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 86
+[12-Oct-2024 15:20:48 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'caminho' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:86
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(86): PDO->query('SELECT id, nome...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 86
+[12-Oct-2024 15:20:49 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'caminho' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:86
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(86): PDO->query('SELECT id, nome...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 86
+[12-Oct-2024 15:21:13 America/Fortaleza] PHP Fatal error:  Uncaught Error: Call to undefined function gerarCertificadoPDF() in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:113
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 113
+[14-Oct-2024 11:17:20 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/certificados.unidasautogestao.com/header.php:4) in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 17
+[14-Oct-2024 11:17:22 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/login.php on line 3
+[14-Oct-2024 11:17:22 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/login.php:3
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/login.php on line 3
+[14-Oct-2024 11:17:24 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/login.php on line 3
+[14-Oct-2024 11:17:24 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/login.php:3
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/login.php on line 3
+[06-Dec-2024 10:21:57 America/Fortaleza] PHP Warning:  Undefined variable $modelos in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 81
+[06-Dec-2024 10:21:57 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 81
+[06-Dec-2024 10:25:37 America/Fortaleza] PHP Warning:  Undefined variable $modelos in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 85
+[06-Dec-2024 10:25:37 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 85
+[06-Dec-2024 10:27:43 America/Fortaleza] PHP Warning:  Undefined variable $modelos in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 143
+[06-Dec-2024 10:27:43 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 143
+[06-Dec-2024 10:27:43 America/Fortaleza] PHP Warning:  Undefined variable $modelos in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 171
+[06-Dec-2024 10:27:43 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 171
+[06-Dec-2024 10:29:55 America/Fortaleza] PHP Warning:  Undefined variable $modelos in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 143
+[06-Dec-2024 10:29:55 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 143
+[06-Dec-2024 10:29:55 America/Fortaleza] PHP Warning:  Undefined variable $modelos in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 171
+[06-Dec-2024 10:29:55 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 171
+[06-Dec-2024 10:32:25 America/Fortaleza] PHP Warning:  Undefined variable $modelos in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 136
+[06-Dec-2024 10:32:25 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 136
+[06-Dec-2024 10:32:25 America/Fortaleza] PHP Warning:  Undefined variable $modelos in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 163
+[06-Dec-2024 10:32:25 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 163
+[06-Dec-2024 10:32:34 America/Fortaleza] PHP Warning:  Undefined variable $modelos in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 136
+[06-Dec-2024 10:32:34 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 136
+[06-Dec-2024 10:32:34 America/Fortaleza] PHP Warning:  Undefined variable $modelos in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 163
+[06-Dec-2024 10:32:34 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 163
+[06-Dec-2024 10:32:52 America/Fortaleza] PHP Warning:  Undefined variable $modelos in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 136
+[06-Dec-2024 10:32:52 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 136
+[06-Dec-2024 10:32:52 America/Fortaleza] PHP Warning:  Undefined variable $modelos in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 163
+[06-Dec-2024 10:32:52 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 163
+[06-Dec-2024 10:32:54 America/Fortaleza] PHP Warning:  Undefined variable $modelos in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 136
+[06-Dec-2024 10:32:54 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 136
+[06-Dec-2024 10:32:54 America/Fortaleza] PHP Warning:  Undefined variable $modelos in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 163
+[06-Dec-2024 10:32:54 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 163
+[06-Dec-2024 10:35:20 America/Fortaleza] PHP Warning:  Undefined variable $modelos in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 156
+[06-Dec-2024 10:35:20 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 156
+[06-Dec-2024 10:35:20 America/Fortaleza] PHP Warning:  Undefined variable $modelos in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 183
+[06-Dec-2024 10:35:20 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 183
+[06-Dec-2024 10:42:19 America/Fortaleza] PHP Warning:  Undefined variable $conn in /home1/unidas90/certificados.unidasautogestao.com/texto.php on line 10
+[06-Dec-2024 10:42:19 America/Fortaleza] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home1/unidas90/certificados.unidasautogestao.com/texto.php:10
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/texto.php on line 10
+[06-Dec-2024 10:42:25 America/Fortaleza] PHP Warning:  Undefined variable $conn in /home1/unidas90/certificados.unidasautogestao.com/texto.php on line 10
+[06-Dec-2024 10:42:25 America/Fortaleza] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home1/unidas90/certificados.unidasautogestao.com/texto.php:10
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/texto.php on line 10
+[06-Dec-2024 10:49:38 America/Fortaleza] PHP Warning:  Undefined variable $modelos in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 88
+[06-Dec-2024 10:49:38 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 88
+[06-Dec-2024 10:53:46 America/Fortaleza] PHP Warning:  Undefined variable $modelos in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 104
+[06-Dec-2024 10:53:46 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 104
+[06-Dec-2024 14:57:35 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/certificados.unidasautogestao.com/header.php:4) in /home1/unidas90/certificados.unidasautogestao.com/upload.php on line 6
+[06-Dec-2024 14:57:37 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/certificados.unidasautogestao.com/header.php:4) in /home1/unidas90/certificados.unidasautogestao.com/upload.php on line 6
+[06-Dec-2024 14:57:39 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/login.php on line 3
+[06-Dec-2024 14:57:39 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/login.php:3
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/login.php on line 3
+[06-Dec-2024 14:57:41 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/login.php on line 3
+[06-Dec-2024 14:57:41 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/login.php:3
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/login.php on line 3
+[06-Dec-2024 14:57:42 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/certificados.unidasautogestao.com/header.php:4) in /home1/unidas90/certificados.unidasautogestao.com/upload.php on line 6
+[06-Dec-2024 14:57:46 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/certificados.unidasautogestao.com/header.php:4) in /home1/unidas90/certificados.unidasautogestao.com/texto.php on line 6
+[06-Dec-2024 14:57:49 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/register.php on line 3
+[06-Dec-2024 14:57:49 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/register.php:3
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/register.php on line 3
+[06-Dec-2024 14:57:50 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/register.php on line 3
+[06-Dec-2024 14:57:50 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/register.php:3
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/register.php on line 3
+[06-Dec-2024 14:57:52 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/certificados.unidasautogestao.com/header.php:4) in /home1/unidas90/certificados.unidasautogestao.com/texto.php on line 6
+[16-Dec-2024 09:45:38 America/Fortaleza] PHP Warning:  Undefined variable $modelos in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 116
+[16-Dec-2024 09:45:38 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 116
+[16-Dec-2024 09:46:15 America/Fortaleza] PHP Warning:  Undefined variable $modelos in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 116
+[16-Dec-2024 09:46:15 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 116
+[16-Dec-2024 10:29:42 America/Fortaleza] PHP Warning:  Undefined variable $modelos in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 150
+[16-Dec-2024 10:29:42 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 150
+[16-Dec-2024 10:32:44 America/Fortaleza] PHP Warning:  Undefined variable $modelos in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 150
+[16-Dec-2024 10:32:44 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 150
+[16-Dec-2024 11:39:49 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/certificados.unidasautogestao.com/header.php:4) in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 6
+[16-Dec-2024 11:39:51 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/login.php on line 3
+[16-Dec-2024 11:39:51 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/login.php:3
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/login.php on line 3
+[16-Dec-2024 11:42:40 America/Fortaleza] PHP Warning:  Undefined variable $modelos in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 150
+[16-Dec-2024 11:42:40 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 150
+[16-Dec-2024 11:42:42 America/Fortaleza] PHP Warning:  Undefined variable $modelos in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 150
+[16-Dec-2024 11:42:42 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 150
+[16-Dec-2024 14:27:34 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/certificados.unidasautogestao.com/header.php:4) in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 6
+[16-Dec-2024 14:27:36 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/login.php on line 3
+[16-Dec-2024 14:27:36 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/login.php:3
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/login.php on line 3
+[16-Dec-2024 16:17:25 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'usuario'@'localhost' (using password: YES) in /home1/unidas90/certificados.unidasautogestao.com/dashboard.php:10
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/dashboard.php(10): mysqli->__construct('localhost', 'usuario', Object(SensitiveParameterValue), 'database')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/dashboard.php on line 10
+[16-Dec-2024 16:17:29 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'usuario'@'localhost' (using password: YES) in /home1/unidas90/certificados.unidasautogestao.com/dashboard.php:10
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/dashboard.php(10): mysqli->__construct('localhost', 'usuario', Object(SensitiveParameterValue), 'database')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/dashboard.php on line 10
+[16-Dec-2024 16:27:17 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'usuario'@'localhost' (using password: YES) in /home1/unidas90/certificados.unidasautogestao.com/dashboard.php:14
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/dashboard.php(14): mysqli->__construct('localhost', 'usuario', Object(SensitiveParameterValue), 'database')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/dashboard.php on line 14
+[16-Dec-2024 16:27:25 America/Fortaleza] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'usuario'@'localhost' (using password: YES) in /home1/unidas90/certificados.unidasautogestao.com/dashboard.php:14
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/dashboard.php(14): mysqli->__construct('localhost', 'usuario', Object(SensitiveParameterValue), 'database')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/dashboard.php on line 14
+[16-Dec-2024 16:34:01 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nivel' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/dashboard.php:47
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/dashboard.php(47): PDO->query('SELECT id, nome...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/dashboard.php on line 47
+[16-Dec-2024 17:09:58 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/certificados.unidasautogestao.com/header.php:4) in /home1/unidas90/certificados.unidasautogestao.com/dashboard.php on line 7
+[16-Dec-2024 17:11:57 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/login.php on line 3
+[16-Dec-2024 17:11:57 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/login.php:3
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/login.php on line 3
+[17-Dec-2024 09:59:32 America/Fortaleza] PHP Warning:  Undefined array key "textos" in /home1/unidas90/certificados.unidasautogestao.com/texto.php on line 22
+[17-Dec-2024 09:59:32 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/texto.php on line 22
+[17-Dec-2024 11:11:20 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'unidas90_certificados.textos_certificados' doesn't exist in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:21
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(21): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 21
+[17-Dec-2024 11:11:40 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'unidas90_certificados.textos_certificados' doesn't exist in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:21
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(21): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 21
+[17-Dec-2024 11:11:43 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'unidas90_certificados.textos_certificados' doesn't exist in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:21
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(21): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 21
+[17-Dec-2024 11:11:48 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'unidas90_certificados.textos_certificados' doesn't exist in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:21
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(21): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 21
+[17-Dec-2024 11:11:54 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'unidas90_certificados.textos_certificados' doesn't exist in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:21
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(21): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 21
+[17-Dec-2024 11:20:52 America/Fortaleza] PHP Warning:  require(/path/to/PHPMailer/src/PHPMailer.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 5
+[17-Dec-2024 11:20:52 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/path/to/PHPMailer/src/PHPMailer.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:5
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 5
+[17-Dec-2024 11:24:51 America/Fortaleza] PHP Warning:  require(/path/to/PHPMailer/src/PHPMailer.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 5
+[17-Dec-2024 11:24:51 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/path/to/PHPMailer/src/PHPMailer.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:5
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 5
+[17-Dec-2024 11:24:53 America/Fortaleza] PHP Warning:  require(/path/to/PHPMailer/src/PHPMailer.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 5
+[17-Dec-2024 11:24:53 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/path/to/PHPMailer/src/PHPMailer.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:5
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 5
+[17-Dec-2024 11:25:03 America/Fortaleza] PHP Fatal error:  Cannot use PHPMailer\PHPMailer\PHPMailer as PHPMailer because the name is already in use in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 138
+[17-Dec-2024 11:25:16 America/Fortaleza] PHP Warning:  require(/path/to/PHPMailer/src/PHPMailer.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 5
+[17-Dec-2024 11:25:16 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/path/to/PHPMailer/src/PHPMailer.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:5
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 5
+[17-Dec-2024 11:25:18 America/Fortaleza] PHP Warning:  require(/path/to/PHPMailer/src/PHPMailer.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 5
+[17-Dec-2024 11:25:18 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/path/to/PHPMailer/src/PHPMailer.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:5
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 5
+[17-Dec-2024 11:26:03 America/Fortaleza] PHP Warning:  require(/path/to/PHPMailer/src/PHPMailer.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 5
+[17-Dec-2024 11:26:03 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/path/to/PHPMailer/src/PHPMailer.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:5
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 5
+[17-Dec-2024 11:33:56 America/Fortaleza] PHP Warning:  require_once(PHPMailer/PHPMailerAutoload.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 5
+[17-Dec-2024 11:33:56 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'PHPMailer/PHPMailerAutoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:5
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 5
+[17-Dec-2024 11:34:04 America/Fortaleza] PHP Warning:  require_once(PHPMailer/PHPMailerAutoload.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 5
+[17-Dec-2024 11:34:04 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'PHPMailer/PHPMailerAutoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:5
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 5
+[17-Dec-2024 11:34:45 America/Fortaleza] PHP Warning:  require_once(PHPMailer/PHPMailerAutoload.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 9
+[17-Dec-2024 11:34:45 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'PHPMailer/PHPMailerAutoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:9
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 9
+[17-Dec-2024 12:02:57 America/Fortaleza] PHP Warning:  require_once(PHPMailer/PHPMailerAutoload.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 9
+[17-Dec-2024 12:02:57 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'PHPMailer/PHPMailerAutoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:9
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 9
+[17-Dec-2024 12:04:10 America/Fortaleza] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home1/unidas90/certificados.unidasautogestao.com/header.php on line 2
+[17-Dec-2024 12:04:10 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:91) in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 154
+[17-Dec-2024 12:04:16 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/login.php on line 3
+[17-Dec-2024 12:04:16 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/login.php:3
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/login.php on line 3
+[17-Dec-2024 12:04:34 America/Fortaleza] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home1/unidas90/certificados.unidasautogestao.com/header.php on line 2
+[17-Dec-2024 12:04:34 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:91) in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 154
+[17-Dec-2024 13:59:48 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'unidas90_certificados.eventos_participantes' doesn't exist in /home1/unidas90/certificados.unidasautogestao.com/enviar.php:65
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/enviar.php(65): PDOStatement->execute()
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/enviar.php on line 65
+[17-Dec-2024 14:45:12 America/Fortaleza] PHP Warning:  Undefined array key "arquivo_nome" in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 125
+[17-Dec-2024 14:45:12 America/Fortaleza] PHP Warning:  Undefined array key "arquivo_nome" in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 125
+[17-Dec-2024 14:45:30 America/Fortaleza] PHP Warning:  Undefined array key "arquivo_nome" in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 125
+[17-Dec-2024 14:45:30 America/Fortaleza] PHP Warning:  Undefined array key "arquivo_nome" in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 125
+[17-Dec-2024 14:45:49 America/Fortaleza] PHP Warning:  Undefined array key "arquivo_nome" in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 125
+[17-Dec-2024 14:45:49 America/Fortaleza] PHP Warning:  Undefined array key "arquivo_nome" in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 125
+[17-Dec-2024 14:45:49 America/Fortaleza] PHP Warning:  Undefined array key "arquivo_nome" in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 125
+[17-Dec-2024 14:46:03 America/Fortaleza] PHP Warning:  Undefined array key "arquivo_nome" in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 125
+[17-Dec-2024 14:46:03 America/Fortaleza] PHP Warning:  Undefined array key "arquivo_nome" in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 125
+[17-Dec-2024 14:46:03 America/Fortaleza] PHP Warning:  Undefined array key "arquivo_nome" in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 125
+[17-Dec-2024 14:46:40 America/Fortaleza] PHP Warning:  Undefined array key "arquivo_nome" in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 125
+[17-Dec-2024 14:46:40 America/Fortaleza] PHP Warning:  Undefined array key "arquivo_nome" in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 125
+[17-Dec-2024 14:46:40 America/Fortaleza] PHP Warning:  Undefined array key "arquivo_nome" in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 125
+[17-Dec-2024 14:49:04 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'arquivo_nome' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/certificados.php:50
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/certificados.php(50): PDO->query('SELECT id, nome...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 50
+[17-Dec-2024 14:49:05 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'arquivo_nome' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/certificados.php:50
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/certificados.php(50): PDO->query('SELECT id, nome...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 50
+[17-Dec-2024 14:49:09 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'arquivo_nome' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/certificados.php:50
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/certificados.php(50): PDO->query('SELECT id, nome...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 50
+[17-Dec-2024 14:49:18 America/Fortaleza] PHP Warning:  Undefined array key "arquivo_nome" in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 125
+[17-Dec-2024 14:49:18 America/Fortaleza] PHP Warning:  Undefined array key "arquivo_nome" in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 125
+[17-Dec-2024 14:49:18 America/Fortaleza] PHP Warning:  Undefined array key "arquivo_nome" in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 125
+[17-Dec-2024 14:50:55 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'data_criacao' in 'order clause' in /home1/unidas90/certificados.unidasautogestao.com/certificados.php:66
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/certificados.php(66): PDO->query('SELECT * FROM m...')
+#1 /home1/unidas90/certificados.unidasautogestao.com/certificados.php(70): listarModelos(Object(PDO))
+#2 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 66
+[17-Dec-2024 14:52:39 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'data_criacao' in 'order clause' in /home1/unidas90/certificados.unidasautogestao.com/certificados.php:70
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/certificados.php(70): PDO->query('SELECT * FROM m...')
+#1 /home1/unidas90/certificados.unidasautogestao.com/certificados.php(74): listarModelos(Object(PDO))
+#2 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 70
+[17-Dec-2024 14:53:37 America/Fortaleza] PHP Warning:  Undefined array key "arquivo_nome" in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 156
+[17-Dec-2024 14:53:37 America/Fortaleza] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 156
+[17-Dec-2024 14:53:37 America/Fortaleza] PHP Warning:  Undefined array key "arquivo_nome" in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 156
+[17-Dec-2024 14:53:37 America/Fortaleza] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 156
+[17-Dec-2024 14:53:37 America/Fortaleza] PHP Warning:  Undefined array key "arquivo_nome" in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 156
+[17-Dec-2024 14:53:37 America/Fortaleza] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 156
+[17-Dec-2024 14:53:47 America/Fortaleza] PHP Warning:  Undefined array key "arquivo_nome" in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 156
+[17-Dec-2024 14:53:47 America/Fortaleza] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 156
+[17-Dec-2024 14:53:47 America/Fortaleza] PHP Warning:  Undefined array key "arquivo_nome" in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 156
+[17-Dec-2024 14:53:47 America/Fortaleza] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 156
+[17-Dec-2024 14:53:47 America/Fortaleza] PHP Warning:  Undefined array key "arquivo_nome" in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 156
+[17-Dec-2024 14:53:47 America/Fortaleza] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 156
+[17-Dec-2024 14:53:51 America/Fortaleza] PHP Warning:  Undefined array key "arquivo_nome" in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 156
+[17-Dec-2024 14:53:51 America/Fortaleza] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 156
+[17-Dec-2024 14:53:51 America/Fortaleza] PHP Warning:  Undefined array key "arquivo_nome" in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 156
+[17-Dec-2024 14:53:51 America/Fortaleza] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 156
+[17-Dec-2024 14:53:51 America/Fortaleza] PHP Warning:  Undefined array key "arquivo_nome" in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 156
+[17-Dec-2024 14:53:51 America/Fortaleza] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 156
+[17-Dec-2024 14:55:17 America/Fortaleza] PHP Warning:  Undefined variable $error in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 96
+[17-Dec-2024 14:55:17 America/Fortaleza] PHP Warning:  Undefined variable $success in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 98
+[17-Dec-2024 14:55:17 America/Fortaleza] PHP Warning:  Undefined variable $modelos in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 121
+[17-Dec-2024 14:55:17 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 121
+[17-Dec-2024 14:55:26 America/Fortaleza] PHP Warning:  Undefined array key "arquivo_nome" in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 156
+[17-Dec-2024 14:55:26 America/Fortaleza] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 156
+[17-Dec-2024 14:55:26 America/Fortaleza] PHP Warning:  Undefined array key "arquivo_nome" in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 156
+[17-Dec-2024 14:55:26 America/Fortaleza] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 156
+[17-Dec-2024 14:55:26 America/Fortaleza] PHP Warning:  Undefined array key "arquivo_nome" in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 156
+[17-Dec-2024 14:55:26 America/Fortaleza] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 156
+[17-Dec-2024 14:59:34 America/Fortaleza] PHP Warning:  unlink(certificados/): Is a directory in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 54
+[17-Dec-2024 15:02:09 America/Fortaleza] PHP Parse error:  Unclosed '{' on line 44 in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 132
+[17-Dec-2024 15:02:11 America/Fortaleza] PHP Parse error:  Unclosed '{' on line 44 in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 132
+[17-Dec-2024 15:02:12 America/Fortaleza] PHP Parse error:  Unclosed '{' on line 44 in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 132
+[17-Dec-2024 15:02:13 America/Fortaleza] PHP Parse error:  Unclosed '{' on line 44 in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 132
+[17-Dec-2024 15:02:14 America/Fortaleza] PHP Parse error:  Unclosed '{' on line 44 in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 132
+[17-Dec-2024 15:02:15 America/Fortaleza] PHP Parse error:  Unclosed '{' on line 44 in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 132
+[17-Dec-2024 15:19:33 America/Fortaleza] PHP Warning:  unlink(certificados/): Is a directory in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 58
+[17-Dec-2024 15:19:35 America/Fortaleza] PHP Warning:  unlink(certificados/): Is a directory in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 58
+[17-Dec-2024 15:23:00 America/Fortaleza] PHP Warning:  unlink(certificados/): Is a directory in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 58
+[17-Dec-2024 15:30:12 America/Fortaleza] PHP Warning:  unlink(certificados/): Is a directory in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 58
+[17-Dec-2024 15:30:14 America/Fortaleza] PHP Warning:  unlink(certificados/): Is a directory in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 58
+[17-Dec-2024 15:30:15 America/Fortaleza] PHP Warning:  unlink(certificados/): Is a directory in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 58
+[17-Dec-2024 15:30:17 America/Fortaleza] PHP Warning:  unlink(certificados/): Is a directory in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 58
+[17-Dec-2024 15:35:34 America/Fortaleza] PHP Warning:  Undefined variable $textos_predefinidos in /home1/unidas90/certificados.unidasautogestao.com/texto.php on line 70
+[17-Dec-2024 15:35:34 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/texto.php on line 70
+[17-Dec-2024 15:35:39 America/Fortaleza] PHP Warning:  Undefined variable $textos_predefinidos in /home1/unidas90/certificados.unidasautogestao.com/texto.php on line 70
+[17-Dec-2024 15:35:39 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/texto.php on line 70
+[17-Dec-2024 15:37:14 America/Fortaleza] PHP Warning:  Undefined array key "textos" in /home1/unidas90/certificados.unidasautogestao.com/texto.php on line 18
+[17-Dec-2024 15:37:14 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/texto.php on line 18
+[17-Dec-2024 15:41:21 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titulo' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:61
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(61): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 61
+[17-Dec-2024 15:41:24 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titulo' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:61
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(61): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 61
+[17-Dec-2024 15:41:31 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titulo' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:61
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(61): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 61
+[17-Dec-2024 15:42:28 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titulo' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:61
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(61): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 61
+[17-Dec-2024 16:07:48 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titulo' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:61
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(61): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 61
+[17-Dec-2024 16:09:30 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titulo' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:61
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(61): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 61
+[17-Dec-2024 16:23:04 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titulo' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:61
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(61): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 61
+[17-Dec-2024 16:32:28 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titulo' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:61
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(61): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 61
+[17-Dec-2024 16:34:23 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titulo' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:61
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(61): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 61
+[17-Dec-2024 16:34:25 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titulo' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:61
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(61): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 61
+[17-Dec-2024 16:36:54 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titulo' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:61
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(61): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 61
+[17-Dec-2024 16:36:56 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titulo' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:61
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(61): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 61
+[17-Dec-2024 16:36:57 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titulo' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:61
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(61): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 61
+[17-Dec-2024 16:40:46 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titulo' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:61
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(61): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 61
+[17-Dec-2024 16:40:48 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titulo' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:61
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(61): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 61
+[17-Dec-2024 16:43:20 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titulo' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:61
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(61): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 61
+[17-Dec-2024 16:43:22 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titulo' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:61
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(61): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 61
+[17-Dec-2024 16:43:23 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titulo' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:61
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(61): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 61
+[17-Dec-2024 16:43:26 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titulo' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:61
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(61): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 61
+[17-Dec-2024 16:44:35 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titulo' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:61
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(61): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 61
+[17-Dec-2024 16:45:02 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titulo' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:61
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(61): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 61
+[17-Dec-2024 16:47:28 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titulo' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:65
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(65): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 65
+[17-Dec-2024 16:47:30 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titulo' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:65
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(65): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 65
+[17-Dec-2024 16:47:58 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titulo' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:65
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(65): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 65
+[17-Dec-2024 16:53:38 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titulo' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:65
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(65): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 65
+[17-Dec-2024 16:55:02 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titulo' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:65
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(65): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 65
+[17-Dec-2024 16:55:20 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titulo' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:65
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(65): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 65
+[17-Dec-2024 16:55:22 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titulo' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:65
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(65): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 65
+[17-Dec-2024 16:57:23 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titulo' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:65
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(65): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 65
+[17-Dec-2024 17:08:13 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titulo' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:65
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(65): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 65
+[17-Dec-2024 17:17:30 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'titulo' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:46
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(46): PDO->query('SELECT id, titu...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 46
+[18-Dec-2024 09:45:29 America/Fortaleza] PHP Warning:  Undefined variable $error in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 48
+[18-Dec-2024 09:45:29 America/Fortaleza] PHP Warning:  Undefined variable $success in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 50
+[18-Dec-2024 09:45:29 America/Fortaleza] PHP Warning:  Undefined variable $modelos in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 73
+[18-Dec-2024 09:45:29 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 73
+[18-Dec-2024 09:45:58 America/Fortaleza] PHP Warning:  Undefined variable $error in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 48
+[18-Dec-2024 09:45:58 America/Fortaleza] PHP Warning:  Undefined variable $success in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 50
+[18-Dec-2024 09:45:58 America/Fortaleza] PHP Warning:  Undefined variable $modelos in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 73
+[18-Dec-2024 09:45:58 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 73
+[18-Dec-2024 09:59:31 America/Fortaleza] PHP Warning:  Undefined variable $error in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 48
+[18-Dec-2024 09:59:31 America/Fortaleza] PHP Warning:  Undefined variable $success in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 50
+[18-Dec-2024 09:59:31 America/Fortaleza] PHP Warning:  Undefined variable $modelos in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 73
+[18-Dec-2024 09:59:31 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/certificados.php on line 73
+[18-Dec-2024 10:46:47 America/Fortaleza] PHP Warning:  fopen(): Remote host file access not supported, file://SalvarPDF/certificado_leandro_teste.pdf in /home1/unidas90/certificados.unidasautogestao.com/tcpdf/include/tcpdf_static.php on line 1811
+[18-Dec-2024 10:46:47 America/Fortaleza] PHP Warning:  fopen(file://SalvarPDF/certificado_leandro_teste.pdf): Failed to open stream: no suitable wrapper could be found in /home1/unidas90/certificados.unidasautogestao.com/tcpdf/include/tcpdf_static.php on line 1811
+[18-Dec-2024 11:23:28 America/Fortaleza] PHP Warning:  fopen(): Remote host file access not supported, file://SalvarPDF/certificado_leandro_teste.pdf in /home1/unidas90/certificados.unidasautogestao.com/tcpdf/include/tcpdf_static.php on line 1811
+[18-Dec-2024 11:23:28 America/Fortaleza] PHP Warning:  fopen(file://SalvarPDF/certificado_leandro_teste.pdf): Failed to open stream: no suitable wrapper could be found in /home1/unidas90/certificados.unidasautogestao.com/tcpdf/include/tcpdf_static.php on line 1811
+[18-Dec-2024 11:31:31 America/Fortaleza] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 15
+[18-Dec-2024 11:31:35 America/Fortaleza] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 15
+[18-Dec-2024 11:55:12 America/Fortaleza] PHP Warning:  Undefined variable $modelos in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 31
+[18-Dec-2024 11:55:12 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 31
+[18-Dec-2024 11:55:12 America/Fortaleza] PHP Warning:  Undefined variable $textos in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 40
+[18-Dec-2024 11:55:12 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 40
+[18-Dec-2024 11:55:12 America/Fortaleza] PHP Warning:  Undefined variable $result in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 58
+[18-Dec-2024 11:55:12 America/Fortaleza] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:58
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 58
+[18-Dec-2024 13:30:59 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/login.php on line 3
+[18-Dec-2024 13:30:59 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/login.php:3
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/login.php on line 3
+[18-Dec-2024 14:56:28 America/Fortaleza] PHP Warning:  fopen(): Remote host file access not supported, file://SalvarPDF/certificado_Leandro_Alves_Ferreira_da_Silva.pdf in /home1/unidas90/certificados.unidasautogestao.com/tcpdf/include/tcpdf_static.php on line 1811
+[18-Dec-2024 14:56:28 America/Fortaleza] PHP Warning:  fopen(file://SalvarPDF/certificado_Leandro_Alves_Ferreira_da_Silva.pdf): Failed to open stream: no suitable wrapper could be found in /home1/unidas90/certificados.unidasautogestao.com/tcpdf/include/tcpdf_static.php on line 1811
+[18-Dec-2024 16:24:42 America/Fortaleza] PHP Warning:  Undefined array key "nome_participante" in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 50
+[20-Dec-2024 10:30:37 America/Fortaleza] PHP Warning:  fopen(): Remote host file access not supported, file://SalvarPDF/certificado_Leandro_Alves_Ferreira_da_Silva.pdf in /home1/unidas90/certificados.unidasautogestao.com/tcpdf/include/tcpdf_static.php on line 1811
+[20-Dec-2024 10:30:37 America/Fortaleza] PHP Warning:  fopen(file://SalvarPDF/certificado_Leandro_Alves_Ferreira_da_Silva.pdf): Failed to open stream: no suitable wrapper could be found in /home1/unidas90/certificados.unidasautogestao.com/tcpdf/include/tcpdf_static.php on line 1811
+[20-Dec-2024 10:45:21 America/Fortaleza] PHP Warning:  Undefined array key "participante_id" in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 100
+[20-Dec-2024 10:45:21 America/Fortaleza] PHP Warning:  Undefined array key "modelo_id" in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 101
+[20-Dec-2024 10:45:21 America/Fortaleza] PHP Warning:  Trying to access array offset on value of type bool in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 113
+[20-Dec-2024 10:45:21 America/Fortaleza] PHP Warning:  Trying to access array offset on value of type bool in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 113
+[20-Dec-2024 10:45:21 America/Fortaleza] PHP Warning:  Trying to access array offset on value of type bool in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 113
+[20-Dec-2024 10:45:21 America/Fortaleza] PHP Warning:  Trying to access array offset on value of type bool in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 114
+[20-Dec-2024 10:45:21 America/Fortaleza] PHP Warning:  Trying to access array offset on value of type bool in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 114
+[20-Dec-2024 10:45:29 America/Fortaleza] PHP Warning:  Undefined array key "modelo_id" in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 101
+[20-Dec-2024 10:45:29 America/Fortaleza] PHP Warning:  Trying to access array offset on value of type bool in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 113
+[20-Dec-2024 10:45:29 America/Fortaleza] PHP Warning:  Trying to access array offset on value of type bool in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 113
+[20-Dec-2024 10:45:44 America/Fortaleza] PHP Warning:  Undefined array key "modelo_id" in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 101
+[20-Dec-2024 10:45:44 America/Fortaleza] PHP Warning:  Trying to access array offset on value of type bool in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 113
+[20-Dec-2024 10:45:44 America/Fortaleza] PHP Warning:  Trying to access array offset on value of type bool in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 113
+[20-Dec-2024 11:00:32 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'certificado_gerado' in 'field list' in /home1/unidas90/certificados.unidasautogestao.com/enviar.php:60
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/enviar.php(60): PDOStatement->execute()
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/enviar.php on line 60
+[20-Dec-2024 11:06:54 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/certificados.unidasautogestao.com/header.php:4) in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 107
+[20-Dec-2024 11:07:59 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/certificados.unidasautogestao.com/header.php:4) in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 107
+[20-Dec-2024 11:08:37 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/certificados.unidasautogestao.com/header.php:4) in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 107
+[20-Dec-2024 11:08:46 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/certificados.unidasautogestao.com/header.php:4) in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 107
+[20-Dec-2024 11:25:47 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'certificado_gerado' in 'where clause' in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:95
+Stack trace:
+#0 /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php(95): PDO->query('SELECT id, nome...')
+#1 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 95
+[20-Dec-2024 14:50:31 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/certificados.unidasautogestao.com/header.php:4) in /home1/unidas90/certificados.unidasautogestao.com/upload.php on line 6
+[20-Dec-2024 14:50:35 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/login.php on line 3
+[20-Dec-2024 14:50:35 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/login.php:3
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/login.php on line 3
+[20-Dec-2024 15:35:05 America/Fortaleza] PHP Warning:  Undefined variable $modelos in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 30
+[20-Dec-2024 15:35:05 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 30
+[20-Dec-2024 15:35:05 America/Fortaleza] PHP Warning:  Undefined variable $textos in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 39
+[20-Dec-2024 15:35:05 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 39
+[20-Dec-2024 15:35:05 America/Fortaleza] PHP Warning:  Undefined variable $result in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 57
+[20-Dec-2024 15:35:05 America/Fortaleza] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php:57
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 57
+[26-Dec-2024 14:11:01 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home1/unidas90/certificados.unidasautogestao.com/login.php on line 3
+[26-Dec-2024 14:11:01 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home1/unidas90/certificados.unidasautogestao.com/login.php:3
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/certificados.unidasautogestao.com/login.php on line 3
+[30-Dec-2024 09:05:49 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/certificados.unidasautogestao.com/header.php:4) in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 107
