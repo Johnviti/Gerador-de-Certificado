@@ -111,28 +111,24 @@ function gerarCertificadoPDF($nome, $modelo, $texto_certificado) {
     }
 
     // Criar o PDF
-    $pdf = new TCPDF('L', 'mm', 'A4');// A4 horizontal (L)
-    $pdf->SetAutoPageBreak(FALSE, 0);// Desativa a quebra automática de páginas
-    $pdf->AddPage();// Adiciona uma nova página ao PDF
+    $pdf = new TCPDF('L', 'mm', 'A4');
+    $pdf->SetAutoPageBreak(FALSE, 0);
+    $pdf->AddPage();
 
     // Definir o modelo de fundo
-    $pdf->Image($modelo, 0, 0, 297, 210);// Insere a imagem do modelo no tamanho completo da página
+    $pdf->Image($modelo, 0, 0, 297, 210);
 
 
-    // Configurações de texto
     $pdf->SetFont('helvetica', 'B', 24);
     $pdf->SetTextColor(0, 0, 0);
 
-    // Inserir o nome do participante
-    $pdf->SetXY(16.5, 75);// Define a posição X e Y para o nome do participante
+    $pdf->SetXY(16.5, 75);
     $pdf->MultiCell(156.9, 14.3, $nome, 0, 'C', 0, 1);
 
-    // Inserir o texto do certificado
     $pdf->SetFont('helvetica', '', 14);
     $pdf->SetXY(16.5, 89.6);
     $pdf->MultiCell(156.9, 47.4, $texto_certificado, 0, 'C', 0, 1);
 
-    // Inserir a data atual
     $meses = array(
         '01' => 'janeiro', '02' => 'fevereiro', '03' => 'março',
         '04' => 'abril', '05' => 'maio', '06' => 'junho',
@@ -173,15 +169,11 @@ $output_url = null;
 // Processa o envio dos certificados
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    var_dump($_POST, 'POST data recebida');
 
     if (isset($_POST['action']) && $_POST['action'] === 'enviar') {
         if (isset($_POST['selected_ids']) && is_array($_POST['selected_ids'])) {
             foreach ($_POST['selected_ids'] as $id) {
                 try {
-                    var_dump($id, 'ID do participante');
-                    var_dump($_POST['model_id'], 'Modelo ID');
-                    // Verifique se o 'model_id' foi enviado
                     if (isset($_POST['model_id'])) {
                         $modelo_id = $_POST['model_id'];
                     } else {
@@ -236,6 +228,44 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                     $nome = $participante['nome'];
                     $email = $participante['email'];
+
+
+                    $stmt = $conn->prepare("
+                        SELECT nome, cpf, evento, instituicao, data_inicio, data_final, carga_horaria 
+                        FROM nomes 
+                        WHERE id = ?
+                    ");
+                    $stmt->execute([$id]);
+                    $participante = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                    if (!$participante) {
+                        throw new Exception('Participante não encontrado.');
+                    }
+
+                    $dataInicio = date('d/m/Y', strtotime($participante['data_inicio']));
+                    $dataFinal = date('d/m/Y', strtotime($participante['data_final']));
+                    $cargaHoraria = $participante['carga_horaria'];
+                    $cidade = 'Cidade Exemplo'; // Ajuste conforme necessário
+                    $dataEmissao = date('d/m/Y');
+
+                    // Substituir as variáveis no texto do certificado
+                    $texto_certificado = str_replace(
+                        [
+                            '[Nome do Participante]',
+                            '[Nome do Fórum]',
+                            '[Data do Evento]',
+                            '[Local do Evento]',
+                            '[Duração do Evento]',
+                        ],
+                        [
+                            $nome,
+                            $participante['evento'],
+                            "$dataInicio a $dataFinal",
+                            $participante['instituicao'],
+                            $cargaHoraria,
+                        ],
+                        $texto_certificado
+                    );
 
                     // Gerar o certificado em PDF
                     $output = gerarCertificadoPDF($nome, $modelo, $texto_certificado);
