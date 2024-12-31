@@ -7,7 +7,12 @@ include('db.php');
 require_once(__DIR__ . '/PHPMailer-master/src/PHPMailer.php');
 require_once(__DIR__ . '/PHPMailer-master/src/SMTP.php');
 require_once(__DIR__ . '/PHPMailer-master/src/Exception.php');
+require_once('vendor/autoload.php'); 
 require_once('tcpdf/tcpdf.php');
+require_once('tcpdf/tcpdf_import.php');
+
+use setasign\Fpdi\Tcpdf\Fpdi;
+
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -111,19 +116,24 @@ function gerarCertificadoPDF($nome, $modelo, $texto_certificado) {
     }
 
     // Criar o PDF
-    $pdf = new TCPDF('L', 'mm', 'A4');
+    $pdf = new Fpdi('L', 'mm', 'A4');  // Use Fpdi aqui ao invés de TCPDF diretamente
     $pdf->SetAutoPageBreak(FALSE, 0);
-    $pdf->AddPage();
 
-    // Definir o modelo de fundo
-    $pdf->Image($modelo, 0, 0, 297, 210);
+    // Importar o modelo de fundo
+    $pageCount = $pdf->setSourceFile($modelo);
+    for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
+        $templateId = $pdf->importPage($pageNo);
+        $pdf->AddPage();
+        $pdf->useTemplate($templateId, 0, 0, 297, 210);
+    }
 
 
+    // Adicionar textos e informações
     $pdf->SetFont('helvetica', 'B', 24);
     $pdf->SetTextColor(0, 0, 0);
 
-    $pdf->SetXY(16.5, 75);
-    $pdf->MultiCell(156.9, 14.3, $nome, 0, 'C', 0, 1);
+    // $pdf->SetXY(16.5, 75);
+    // $pdf->MultiCell(156.9, 14.3, $nome, 0, 'C', 0, 1);
 
     $pdf->SetFont('helvetica', '', 14);
     $pdf->SetXY(16.5, 89.6);
@@ -270,12 +280,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     // Gerar o certificado em PDF
                     $output = gerarCertificadoPDF($nome, $modelo, $texto_certificado);
 
-                    // Atualizar o status do certificado no banco de dados
-                    if ($acao == 'gerar') {
-                        $stmt = $conn->prepare("UPDATE nomes SET certificado_gerado = certificado_gerado + 1 WHERE id = :id");
-                        $stmt->bindParam(':id', $participante_id, PDO::PARAM_INT);
-                        $stmt->execute();
-                    }                    
+                    
+                    $stmt = $conn->prepare("UPDATE nomes SET certificado_gerado = certificado_gerado + 1 WHERE id = :id");
+                    $stmt->bindParam(':id', $participante_id, PDO::PARAM_INT);
+                    $stmt->execute();
+                                   
 
                     // Gerar o URL do certificado
                     $output_url = str_replace(__DIR__, 'https://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']), $output);
