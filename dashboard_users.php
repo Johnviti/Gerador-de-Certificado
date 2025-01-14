@@ -8,8 +8,8 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-if ($_SESSION['user_nivel'] != 1) {
-    header('Location: dashboard_users.php');
+if ($_SESSION['user_nivel'] != 2) {
+    header('Location: dashboard.php');
     exit;
 }
 
@@ -73,16 +73,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['excluir_usuario'])) {
 $stmt = $conn->query("SELECT id, nome, email, nivel FROM usuarios");
 $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// Dados simulados do relatório
-// $data = [
-//     ['user_name' => 'João Silva', 'date' => '2024-12-10', 'event_name' => 'Workshop PHP', 'certificates' => 15],
-//     ['user_name' => 'Maria Oliveira', 'date' => '2024-12-12', 'event_name' => 'Curso Laravel', 'certificates' => 20],
-//     ['user_name' => 'Pedro Santos', 'date' => '2024-12-15', 'event_name' => 'Palestra Segurança', 'certificates' => 10],
-// ];
 
-// Tabela de cerficados gerados
+$usuario_logado = $_SESSION['user_id'];
+
+$nome_usuario = $conn->query("SELECT nome FROM usuarios WHERE id = $usuario_logado");
+$nome_usuario = $nome_usuario->fetchColumn();
+
+// Tabela de certificados gerados
 try {
-    $query = $conn->query("
+    $query = $conn->prepare("
        SELECT 
             usuarios.nome AS user_name, 
             nomes.data_inicio AS date, 
@@ -96,13 +95,16 @@ try {
             nomes ON certificados_gerados.nome_evento = nomes.evento
         WHERE
             certificados_gerados.data_evento = nomes.data_inicio
+            AND usuarios.id = :usuario_id
         GROUP BY 
             usuarios.nome, nomes.evento, nomes.data_inicio;
-
     ");
 
+    $query->bindParam(':usuario_id', $usuario_logado, PDO::PARAM_INT);
+
+    $query->execute();
+
     $data = $query->fetchAll(PDO::FETCH_ASSOC);
-    
 
 } catch (PDOException $e) {
     echo "Erro na conexão: " . $e->getMessage();
@@ -134,7 +136,7 @@ try {
 </head>
 <body>
 <div class="container mt-5">
-    <h1 class="text-center mb-4">Painel Administrativo</h1>
+    <h1 class="text-center mb-4">Painel Administrativo - <?php echo $nome_usuario; ?></h1>
 
     <!-- Mensagem -->
     <?php if (!empty($message)): ?>
@@ -149,7 +151,7 @@ try {
                 <thead class="thead-dark">
                     <tr>
                         <th>Nome do Usuário</th>
-                        <th>Data do Emissão</th>
+                        <th>Data do Evento</th>
                         <th>Nome do Evento</th>
                         <th>Certificados Gerados</th>
                     </tr>
@@ -180,70 +182,6 @@ try {
         </div>
     </div>
 
-    <!-- Formulário Adicionar Usuário -->
-    <div class="card mb-4">
-        <div class="card-header">Adicionar Usuário</div>
-        <div class="card-body">
-            <form method="POST">
-                <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label for="name">Nome</label>
-                        <input type="text" class="form-control" name="name" required>
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="email">E-mail</label>
-                        <input type="email" class="form-control" name="email" required>
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="password">Senha</label>
-                        <input type="password" class="form-control" name="password" required>
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="nivel">Nível</label>
-                        <select name="nivel" class="form-control" required>
-                            <option value="1">Administrador</option>
-                            <option value="2">Usuário</option>
-                        </select>
-                    </div>
-                </div>
-                <button type="submit" name="add_user" class="btn btn-primary">Adicionar Usuário</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Tabela de Usuários -->
-    <div class="card">
-        <div class="card-header">Usuários Cadastrados</div>
-        <div class="card-body">
-            <table class="table table-bordered table-striped">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>ID</th>
-                        <th>Nome</th>
-                        <th>E-mail</th>
-                        <th>Nível</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($usuarios as $usuario): ?>
-                        <tr>
-                            <td><?php echo htmlspecialchars($usuario['id']); ?></td>
-                            <td><?php echo htmlspecialchars($usuario['nome']); ?></td>
-                            <td><?php echo htmlspecialchars($usuario['email']); ?></td>
-                            <td><?php echo $usuario['nivel'] == 1 ? 'Administrador' : 'Usuário'; ?></td>
-                            <td>
-                                <form method="POST" style="display:inline;">
-                                    <input type="hidden" name="excluir_usuario" value="<?php echo $usuario['id']; ?>">
-                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir este usuário?')">Excluir</button>
-                                </form>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        </div>
-    </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

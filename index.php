@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $message = "Email inválido";
         } else {
             try {
-                $stmt = $conn->prepare("SELECT id, senha FROM usuarios WHERE email = :email");
+                $stmt = $conn->prepare("SELECT id, senha, nivel FROM usuarios WHERE email = :email");
                 $stmt->bindParam(':email', $email);
                 $stmt->execute();
 
@@ -64,7 +64,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $user = $stmt->fetch(PDO::FETCH_ASSOC);
                     if (password_verify($senha, $user['senha'])) {
                         $_SESSION['user_id'] = $user['id'];
-                        header("Location: dashboard.php");
+                        $_SESSION['user_nivel'] = $user['nivel'];
+                        
+                        if ($_SESSION['user_nivel'] === 1){
+                            header("Location: dashboard.php");
+                            exit();
+                        }
+
+                        header("Location: certificados.php");
                         exit();
                     } else {
                         $message = "Senha incorreta";

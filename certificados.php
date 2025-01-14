@@ -122,6 +122,7 @@ $modelos = listarModelos($conn);
             <div class="col">
                 <div class="card">
                     <div class="card-body text-center">
+                        <img src="thumbnails/<?= htmlspecialchars($modelo['thumb_nome']); ?>" class="card-img-top" alt="Miniatura do PDF">
                         <h5 class="card-title"><?= htmlspecialchars($modelo['nome_evento']); ?></h5>
                         <a href="certificados/<?= htmlspecialchars($modelo['arquivo_nome']); ?>" class="btn btn-info btn-sm" target="_blank">Visualizar</a>
                         <a href="?delete_id=<?= $modelo['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Deseja excluir este modelo?');">Excluir</a>
