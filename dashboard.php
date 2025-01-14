@@ -2,6 +2,11 @@
 session_start();
 include('header.php');
 
+require 'vendor/autoload.php'; 
+
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+
 // Verificar se o usuário está logado
 if (!isset($_SESSION['user_id'])) {
     header('Location: index.php');
@@ -29,6 +34,70 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     die("Erro na conexão com o banco de dados: " . $e->getMessage());
+}
+
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user_id'])) {
+    $user_id = $_POST['user_id'];
+
+    $stmt = $conn->prepare("
+        SELECT 
+            nomes.nome AS certificado_nome, 
+            nomes.cpf AS certificado_cpf, 
+            nomes.instituicao AS certificado_instituicao, 
+            nomes.carga_horaria AS certificado_carga_horaria, 
+            nomes.email AS certificado_email,
+            usuarios.nome AS admin_nome
+        FROM 
+            certificados_gerados
+        JOIN 
+            nomes ON certificados_gerados.nome_evento = nomes.evento
+            AND certificados_gerados.data_evento = nomes.data_inicio
+        JOIN 
+            usuarios ON nomes.admin_id = usuarios.id
+        WHERE 
+            certificados_gerados.usuario_id = :user_id
+    ");
+    $stmt->bindParam(':user_id', $user_id);
+    $stmt->execute();
+    $dados = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    var_dump($dados);
+
+    if (empty($dados)) {
+        die("Nenhum certificado encontrado para este usuário.");
+    }
+
+    $spreadsheet = new Spreadsheet();
+    $sheet = $spreadsheet->getActiveSheet();
+    $sheet->setTitle("Relatório de Certificados");
+
+    $sheet->setCellValue('A1', 'Nome do Certificado');
+    $sheet->setCellValue('B1', 'CPF');
+    $sheet->setCellValue('C1', 'Instituição');
+    $sheet->setCellValue('D1', 'Carga Horária');
+    $sheet->setCellValue('E1', 'E-mail');
+    $sheet->setCellValue('F1', 'Gerado Por (Admin)');
+
+    $row = 2;
+    foreach ($dados as $dado) {
+        $sheet->setCellValue("A{$row}", $dado['certificado_nome']);
+        $sheet->setCellValue("B{$row}", $dado['certificado_cpf']);
+        $sheet->setCellValue("C{$row}", $dado['certificado_instituicao']);
+        $sheet->setCellValue("D{$row}", $dado['certificado_carga_horaria']);
+        $sheet->setCellValue("E{$row}", $dado['certificado_email']);
+        $sheet->setCellValue("F{$row}", $dado['admin_nome']);
+        $row++;
+    }
+
+    $writer = new Xlsx($spreadsheet);
+    $filename = "relatorio_certificados_usuario_{$user_id}.xlsx";
+
+    header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    header("Content-Disposition: attachment; filename=\"{$filename}\"");
+    header('Cache-Control: max-age=0');
+    $writer->save('php://output');
+    exit;
 }
 
 // Adicionar usuário
@@ -177,6 +246,27 @@ try {
                 <?php endif; ?>
                 </tbody>
             </table>
+        </div>
+    </div>
+    
+    <!-- Formulário para gerar relatório -->
+    <div class="card mb-4">
+        <div class="card-header">Gerar Relatório de Certificados</div>
+        <div class="card-body">
+            <form method="POST" action="dashboard.php">
+                <div class="form-group">
+                    <label for="user_id">Selecione o Usuário</label>
+                    <select name="user_id" id="user_id" class="form-control" required>
+                        <option value="">Selecione...</option>
+                        <?php foreach ($usuarios as $usuario): ?>
+                            <option value="<?php echo htmlspecialchars($usuario['id']); ?>">
+                                <?php echo htmlspecialchars($usuario['nome']); ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-success">Gerar Relatório</button>
+            </form>
         </div>
     </div>
 

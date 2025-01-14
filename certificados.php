@@ -79,6 +79,8 @@ function listarModelos($conn) {
 }
 
 $modelos = listarModelos($conn);
+
+$baseUrl = 'http://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['PHP_SELF']), '/') . '/';
 ?>
 
 <!DOCTYPE html>
@@ -88,6 +90,10 @@ $modelos = listarModelos($conn);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modelos de Certificados</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+    </script>
 </head>
 <body>
 <div class="container">
@@ -120,9 +126,9 @@ $modelos = listarModelos($conn);
     <div class="row row-cols-1 row-cols-md-5 g-4">
         <?php foreach ($modelos as $modelo): ?>
             <div class="col">
-                <div class="card">
+                <div class="card" style="padding: 10px;">
+                    <canvas id="pdf-canvas-<?= $modelo['id']; ?>" width="150" height="80"></canvas>
                     <div class="card-body text-center">
-                        <img src="thumbnails/<?= htmlspecialchars($modelo['thumb_nome']); ?>" class="card-img-top" alt="Miniatura do PDF">
                         <h5 class="card-title"><?= htmlspecialchars($modelo['nome_evento']); ?></h5>
                         <a href="certificados/<?= htmlspecialchars($modelo['arquivo_nome']); ?>" class="btn btn-info btn-sm" target="_blank">Visualizar</a>
                         <a href="?delete_id=<?= $modelo['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Deseja excluir este modelo?');">Excluir</a>
@@ -131,10 +137,45 @@ $modelos = listarModelos($conn);
             </div>
         <?php endforeach; ?>
     </div>
+
+    <script>
+        const pdfDirectory = "<?= $baseUrl; ?>certificados/";
+
+        const modelos = <?= json_encode($modelos); ?>;
+
+        modelos.forEach(modelo => {
+            const canvas = document.getElementById(`pdf-canvas-${modelo.id}`);
+            const pdfUrl = pdfDirectory + modelo.arquivo_nome;
+
+            if (canvas) {
+                const context = canvas.getContext('2d');
+                const scale = 1.5;
+
+                pdfjsLib.getDocument(pdfUrl).promise.then((pdf) => {
+                    pdf.getPage(1).then((page) => {
+                        const viewport = page.getViewport({ scale: 1.5 });
+                        canvas.width = viewport.width;
+                        canvas.height = viewport.height;
+
+                        const renderContext = {
+                            canvasContext: context,
+                            viewport: viewport,
+                        };
+                        page.render(renderContext).promise.then(() => {
+                            console.log('PDF renderizado com sucesso!');
+                        }).catch((err) => {
+                            console.error('Erro ao renderizar a página:', err);
+                        });
+                    });
+                }).catch((err) => {
+                    console.error('Erro ao carregar o PDF:', err);
+                })
+            }
+        });
+    </script>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script> -->
 </body>
 </html>
-
-<?php include('footer.php'); ?>
