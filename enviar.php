@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['search_term'])) {
         } else {
             $search_term = '%' . $_POST['search_term'] . '%';
             $stmt = $conn->prepare("
-                SELECT id, nome, cpf, email, certificado_gerado 
+                SELECT id, nome, cpf, email, certificado_gerado, evento 
                 FROM nomes 
                 WHERE nome LIKE :search_term 
                    OR cpf LIKE :search_term 
@@ -154,7 +154,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['search_term'])) {
                     <p><strong>Nome:</strong> <?= htmlspecialchars($participante['nome']) ?></p>
                     <p><strong>CPF:</strong> <?= htmlspecialchars($participante['cpf'] ?? 'Não informado') ?></p>
                     <p><strong>Email:</strong> <?= htmlspecialchars($participante['email']) ?></p>
-
+                    <p><strong>Evento:</strong> <?= htmlspecialchars($participante['evento'] ?? 'Não informado') ?></p>
                     <!-- Botão de Enviar Certificado -->
                     <?php if ($participante['certificado_gerado']): ?>
                         <form method="POST" class="mt-3">
@@ -171,3 +171,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['search_term'])) {
 </div>
 </body>
 </html>
+
+
