@@ -313,16 +313,7 @@ function formatarMoeda($valor) {
                 value="<?php echo isset($_POST['txtValor2022']) ? 'R$ ' . formatarMoeda($_POST['txtValor2022']) : ''; ?>"
                 required /><br>
             </p> -->
-            <input 
-                type="text" 
-                placeholder="R$ 0,00" 
-                id="txtValor2017"
-                name="txtValor2022" 
-                class="campo-monetario" 
-                data-thousands="." data-decimal="," data-prefix="R$ "
-                value="<?php echo isset($_POST['txtValor2022']) ? $_POST['txtValor2022'] : ''; ?>"
-                required /><br>
-            </p>
+            <input type="text" placeholder="R$ 0,00" id="txtValor2017" name="txtValor2022" class="campo" data-thousands="." data-decimal="," data-prefix="R$ " value="<?php echo $_REQUEST['txtValor2022']; ?>" required /><br></p>
 			<p>Selecione a forma de administração do procedimento:<br><br>
             <label><input type="radio" name="calculator" value="default" required <?= $_REQUEST['calculator'] === 'default' ? 'checked' : '' ?> onchange="this.form.submit();" />&nbsp;Padrão</label>
             <label><input type="radio" name="calculator" value="expedita" required <?= $_REQUEST['calculator'] === 'expedita' ? 'checked' : '' ?> onchange="this.form.submit();" />&nbsp;Expedita</label></p>
