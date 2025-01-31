@@ -83,13 +83,7 @@ if ($_POST) {
 		$lblRequerenteHonorarioArbitros3 = ($lblRequerenteHonorarioArbitros + ($lblRequerenteHonorarioArbitros * 2 * 0.83333)) / 2;
 		$lblRequerenteHonorarioArbitros /= 2;
   }
-  
-  
-} 
-
-function formatarMoeda($valor) {
-    return number_format((float) $valor, 2, ',', '.');
-}
+} {
 ?>
 <!DOCTYPE html>
 <html>
@@ -100,34 +94,6 @@ function formatarMoeda($valor) {
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script src="../Scripts/Libs/jquery-1.11.0.min.js"></script>
     <script src="../Scripts/Libs/jquery.maskMoney.min.js"></script>
-    <script>
-    $(document).ready(function() {
-        // Aplica a máscara nos campos monetários
-        $('.campo-monetario').maskMoney({
-            prefix: 'R$ ',          // Prefixo para reais
-            allowNegative: false,  // Não permite valores negativos
-            thousands: '.',        // Separador de milhar
-            decimal: ',',          // Separador decimal
-            affixesStay: true      // Mantém o prefixo ao editar
-        });
-
-        // Formata automaticamente os valores carregados pelo PHP no frontend
-        $('.campo-monetario').each(function() {
-            let valor = $(this).val();
-            if (valor) {
-                $(this).maskMoney('mask', valor.replace('R$ ', '')); // Reaplica máscara
-            }
-        });
-
-        // Remove a máscara ao enviar o formulário
-        $('form').on('submit', function() {
-            $('.campo-monetario').each(function() {
-                let valorNumerico = $(this).maskMoney('unmasked')[0]; // Valor puro
-                $(this).val(valorNumerico); // Remove máscara antes de enviar
-            });
-        });
-    });
-</script>
 
 
     <script src="../Scripts/jCalculadora.js?v=_2_O2ISiGBe5X6-5gdMmonh8tFKYZaYX5PYQUMoNxH41"></script>
@@ -305,15 +271,7 @@ function formatarMoeda($valor) {
 		  
           <form action="" method="POST">
 			<p>Informe o valor da disputa:
-               
-            <input 
-                type="text" 
-                placeholder="R$ 0,00" 
-                name="txtValor2022" 
-                class="campo-monetario" 
-                value="<?php echo isset($_POST['txtValor2022']) ? 'R$ ' . formatarMoeda($_POST['txtValor2022']) : ''; ?>"
-                required /><br>
-            </p>
+            <input type="text" placeholder="R$ 0,00" id="txtValor2017" name="txtValor2022" class="campo" data-thousands="." data-decimal="," data-prefix="R$ " value="<?php echo $_REQUEST['txtValor2022']; ?>" required /><br></p>
 			<p>Selecione a forma de administração do procedimento:<br><br>
             <label><input type="radio" name="calculator" value="default" required <?= $_REQUEST['calculator'] === 'default' ? 'checked' : '' ?> onchange="this.form.submit();" />&nbsp;Padrão</label>
             <label><input type="radio" name="calculator" value="expedita" required <?= $_REQUEST['calculator'] === 'expedita' ? 'checked' : '' ?> onchange="this.form.submit();" />&nbsp;Expedita</label></p>
@@ -420,7 +378,6 @@ function formatarMoeda($valor) {
 				<?php endif; ?>
 
   </body>
- 
 </html>
 
 <?php
@@ -442,5 +399,7 @@ function formatarMoeda($valor) {
   //  $dompdf->stream("Devolucao_".$id.".pdf",array("Attachment" => false));
 
   // ob_end_clean();
+
+}
 
 ?>
