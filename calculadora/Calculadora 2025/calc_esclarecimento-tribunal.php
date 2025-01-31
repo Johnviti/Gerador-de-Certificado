@@ -1,7 +1,7 @@
 <?php
 if ($_POST) {
   $id = time();
-  $valor = str_replace("R$ ", "",  $_REQUEST['txtValor2022']);
+  $valor = str_replace("R$ ", "",  $_REQUEST['txtValor2025']);
   $valor = str_replace(".", "",  $valor);
   $valor = str_replace(",", ".",  $valor);
 
@@ -9,11 +9,11 @@ if ($_POST) {
   $lblRequerenteHonorarioArbitros = 0;
 
   $mapAdm = [
-    ['max' => 10000000, 'base' => 25000],
-    ['max' => 50000000, 'base' => 35000],
-    ['max' => 150000000, 'base' => 45000],
-    ['max' => 500000000, 'base' => 55000],
-    ['max' => null, 'base' => 65000]
+    ['max' => 10000000, 'base' => 27500],
+    ['max' => 50000000, 'base' => 38400],
+    ['max' => 150000000, 'base' => 49400],
+    ['max' => 500000000, 'base' => 60400],
+    ['max' => null, 'base' => 71400]
   ];
 
   ////////////Taxa de Arbitro Único
