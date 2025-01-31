@@ -65,22 +65,23 @@ if ($_POST) {
   } else if ($valor <= 3000000) {
     ////////////Taxa de Administração por Parte
     if ($valor > 0 and $valor < 1000000) {
-      $lblRequerenteTaxaAdministracao = 30000;
+      $lblRequerenteTaxaAdministracao = 32900;
     } else if ($valor >= 1000000 and $valor <= 2000000) {
-      $lblRequerenteTaxaAdministracao = 30000 + (($valor - 1000000) * 0.009);
+      $lblRequerenteTaxaAdministracao = 32900 + (($valor - 1000000) * 0.0099);
     } else if ($valor >= 2000000 and $valor <= 3000000) {
-      $lblRequerenteTaxaAdministracao = 39000 + (($valor - 2000000) * 0.009);
+      $lblRequerenteTaxaAdministracao = 42800 + (($valor - 2000000) * 0.0099);
     }
 
     ////////III. Honorários dos Árbitros
     if ($valor > 0 and $valor < 1000000) {
-      $lblRequerenteHonorarioArbitros = 45000;
+      $lblRequerenteHonorarioArbitros = 49400;
     } else if ($valor >= 1000000 and $valor <= 2000000) {
-      $lblRequerenteHonorarioArbitros = 45000 + (($valor - 1000000) * 0.014);
+      $lblRequerenteHonorarioArbitros = 49400 + (($valor - 1000000) * 0.0154);
     } else if ($valor >= 2000000 and $valor <= 3000000) {
-      $lblRequerenteHonorarioArbitros = 59000 + (($valor - 2000000) * 0.014);
+      $lblRequerenteHonorarioArbitros = 64800 + (($valor - 2000000) * 0.0154);
     }
 
+    $lblRequerenteTaxaRegistro = null;
     $lblRequerenteTaxaAdministracao /= 2;
     $lblRequerenteHonorarioArbitros3 = ($lblRequerenteHonorarioArbitros + ($lblRequerenteHonorarioArbitros * 2 * 0.83333)) / 2;
     $lblRequerenteHonorarioArbitros /= 2;
@@ -274,6 +275,9 @@ if ($_POST) {
           <p>Informe o valor da disputa:
             <input type="text" placeholder="R$ 0,00" id="txtValor2017" name="txtValor2025" class="campo" data-thousands="." data-decimal="," data-prefix="R$ " value="<?php echo $_REQUEST['txtValor2025']; ?>" required /><br>
           </p>
+          <p>Honorarios Adicionais:
+            <input type="text" placeholder="R$ 0,00" id="txtValor2017" name="txtHonorariosAdicionais" class="campo" data-thousands="." data-decimal="," data-prefix="R$ " value="<?php echo $_REQUEST['txtHonorariosAdicionais']; ?>" required /><br>
+          </p>
           <p>Selecione a forma de administração do procedimento:<br><br>
             <label><input type="radio" name="calculator" value="default" required <?= $_REQUEST['calculator'] === 'default' ? 'checked' : '' ?> onchange="this.form.submit();" />&nbsp;Padrão</label>
             <label><input type="radio" name="calculator" value="expedita" required <?= $_REQUEST['calculator'] === 'expedita' ? 'checked' : '' ?> onchange="this.form.submit();" />&nbsp;Expedita</label>
@@ -347,16 +351,16 @@ if ($_POST) {
             <div class="linha">
               <?php if (!$_POST || $_REQUEST['calculator'] === 'default'): ?>
                 <div class="coluna">Honorários do Tribunal Arbitral
-                  <!-- <a href="#" onclick="window.open('https://ccbc.org.br/Conteudo/Composicao2022/?txtValor2022=<?php echo $_REQUEST['txtValor2022'] ?>', 'Calculadora 2022', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=504, HEIGHT=270'); return false;" style="font-size: 12px; font-family: arial; text-decoration: none;"> 
+                  <a href="#" onclick="window.open('https://ccbc.org.br/Conteudo/Composicao2022/?txtValor2022=<?php echo $_REQUEST['txtValor2022'] ?>', 'Calculadora 2022', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=504, HEIGHT=270'); return false;" style="font-size: 12px; font-family: arial; text-decoration: none;"> 
                     (Composição) 
-                  </a> -->
+                  </a>
                 </div>
               <?php endif; ?>
               <?php if ($_REQUEST['calculator'] === 'expedita'): ?>
                 <div class="coluna">Honorários do Tribunal Arbitral
-                  <!-- <a href="#" onclick="window.open('https://ccbc.org.br/Conteudo/Composicao2021/?txtValor2021=<?php echo $_REQUEST['txtValor2022'] ?>', 'Calculadora 2021', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=504, HEIGHT=270'); return false;" style="font-size: 12px; font-family: arial; text-decoration: none;">
+                  <a href="#" onclick="window.open('https://ccbc.org.br/Conteudo/Composicao2021/?txtValor2021=<?php echo $_REQUEST['txtValor2022'] ?>', 'Calculadora 2021', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=504, HEIGHT=270'); return false;" style="font-size: 12px; font-family: arial; text-decoration: none;">
                     (Composição) 
-                  </a> -->
+                  </a>
                 </div>
               <?php endif; ?>
               <div class="coluna"><span id="lblRequerenteHonorarioArbitros"><?php echo $lblRequerenteHonorarioArbitros3 ? ("R$ " . number_format($lblRequerenteHonorarioArbitros3, 2, ",", ".")) : '-'; ?></span></div>

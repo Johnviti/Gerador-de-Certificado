@@ -1,7 +1,7 @@
 <?php
 if ($_POST) {
   $id = time();
-  $valor = str_replace("R$ ", "",  $_REQUEST['txtValor2025']);
+  $valor = str_replace("R$ ", "",  $_REQUEST['txtHonorariosAdicionais']);
   $valor = str_replace(".", "",  $valor);
   $valor = str_replace(",", ".",  $valor);
 
