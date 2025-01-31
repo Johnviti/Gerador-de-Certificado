@@ -98,7 +98,7 @@ if ($_POST) {
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <script src="../Scripts/Libs/jquery-1.11.0.min.js"></script>
   <script src="../Scripts/Libs/jquery.maskMoney.min.js"></script>
-  <script src="../Scripts/jCalculadora.js?v=_2_O2ISiGBe5X6-5gdMmonh8tFKYZaYX5PYQUMoNxH41"></script>
+  <script src="../Scripts/jCalculadora2025.js?v=_2_O2ISiGBe5X6-5gdMmonh8tFKYZaYX5PYQUMoNxH41"></script>
   <link rel='stylesheet' id='sb_dtm_custom_css-css' href='https://ccbc.org.br/cam-ccbc-centro-arbitragem-mediacao/wp-content/themes/Divi/style.css?ver=4.9.8' type='text/css' media='all' />
   <meta name="viewport" content="width=device-width" />
   <title>Calculadora 2025</title>
@@ -351,14 +351,14 @@ if ($_POST) {
             <div class="linha">
               <?php if (!$_POST || $_REQUEST['calculator'] === 'default'): ?>
                 <div class="coluna">Honorários do Tribunal Arbitral
-                  <a href="#" onclick="window.open('https://ccbc.org.br/Conteudo/Composicao2022/?txtValor2022=<?php echo $_REQUEST['txtValor2022'] ?>', 'Calculadora 2022', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=504, HEIGHT=270'); return false;" style="font-size: 12px; font-family: arial; text-decoration: none;"> 
+                  <a href="#" onclick="window.open('https://ccbc.org.br/Conteudo/Calcular2025/composicao/?txtValor2025=<?php echo $_REQUEST['txtValor2025'] ?>', 'Calculadora 2022', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=504, HEIGHT=270'); return false;" style="font-size: 12px; font-family: arial; text-decoration: none;"> 
                     (Composição) 
                   </a>
                 </div>
               <?php endif; ?>
               <?php if ($_REQUEST['calculator'] === 'expedita'): ?>
                 <div class="coluna">Honorários do Tribunal Arbitral
-                  <a href="#" onclick="window.open('https://ccbc.org.br/Conteudo/Composicao2021/?txtValor2021=<?php echo $_REQUEST['txtValor2022'] ?>', 'Calculadora 2021', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=504, HEIGHT=270'); return false;" style="font-size: 12px; font-family: arial; text-decoration: none;">
+                  <a href="#" onclick="window.open('https://ccbc.org.br/Conteudo/Calcular2025/composicaoExpedita/?txtValor2025=<?php echo $_REQUEST['txtValor2025'] ?>', 'Calculadora 2021', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=504, HEIGHT=270'); return false;" style="font-size: 12px; font-family: arial; text-decoration: none;">
                     (Composição) 
                   </a>
                 </div>
@@ -373,7 +373,7 @@ if ($_POST) {
             </div>
           </div>
           <?php if ($_REQUEST['calculator'] === 'default'):
-            include "calc_esclarecimento-tribunal.php";
+            // include "calc_esclarecimento-tribunal.php";
           endif; ?>
         </div>
       </div> <!-- .et_pb_text -->
