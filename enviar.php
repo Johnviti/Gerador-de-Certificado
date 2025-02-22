@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['search_term'])) {
             $search_term = '%' . $_POST['search_term'] . '%';
             $user_admin = $_SESSION['user_id'];
             $stmt = $conn->prepare("
-            SELECT id, nome, cpf, email, certificado_gerado 
+            SELECT id, nome, cpf, email, certificado_gerado
             FROM nomes 
             WHERE (nome LIKE :search_term 
                    OR cpf LIKE :search_term 
