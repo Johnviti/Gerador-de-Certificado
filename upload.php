@@ -23,6 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['manual_submit'])) {
         $carga_horaria = (int)$_POST['carga_horaria'];
         $email = trim($_POST['email']);
         $telefone = trim($_POST['telefone']);
+        $user_admin = $_SESSION['user_id'];
 
         if (empty($nome) || empty($cpf) || empty($evento) || empty($instituicao) || empty($email)) {
             echo "<div class='alert alert-danger text-center'>Erro: Todos os campos obrigatórios devem ser preenchidos.</div>";
@@ -36,11 +37,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['manual_submit'])) {
             if ($stmt_check->rowCount() > 0) {
                 echo "<div class='alert alert-warning text-center'>Aviso: Já existe um registro com este CPF e Evento.</div>";
             } else {
-                // Inserir no banco de dados
                 $stmt = $conn->prepare("INSERT INTO nomes 
-                                        (nome, cpf, evento, instituicao, data_inicio, data_final, carga_horaria, email, telefone) 
-                                        VALUES 
-                                        (:nome, :cpf, :evento, :instituicao, :data_inicio, :data_final, :carga_horaria, :email, :telefone)");
+                    (nome, cpf, evento, instituicao, data_inicio, data_final, carga_horaria, email, telefone, admin_id) 
+                    VALUES 
+                    (:nome, :cpf, :evento, :instituicao, :data_inicio, :data_final, :carga_horaria, :email, :telefone, :admin_id)");
 
                 $stmt->bindParam(':nome', $nome);
                 $stmt->bindParam(':cpf', $cpf);
@@ -51,6 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['manual_submit'])) {
                 $stmt->bindParam(':carga_horaria', $carga_horaria);
                 $stmt->bindParam(':email', $email);
                 $stmt->bindParam(':telefone', $telefone);
+                $stmt->bindParam(':admin_id', $user_admin);
 
                 $stmt->execute();
                 echo "<div class='alert alert-success text-center'>Dados inseridos com sucesso!</div>";
@@ -60,6 +61,95 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['manual_submit'])) {
         echo "<div class='alert alert-danger text-center'>Erro ao inserir dados: " . $e->getMessage() . "</div>";
     }
 }
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['arquivo_csv'])) {
+    $arquivo_temp = $_FILES['arquivo_csv']['tmp_name'];
+    $arquivo_nome = $_FILES['arquivo_csv']['name'];
+    $extensao = pathinfo($arquivo_nome, PATHINFO_EXTENSION);
+
+    if ($extensao == 'csv') {
+        if (is_uploaded_file($arquivo_temp)) {
+            try {
+                // Configurações iniciais
+                $handle = fopen($arquivo_temp, 'r');
+                $linha_teste = fgets($handle); // Lê a primeira linha para detectar o delimitador
+                fclose($handle);
+
+                $delimitador = (strpos($linha_teste, ';') !== false) ? ';' : ',';
+
+                // Reabre o arquivo com a codificação correta
+                $handle = fopen($arquivo_temp, 'r');
+                if (!$handle) {
+                    throw new Exception("Erro ao abrir o arquivo CSV.");
+                }
+
+                // Ignorar cabeçalho
+                fgetcsv($handle, 1000, $delimitador);
+
+                // Configurar conexão com o banco de dados
+                $hostname = "localhost";
+                $username = "unidas90_admin";
+                $password = "4dm1n@2025";
+                $database = "unidas90_certificados";
+
+                $conn = new PDO("mysql:host=$hostname;dbname=$database;charset=utf8", $username, $password);
+                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                $user_admin = $_SESSION['user_id'];
+
+                $stmt = $conn->prepare("
+                    INSERT INTO nomes 
+                    (nome, cpf, evento, instituicao, data_inicio, data_final, carga_horaria, email, telefone, admin_id) 
+                    VALUES 
+                    (:nome, :cpf, :evento, :instituicao, :data_inicio, :data_final, :carga_horaria, :email, :telefone, :admin_id)
+                ");
+
+                while (($dados = fgetcsv($handle, 1000, $delimitador)) !== false) {
+                    $nome = trim($dados[0]);
+                    $cpf = preg_replace('/\D/', '', $dados[1]);
+                    $instituicao = trim($dados[2]);
+                    $evento = trim($dados[3]);
+                    $data_inicio = date('Y-m-d', strtotime($dados[5]));
+                    $data_final = date('Y-m-d', strtotime($dados[6]));
+                    $carga_horaria = (int)$dados[7];
+                    $email = trim($dados[8]);
+                    $telefone = isset($dados[9]) ? trim($dados[9]) : null;
+
+                    if (empty($nome) || empty($cpf) || empty($email)) {
+                        echo "Erro: Campos obrigatórios ausentes na linha ($nome, $cpf).<br>";
+                        continue;
+                    }
+
+                    try {
+                        $stmt->bindParam(':nome', $nome);
+                        $stmt->bindParam(':cpf', $cpf);
+                        $stmt->bindParam(':evento', $evento);
+                        $stmt->bindParam(':instituicao', $instituicao);
+                        $stmt->bindParam(':data_inicio', $data_inicio);
+                        $stmt->bindParam(':data_final', $data_final);
+                        $stmt->bindParam(':carga_horaria', $carga_horaria);
+                        $stmt->bindParam(':email', $email);
+                        $stmt->bindParam(':telefone', $telefone);
+                        $stmt->bindParam(':admin_id', $user_admin); 
+
+                        $stmt->execute();
+                        echo "Dados do participante $nome inseridos com sucesso!<br>";
+                    } catch (PDOException $e) {
+                        echo "Erro ao inserir dados de $nome: " . $e->getMessage() . "<br>";
+                    }
+                }
+
+                fclose($handle);
+            } catch (Exception $e) {
+                echo "Erro ao processar o arquivo CSV: " . $e->getMessage();
+            }
+        } else {
+            echo "Erro no upload do arquivo.";
+        }
+    } else {
+        echo "Por favor, envie um arquivo CSV (.csv).";
+    }
+}
+
 ?>
 
 <!DOCTYPE html>

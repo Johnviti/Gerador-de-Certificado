@@ -1382,3 +1382,111 @@ Stack trace:
 #0 {main}
   thrown in /home1/unidas90/certificados.unidasautogestao.com/login.php on line 3
 [30-Dec-2024 09:05:49 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/certificados.unidasautogestao.com/header.php:4) in /home1/unidas90/certificados.unidasautogestao.com/gerar_certificado.php on line 107
+[30-Dec-2024 22:49:50 America/Fortaleza] PHP Warning:  Undefined variable $conn in /home1/unidas90/teste.unidasautogestao.com/index.php on line 59
+[30-Dec-2024 22:49:50 America/Fortaleza] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home1/unidas90/teste.unidasautogestao.com/index.php:59
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/teste.unidasautogestao.com/index.php on line 59
+[01-Jan-2025 11:19:53 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/teste.unidasautogestao.com/header.php:4) in /home1/unidas90/teste.unidasautogestao.com/certificados.php on line 6
+[01-Jan-2025 11:19:59 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home1/unidas90/teste.unidasautogestao.com/login.php on line 3
+[01-Jan-2025 11:19:59 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home1/unidas90/teste.unidasautogestao.com/login.php on line 3
+[01-Jan-2025 11:19:59 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home1/unidas90/teste.unidasautogestao.com/login.php:3
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/teste.unidasautogestao.com/login.php on line 3
+[01-Jan-2025 11:20:02 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home1/unidas90/teste.unidasautogestao.com/login.php on line 3
+[01-Jan-2025 11:20:02 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home1/unidas90/teste.unidasautogestao.com/login.php on line 3
+[01-Jan-2025 11:20:02 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home1/unidas90/teste.unidasautogestao.com/login.php:3
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/teste.unidasautogestao.com/login.php on line 3
+[01-Jan-2025 13:02:02 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/teste.unidasautogestao.com/header.php:4) in /home1/unidas90/teste.unidasautogestao.com/texto.php on line 6
+[01-Jan-2025 18:15:53 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/teste.unidasautogestao.com/header.php:4) in /home1/unidas90/teste.unidasautogestao.com/gerar_certificado.php on line 309
+[01-Jan-2025 18:17:40 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/teste.unidasautogestao.com/header.php:4) in /home1/unidas90/teste.unidasautogestao.com/gerar_certificado.php on line 307
+[01-Jan-2025 18:17:59 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/teste.unidasautogestao.com/header.php:4) in /home1/unidas90/teste.unidasautogestao.com/gerar_certificado.php on line 307
+[01-Jan-2025 18:18:50 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/teste.unidasautogestao.com/header.php:4) in /home1/unidas90/teste.unidasautogestao.com/gerar_certificado.php on line 307
+[01-Jan-2025 18:20:17 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/teste.unidasautogestao.com/header.php:4) in /home1/unidas90/teste.unidasautogestao.com/gerar_certificado.php on line 307
+[01-Jan-2025 18:21:02 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/teste.unidasautogestao.com/header.php:4) in /home1/unidas90/teste.unidasautogestao.com/gerar_certificado.php on line 307
+[01-Jan-2025 18:28:36 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/teste.unidasautogestao.com/header.php:4) in /home1/unidas90/teste.unidasautogestao.com/gerar_certificado.php on line 307
+[01-Jan-2025 18:29:06 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/teste.unidasautogestao.com/header.php:4) in /home1/unidas90/teste.unidasautogestao.com/gerar_certificado.php on line 307
+[01-Jan-2025 18:30:13 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/teste.unidasautogestao.com/header.php:4) in /home1/unidas90/teste.unidasautogestao.com/gerar_certificado.php on line 304
+[01-Jan-2025 18:30:44 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/teste.unidasautogestao.com/header.php:4) in /home1/unidas90/teste.unidasautogestao.com/gerar_certificado.php on line 304
+[01-Jan-2025 18:35:09 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/teste.unidasautogestao.com/header.php:4) in /home1/unidas90/teste.unidasautogestao.com/gerar_certificado.php on line 304
+[01-Jan-2025 18:39:20 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home1/unidas90/teste.unidasautogestao.com/login.php on line 3
+[01-Jan-2025 18:39:20 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home1/unidas90/teste.unidasautogestao.com/login.php on line 3
+[01-Jan-2025 18:39:20 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home1/unidas90/teste.unidasautogestao.com/login.php:3
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/teste.unidasautogestao.com/login.php on line 3
+[01-Jan-2025 18:40:01 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/teste.unidasautogestao.com/header.php:4) in /home1/unidas90/teste.unidasautogestao.com/gerar_certificado.php on line 304
+[01-Jan-2025 19:24:23 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home1/unidas90/teste.unidasautogestao.com/login.php on line 3
+[01-Jan-2025 19:24:23 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home1/unidas90/teste.unidasautogestao.com/login.php on line 3
+[01-Jan-2025 19:24:23 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home1/unidas90/teste.unidasautogestao.com/login.php:3
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/teste.unidasautogestao.com/login.php on line 3
+[01-Jan-2025 19:24:27 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home1/unidas90/teste.unidasautogestao.com/login.php on line 3
+[01-Jan-2025 19:24:27 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home1/unidas90/teste.unidasautogestao.com/login.php on line 3
+[01-Jan-2025 19:24:27 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home1/unidas90/teste.unidasautogestao.com/login.php:3
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/teste.unidasautogestao.com/login.php on line 3
+[01-Jan-2025 19:25:18 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/teste.unidasautogestao.com/header.php:4) in /home1/unidas90/teste.unidasautogestao.com/gerar_certificado.php on line 304
+[01-Jan-2025 20:09:21 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/teste.unidasautogestao.com/header.php:4) in /home1/unidas90/teste.unidasautogestao.com/upload.php on line 6
+[02-Jan-2025 10:23:55 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/teste.unidasautogestao.com/header.php:4) in /home1/unidas90/teste.unidasautogestao.com/enviar.php on line 15
+[02-Jan-2025 10:23:57 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home1/unidas90/teste.unidasautogestao.com/login.php on line 3
+[02-Jan-2025 10:23:57 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home1/unidas90/teste.unidasautogestao.com/login.php on line 3
+[02-Jan-2025 10:23:57 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home1/unidas90/teste.unidasautogestao.com/login.php:3
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/teste.unidasautogestao.com/login.php on line 3
+[02-Jan-2025 13:24:38 America/Fortaleza] PHP Warning:  Undefined array key "nivel" in /home1/unidas90/teste.unidasautogestao.com/index.php on line 67
+[02-Jan-2025 13:24:38 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/teste.unidasautogestao.com/header.php:4) in /home1/unidas90/teste.unidasautogestao.com/dashboard.php on line 12
+[02-Jan-2025 13:26:02 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/teste.unidasautogestao.com/header.php:4) in /home1/unidas90/teste.unidasautogestao.com/dashboard.php on line 12
+[02-Jan-2025 13:26:15 America/Fortaleza] PHP Warning:  Undefined array key "nivel" in /home1/unidas90/teste.unidasautogestao.com/index.php on line 67
+[02-Jan-2025 13:29:07 America/Fortaleza] PHP Warning:  Undefined array key "nivel" in /home1/unidas90/teste.unidasautogestao.com/index.php on line 67
+[02-Jan-2025 14:55:31 America/Fortaleza] PHP Warning:  Undefined array key "certificates" in /home1/unidas90/teste.unidasautogestao.com/dashboard.php on line 167
+[02-Jan-2025 14:55:31 America/Fortaleza] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home1/unidas90/teste.unidasautogestao.com/dashboard.php on line 167
+[02-Jan-2025 15:15:40 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home1/unidas90/teste.unidasautogestao.com/register.php on line 3
+[02-Jan-2025 15:15:40 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home1/unidas90/teste.unidasautogestao.com/register.php on line 3
+[02-Jan-2025 15:15:40 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home1/unidas90/teste.unidasautogestao.com/register.php:3
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/teste.unidasautogestao.com/register.php on line 3
+[02-Jan-2025 15:16:49 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home1/unidas90/teste.unidasautogestao.com/register.php on line 3
+[02-Jan-2025 15:16:49 America/Fortaleza] PHP Warning:  require(config.php): Failed to open stream: No such file or directory in /home1/unidas90/teste.unidasautogestao.com/register.php on line 3
+[02-Jan-2025 15:16:49 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home1/unidas90/teste.unidasautogestao.com/register.php:3
+Stack trace:
+#0 {main}
+  thrown in /home1/unidas90/teste.unidasautogestao.com/register.php on line 3
+[03-Jan-2025 12:54:44 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`unidas90_certificados`.`certificados_gerados`, CONSTRAINT `certificados_gerados_ibfk_2` FOREIGN KEY (`nome_evento`) REFERENCES `nomes` (`evento`)) in /home1/unidas90/teste.unidasautogestao.com/gerar_certificado.php:170
+Stack trace:
+#0 /home1/unidas90/teste.unidasautogestao.com/gerar_certificado.php(170): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/unidas90/teste.unidasautogestao.com/gerar_certificado.php on line 170
+[03-Jan-2025 12:54:47 America/Fortaleza] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`unidas90_certificados`.`certificados_gerados`, CONSTRAINT `certificados_gerados_ibfk_2` FOREIGN KEY (`nome_evento`) REFERENCES `nomes` (`evento`)) in /home1/unidas90/teste.unidasautogestao.com/gerar_certificado.php:170
+Stack trace:
+#0 /home1/unidas90/teste.unidasautogestao.com/gerar_certificado.php(170): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home1/unidas90/teste.unidasautogestao.com/gerar_certificado.php on line 170
+[04-Jan-2025 15:10:41 America/Fortaleza] PHP Warning:  Undefined array key "nome" in /home1/unidas90/teste.unidasautogestao.com/enviar.php on line 130
+[04-Jan-2025 15:10:41 America/Fortaleza] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home1/unidas90/teste.unidasautogestao.com/enviar.php on line 130
+[04-Jan-2025 15:10:41 America/Fortaleza] PHP Warning:  Undefined array key "email" in /home1/unidas90/teste.unidasautogestao.com/enviar.php on line 132
+[04-Jan-2025 15:10:41 America/Fortaleza] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home1/unidas90/teste.unidasautogestao.com/enviar.php on line 132
+[04-Jan-2025 15:10:41 America/Fortaleza] PHP Warning:  Undefined array key "certificado_gerado" in /home1/unidas90/teste.unidasautogestao.com/enviar.php on line 135
+[04-Jan-2025 15:11:44 America/Fortaleza] PHP Warning:  Undefined array key "nome" in /home1/unidas90/teste.unidasautogestao.com/enviar.php on line 131
+[04-Jan-2025 15:11:44 America/Fortaleza] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home1/unidas90/teste.unidasautogestao.com/enviar.php on line 131
+[04-Jan-2025 15:11:44 America/Fortaleza] PHP Warning:  Undefined array key "email" in /home1/unidas90/teste.unidasautogestao.com/enviar.php on line 133
+[04-Jan-2025 15:11:44 America/Fortaleza] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home1/unidas90/teste.unidasautogestao.com/enviar.php on line 133
+[04-Jan-2025 15:11:44 America/Fortaleza] PHP Warning:  Undefined array key "certificado_gerado" in /home1/unidas90/teste.unidasautogestao.com/enviar.php on line 136
+[04-Jan-2025 15:12:21 America/Fortaleza] PHP Warning:  Undefined variable $participantes in /home1/unidas90/teste.unidasautogestao.com/enviar.php on line 124
+[04-Jan-2025 15:13:01 America/Fortaleza] PHP Warning:  Undefined variable $participantes in /home1/unidas90/teste.unidasautogestao.com/enviar.php on line 124
+[04-Jan-2025 15:13:19 America/Fortaleza] PHP Warning:  Undefined variable $participante in /home1/unidas90/teste.unidasautogestao.com/enviar.php on line 62
+[04-Jan-2025 15:13:19 America/Fortaleza] PHP Warning:  Undefined variable $participante in /home1/unidas90/teste.unidasautogestao.com/enviar.php on line 64
+[04-Jan-2025 19:09:47 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/teste.unidasautogestao.com/header.php:4) in /home1/unidas90/teste.unidasautogestao.com/upload.php on line 6
+[05-Jan-2025 20:17:19 America/Fortaleza] PHP Parse error:  syntax error, unexpected token ";", expecting ")" in /home1/unidas90/teste.unidasautogestao.com/enviar.php on line 82
+[05-Jan-2025 20:17:22 America/Fortaleza] PHP Parse error:  syntax error, unexpected token ";", expecting ")" in /home1/unidas90/teste.unidasautogestao.com/enviar.php on line 82
+[05-Jan-2025 20:18:32 America/Fortaleza] PHP Parse error:  syntax error, unexpected token ";", expecting ")" in /home1/unidas90/teste.unidasautogestao.com/enviar.php on line 82
+[05-Jan-2025 20:18:51 America/Fortaleza] PHP Parse error:  syntax error, unexpected token ";", expecting ")" in /home1/unidas90/teste.unidasautogestao.com/enviar.php on line 82
+[06-Jan-2025 13:41:20 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/teste.unidasautogestao.com/header.php:4) in /home1/unidas90/teste.unidasautogestao.com/certificados.php on line 6
+[13-Jan-2025 16:20:48 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/unidas90/teste.unidasautogestao.com/header.php:4) in /home1/unidas90/teste.unidasautogestao.com/dashboard.php on line 7

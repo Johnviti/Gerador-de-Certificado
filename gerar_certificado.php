@@ -1,13 +1,15 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 include('header.php');
 include('db.php');
 require_once(__DIR__ . '/PHPMailer-master/src/PHPMailer.php');
 require_once(__DIR__ . '/PHPMailer-master/src/SMTP.php');
 require_once(__DIR__ . '/PHPMailer-master/src/Exception.php');
+require_once('vendor/autoload.php'); 
 require_once('tcpdf/tcpdf.php');
+require_once('tcpdf/tcpdf_import.php');
+
+use setasign\Fpdi\Tcpdf\Fpdi;
+
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -26,6 +28,11 @@ function enviarCertificado($email, $nome, $arquivo, $id, $conn) {
 
         $mail->setFrom('sistemas@unidasautogestao.com', 'Sistema de Certificados UNIDAS');
         $mail->addAddress($email, $nome);
+
+        // Configurações de codificação
+        $mail->CharSet = 'UTF-8'; // Para suportar acentuação e caracteres especiais
+        $mail->Encoding = 'base64'; // Codificação para e-mail
+
         $mail->isHTML(true);
         $mail->Subject = 'Certificado de Participação – Evento UNIDAS';
         $mail->Body    = "Olá, $nome!<br><br>
@@ -51,11 +58,8 @@ function enviarCertificado($email, $nome, $arquivo, $id, $conn) {
                         Equipe UNIDAS\n\n
                         Obs: Não responder a este e-mail. Este e-mail está programado apenas para envio. Se tiver dúvidas, entre em contato pelo e-mail institucional@unidas.org.br ou telefone (11) 3289-0855.";
 
-        // $mail->Subject = 'Seu Certificado';
-        // $mail->Body    = "Olá, {$nome}. Segue anexo o seu certificado.";
-        // $mail->addAttachment($arquivo);
-         // Anexar o certificado
-         if (file_exists($arquivo)) {
+        // Anexar o certificado
+        if (file_exists($arquivo)) {
             $mail->addAttachment($arquivo);
         } else {
             throw new Exception('Erro: O arquivo de certificado não foi encontrado.');
@@ -71,6 +75,7 @@ function enviarCertificado($email, $nome, $arquivo, $id, $conn) {
         return false;
     }
 }
+
 
 // Função para arquivar certificados
 function arquivarCertificados($ids, $conn) {
@@ -88,7 +93,7 @@ function arquivarCertificados($ids, $conn) {
                     mkdir('Arquivados', 0777, true);
                 }
                 rename($arquivo, $arquivado);
-                $conn->prepare("DELETE FROM nomes WHERE id = ?")->execute([$id]);
+                $conn->prepare("UPDATE nomes SET arquivado = TRUE WHERE id = ?")->execute([$id]);
             }
         }
     }
@@ -111,19 +116,24 @@ function gerarCertificadoPDF($nome, $modelo, $texto_certificado) {
     }
 
     // Criar o PDF
-    $pdf = new TCPDF('L', 'mm', 'A4');
+    $pdf = new Fpdi('L', 'mm', 'A4');  // Use Fpdi aqui ao invés de TCPDF diretamente
     $pdf->SetAutoPageBreak(FALSE, 0);
-    $pdf->AddPage();
 
-    // Definir o modelo de fundo
-    $pdf->Image($modelo, 0, 0, 297, 210);
+    // Importar o modelo de fundo
+    $pageCount = $pdf->setSourceFile($modelo);
+    for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
+        $templateId = $pdf->importPage($pageNo);
+        $pdf->AddPage();
+        $pdf->useTemplate($templateId, 0, 0, 297, 210);
+    }
 
 
+    // Adicionar textos e informações
     $pdf->SetFont('helvetica', 'B', 24);
     $pdf->SetTextColor(0, 0, 0);
 
-    $pdf->SetXY(16.5, 75);
-    $pdf->MultiCell(156.9, 14.3, $nome, 0, 'C', 0, 1);
+    // $pdf->SetXY(16.5, 75);
+    // $pdf->MultiCell(156.9, 14.3, $nome, 0, 'C', 0, 1);
 
     $pdf->SetFont('helvetica', '', 14);
     $pdf->SetXY(16.5, 89.6);
@@ -168,8 +178,6 @@ $output_url = null;
 
 // Processa o envio dos certificados
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-
     if (isset($_POST['action']) && $_POST['action'] === 'enviar') {
         if (isset($_POST['selected_ids']) && is_array($_POST['selected_ids'])) {
             foreach ($_POST['selected_ids'] as $id) {
@@ -252,7 +260,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $texto_certificado = str_replace(
                         [
                             '[Nome do Participante]',
-                            '[Nome do Fórum]',
+                            '[Nome do Evento]',
                             '[Data do Evento]',
                             '[Local do Evento]',
                             '[Duração do Evento]',
@@ -270,12 +278,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     // Gerar o certificado em PDF
                     $output = gerarCertificadoPDF($nome, $modelo, $texto_certificado);
 
-                    // Atualizar o status do certificado no banco de dados
-                    if ($acao == 'gerar') {
-                        $stmt = $conn->prepare("UPDATE nomes SET certificado_gerado = certificado_gerado + 1 WHERE id = :id");
-                        $stmt->bindParam(':id', $participante_id, PDO::PARAM_INT);
-                        $stmt->execute();
-                    }                    
+                    
+                    $stmt = $conn->prepare("UPDATE nomes SET certificado_gerado = certificado_gerado + 1 WHERE id = :id");
+                    $stmt->bindParam(':id', $participante_id, PDO::PARAM_INT);
+                    $stmt->execute();
+                    
+                    // Inserir um registro na tabela de certificados gerados
+                    $stmt = $conn->prepare("
+                        INSERT INTO certificados_gerados (usuario_id, nome_evento, data_evento, data_geracao)
+                        VALUES (:usuario_id, :evento, :data_evento, NOW())
+                    ");
+                    $stmt->bindParam(':usuario_id', $_SESSION['user_id'], PDO::PARAM_INT);
+                    $stmt->bindParam(':evento', $participante['evento'], PDO::PARAM_STR);
+                    $stmt->bindParam(':data_evento', $participante['data_inicio'], PDO::PARAM_STR);
+                    $stmt->execute();
+                                   
 
                     // Gerar o URL do certificado
                     $output_url = str_replace(__DIR__, 'https://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']), $output);
@@ -294,15 +311,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } elseif (isset($_POST['action']) && $_POST['action'] === 'arquivar') {
         if (isset($_POST['selected_ids']) && is_array($_POST['selected_ids'])) {
             arquivarCertificados($_POST['selected_ids'], $conn);
-            header("Location: " . $_SERVER['PHP_SELF']);
-            exit;
+            echo '<script type="text/javascript">window.location.href = "/gerar_certificado.php";</script>';
+            
         }
     }
 }
 
+if ($_SESSION['user_nivel'] === 2) {
+    $query = "SELECT id, nome, email, enviado FROM nomes WHERE arquivado = FALSE AND admin_id = {$_SESSION['user_id']}";
+    $result = $conn->query($query);
+}else{
+    $query = "SELECT id, nome, email, enviado FROM nomes WHERE arquivado = FALSE";
+    $result = $conn->query($query);
+}
 // Busca participantes, modelos e textos
-$query = "SELECT id, nome, email, enviado FROM nomes";
-$result = $conn->query($query);
+
 
 // Atualiza as queries para buscar os modelos e textos
 $modelos = $conn->query("SELECT id, nome_modelo AS nome FROM modelos_certificados")->fetchAll(PDO::FETCH_ASSOC);
@@ -337,7 +360,7 @@ $textos = $conn->query("SELECT id, nome_modelo AS titulo FROM textos_certificado
         <div class="row mb-3">
             <div class="col-md-6">
                 <label style="font-size: 12px;">Selecione o Modelo:</label>
-                <select name="model_id" class="form-control" required>
+                <select name="model_id" class="form-control">
                     <option value="">Selecione</option>
                     <?php foreach ($modelos as $modelo): ?>
                         <option value="<?= $modelo['id'] ?>"><?= htmlspecialchars($modelo['nome']) ?></option>
@@ -346,7 +369,7 @@ $textos = $conn->query("SELECT id, nome_modelo AS titulo FROM textos_certificado
             </div>
             <div class="col-md-6">
                 <label style="font-size: 12px;">Selecione o Texto:</label>
-                <select name="text_id" class="form-control" required>
+                <select name="text_id" class="form-control">
                     <option value="">Selecione</option>
                     <?php foreach ($textos as $texto): ?>
                         <option value="<?= $texto['id'] ?>"><?= htmlspecialchars($texto['titulo']) ?></option>

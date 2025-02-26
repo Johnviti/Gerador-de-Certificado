@@ -44,38 +44,62 @@ function enviarEmailComCertificado($email, $nome, $caminhoCertificado) {
 
 $error = null;
 $success = null;
-$participante = null;
+$participantes = null;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['search_term'])) {
     try {
-        $search_term = '%' . $_POST['search_term'] . '%';
-        $stmt = $conn->prepare("
-            SELECT id, nome, cpf, email, certificado_gerado 
-            FROM nomes 
-            WHERE nome LIKE :search_term 
-               OR cpf LIKE :search_term 
-               OR email LIKE :search_term
-        ");
-        $stmt->bindParam(':search_term', $search_term);
-        $stmt->execute();
-        $participante = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if (!$participante) {
+        if($_SESSION['user_nivel'] === 2){
+
+            $search_term = '%' . $_POST['search_term'] . '%';
+            $user_admin = $_SESSION['user_id'];
+            $stmt = $conn->prepare("
+            SELECT id, nome, cpf, email, certificado_gerado
+            FROM nomes 
+            WHERE (nome LIKE :search_term 
+                   OR cpf LIKE :search_term 
+                   OR email LIKE :search_term)
+              AND admin_id = :user_admin;
+            ");
+            $stmt->bindParam(':search_term', $search_term);
+            $stmt->bindParam(':user_admin', $user_admin);
+            $stmt->execute();
+            $participantes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            
+        } else {
+            $search_term = '%' . $_POST['search_term'] . '%';
+            $stmt = $conn->prepare("
+                SELECT id, nome, cpf, email, certificado_gerado, evento 
+                FROM nomes 
+                WHERE nome LIKE :search_term 
+                   OR cpf LIKE :search_term 
+                   OR email LIKE :search_term
+            ");
+            $stmt->bindParam(':search_term', $search_term);
+            $stmt->execute();
+            $participantes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            
+        }
+       
+        if (!$participantes) {
             $error = 'Nenhum participante encontrado.';
         } elseif (isset($_POST['enviar_email'])) {
-            $output_dir = __DIR__ . '/SalvarPDF';
-            $caminhoCertificado = $output_dir . '/certificado_' . str_replace(' ', '_', $participante['nome']) . '.pdf';
-
-            if (file_exists($caminhoCertificado)) {
-                $resultadoEnvio = enviarEmailComCertificado($participante['email'], $participante['nome'], $caminhoCertificado);
-                if ($resultadoEnvio === true) {
-                    $success = 'Certificado enviado com sucesso para ' . htmlspecialchars($participante['nome']) . '.';
+            foreach ($participantes as $participante){
+                $output_dir = __DIR__ . '/SalvarPDF';
+                $caminhoCertificado = $output_dir . '/certificado_' . str_replace(' ', '_', $participante['nome']) . '.pdf';
+    
+                if (file_exists($caminhoCertificado)) {
+                    $resultadoEnvio = enviarEmailComCertificado($participante['email'], $participante['nome'], $caminhoCertificado);
+                    if ($resultadoEnvio === true) {
+                        $success = 'Certificado enviado com sucesso para ' . htmlspecialchars($participante['nome']) . '.';
+                    } else {
+                        $error = $resultadoEnvio;
+                    }
                 } else {
-                    $error = $resultadoEnvio;
+                    $error = 'Certificado não encontrado para ' . htmlspecialchars($participante['nome']) . '.';
                 }
-            } else {
-                $error = 'Certificado não encontrado para ' . htmlspecialchars($participante['nome']) . '.';
             }
+           
         }
     } catch (Exception $e) {
         $error = 'Erro ao processar a solicitação: ' . $e->getMessage();
@@ -120,28 +144,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['search_term'])) {
     <?php endif; ?>
 
     <!-- Resultado da Pesquisa -->
-    <?php if ($participante): ?>
-        <div class="card">
-            <div class="card-header">
-                <h5>Detalhes do Participante</h5>
+     <?php if ($participantes): ?>
+        <?php foreach ($participantes as $participante): ?>
+            <div class="card mb-3">
+                <div class="card-header">
+                    <h5>Detalhes do Participante</h5>
+                </div>
+                <div class="card-body">
+                    <p><strong>Nome:</strong> <?= htmlspecialchars($participante['nome']) ?></p>
+                    <p><strong>CPF:</strong> <?= htmlspecialchars($participante['cpf'] ?? 'Não informado') ?></p>
+                    <p><strong>Email:</strong> <?= htmlspecialchars($participante['email']) ?></p>
+                    <p><strong>Evento:</strong> <?= htmlspecialchars($participante['evento'] ?? 'Não informado') ?></p>
+                    <!-- Botão de Enviar Certificado -->
+                    <?php if ($participante['certificado_gerado']): ?>
+                        <form method="POST" class="mt-3">
+                            <input type="hidden" name="search_term" value="<?= htmlspecialchars($participante['email']) ?>">
+                            <button type="submit" name="enviar_email" class="btn btn-success">Enviar Certificado por Email</button>
+                        </form>
+                    <?php else: ?>
+                        <p class="text-danger mt-3"><strong>Certificado:</strong> Não Gerado</p>
+                    <?php endif; ?>
+                </div>
             </div>
-            <div class="card-body">
-                <p><strong>Nome:</strong> <?= htmlspecialchars($participante['nome']) ?></p>
-                <p><strong>CPF:</strong> <?= htmlspecialchars($participante['cpf'] ?? 'Não informado') ?></p>
-                <p><strong>Email:</strong> <?= htmlspecialchars($participante['email']) ?></p>
-
-                <!-- Botão de Enviar Certificado -->
-                <?php if ($participante['certificado_gerado']): ?>
-                    <form method="POST" class="mt-3">
-                        <input type="hidden" name="search_term" value="<?= htmlspecialchars($participante['email']) ?>">
-                        <button type="submit" name="enviar_email" class="btn btn-success">Enviar Certificado por Email</button>
-                    </form>
-                <?php else: ?>
-                    <p class="text-danger mt-3"><strong>Certificado:</strong> Não Gerado</p>
-                <?php endif; ?>
-            </div>
-        </div>
+        <?php endforeach; ?>
     <?php endif; ?>
 </div>
 </body>
 </html>
+
+

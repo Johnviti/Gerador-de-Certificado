@@ -1,7 +1,6 @@
 <?php
 session_start();
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -75,13 +74,17 @@ session_start();
             <img class="logo-painel" src="./img/logo.png" alt="logo">
         </a>
         <!-- <a href="index.php">Home</a> --> <!-- Linha removida -->
-        <?php if (isset($_SESSION['user_id'])): ?>
-            <a href="dashboard.php">Painel de Controle</a>
+         <?php if (isset($_SESSION['user_id'])): ?>
+            <?php if(isset($_SESSION['user_nivel']) && $_SESSION['user_nivel'] === 1): ?>
+                <a href="dashboard.php">Painel de Controle</a>
+            <?php else: ?>
+                <a href="dashboard_users.php">Painel de Controle</a>
+            <?php endif; ?>
             <a href="certificados.php">Modelos de Certificados</a>
             <a href="texto.php">Texto dos Certificados</a>
             <a href="upload.php">Upload de Nomes</a>
             <a href="gerar_certificado.php">Gerar Certificados</a>
-            <a href="enviar.php">Enviar Emails</a>
+            <a href="enviar.php">Pesquisar</a>
             <a href="logout.php" class="btn btn-danger mt-3">Logout</a>
         <?php else: ?>
             <a href="login.php">Login</a>

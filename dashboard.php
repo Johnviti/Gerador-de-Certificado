@@ -2,11 +2,22 @@
 session_start();
 include('header.php');
 
+require 'vendor/autoload.php'; 
+
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+
 // Verificar se o usuário está logado
 if (!isset($_SESSION['user_id'])) {
-    header('Location: login.php');
+    header('Location: index.php');
     exit;
 }
+
+if ($_SESSION['user_nivel'] != 1) {
+    header('Location: dashboard_users.php');
+    exit;
+}
+
 
 // Ativar exibição de erros
 error_reporting(E_ALL);
@@ -14,8 +25,8 @@ ini_set('display_errors', 1);
 
 // Configuração da conexão com o banco de dados
 $servername = "localhost";
-$username = "unidas90_Leandro";
-$password = "Le@ndro2101";
+$username = "unidas90_admin";
+$password = "4dm1n@2025";
 $dbname = "unidas90_certificados";
 
 try {
@@ -74,18 +85,34 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 //     ['user_name' => 'Pedro Santos', 'date' => '2024-12-15', 'event_name' => 'Palestra Segurança', 'certificates' => 10],
 // ];
 
+// Tabela de cerficados gerados
 try {
-    // Consulta SQL
-    $query = $conn->query("SELECT nome AS user_name, data_inicio AS date, evento AS event_name, certificado_gerado AS certificates FROM nomes");
+    $query = $conn->query("
+       SELECT 
+            usuarios.nome AS user_name, 
+            nomes.data_inicio AS date, 
+            nomes.evento AS event_name,
+            COUNT(DISTINCT certificados_gerados.id) AS certificados_gerados
+        FROM 
+            usuarios
+        JOIN 
+            certificados_gerados ON certificados_gerados.usuario_id = usuarios.id
+        JOIN 
+            nomes ON certificados_gerados.nome_evento = nomes.evento
+        WHERE
+            certificados_gerados.data_evento = nomes.data_inicio
+        GROUP BY 
+            usuarios.nome, nomes.evento, nomes.data_inicio;
 
-    // Prepara e executa a consulta
+    ");
+
     $data = $query->fetchAll(PDO::FETCH_ASSOC);
+    
 
 } catch (PDOException $e) {
     echo "Erro na conexão: " . $e->getMessage();
-    $data = []; // Garante que $data está definido, mesmo em caso de erro
+    $data = []; 
 }
-
 
 ?>
 
@@ -123,7 +150,7 @@ try {
                 <thead class="thead-dark">
                     <tr>
                         <th>Nome do Usuário</th>
-                        <th>Data</th>
+                        <th>Data do Emissão</th>
                         <th>Nome do Evento</th>
                         <th>Certificados Gerados</th>
                     </tr>
@@ -141,7 +168,7 @@ try {
                                 ?>
                             </td>
                             <td><?php echo htmlspecialchars($row['event_name']); ?></td>
-                            <td><?php echo htmlspecialchars($row['certificates']); ?></td>
+                            <td><?php echo htmlspecialchars($row['certificados_gerados']); ?></td>
                         </tr>
                     <?php endforeach; ?>
                 <?php else: ?>
@@ -151,6 +178,27 @@ try {
                 <?php endif; ?>
                 </tbody>
             </table>
+        </div>
+    </div>
+    
+    <!-- Formulário para gerar relatório -->
+    <div class="card mb-4">
+        <div class="card-header">Gerar Relatório de Certificados</div>
+        <div class="card-body">
+            <form method="POST" action="/gerar_excel.php">
+                <div class="form-group">
+                    <label for="user_id">Selecione o Usuário</label>
+                    <select name="user_id" id="user_id" class="form-control" required>
+                        <option value="">Selecione...</option>
+                        <?php foreach ($usuarios as $usuario): ?>
+                            <option value="<?php echo htmlspecialchars($usuario['id']); ?>">
+                                <?php echo htmlspecialchars($usuario['nome']); ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-success">Gerar Relatório</button>
+            </form>
         </div>
     </div>
 
