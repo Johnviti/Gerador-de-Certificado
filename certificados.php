@@ -80,7 +80,7 @@ function listarModelos($conn) {
 
 $modelos = listarModelos($conn);
 
-$baseUrl = 'http://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['PHP_SELF']), '/') . '/';
+$baseUrl = 'https://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['PHP_SELF']), '/') . '/';
 ?>
 
 <!DOCTYPE html>
@@ -107,7 +107,7 @@ $baseUrl = 'http://' . $_SERVER['HTTP_HOST'] . rtrim(dirname($_SERVER['PHP_SELF'
 
     <!-- Formulário de Upload -->
     <div class="upload-section">
-        <h2 class="text-center">Upload de Certificado em Branco</h2>
+        <h2 class="text-center">Inserir Novos Modelos</h2>
         <form action="" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="nome_evento" class="form-label">Nome do Evento:</label>

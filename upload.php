@@ -11,6 +11,8 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+
+
 // Processa o formulário manual
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['manual_submit'])) {
     try {
@@ -87,9 +89,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['arquivo_csv'])) {
 
                 // Configurar conexão com o banco de dados
                 $hostname = "localhost";
-                $username = "unidas90_admin";
-                $password = "4dm1n@2025";
-                $database = "unidas90_certificados";
+                $username = "unidas90_Leandro";
+                $password = "Le@ndro2101";
+                $database = "unidas90_comissoescertificados";
 
                 $conn = new PDO("mysql:host=$hostname;dbname=$database;charset=utf8", $username, $password);
                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -206,7 +208,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['arquivo_csv'])) {
 <body>
 <div class="container form-container">
     <h1 class="page-title">Upload e Edição de Nomes</h1>
-
+ <div class="btn-container d-flex justify-content-between">
+        <a href="https://unidas.digital/wp-content/uploads/2025/03/Modelo.csv" class="btn btn-secondary" download>Baixar Modelo Planilha Oficial</a>
+        </div>
     <!-- Upload CSV -->
     <form action="upload.php" method="post" enctype="multipart/form-data" class="mb-5">
         <div class="form-group">

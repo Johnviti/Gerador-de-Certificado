@@ -35,28 +35,36 @@ function enviarCertificado($email, $nome, $arquivo, $id, $conn) {
 
         $mail->isHTML(true);
         $mail->Subject = 'Certificado de Participação – Evento UNIDAS';
-        $mail->Body    = "Olá, $nome!<br><br>
-                        Agradecemos pela sua presença em nosso evento. Em anexo, você encontrará o seu certificado de participação.<br><br>
-                        Caso tenha dúvidas ou sugestões, fique à vontade para entrar em contato conosco. Será um prazer atender você.<br><br>
-                        📧 E-mail: institucional@unidas.org.br<br>
-                        📞 Telefone: (11) 3289-0855<br>
-                        📍 Endereço: Alameda Santos, 1000 – 8º Andar – São Paulo, SP<br><br>
-                        Agradecemos mais uma vez e esperamos vê-lo(a) em futuros eventos da UNIDAS!<br><br>
-                        Atenciosamente,<br>
-                        <strong>Equipe UNIDAS</strong><br><br>
-                        <img src='https://unidas.digital/wp-content/uploads/2024/08/logo-1.png' alt='Logo UNIDAS' style='width:150px;'><br><br>
-                        <small><strong>Obs:</strong> Não responder a este e-mail. Este e-mail está programado apenas para envio. 
-                        Se tiver dúvidas, entre em contato pelo e-mail institucional@unidas.org.br ou telefone (11) 3289-0855.</small>";
+$mail->Body = "Olá, $nome!<br><br>
+Agradecemos pela sua participação nas COMISSÕES TÉCNICAS UNIDAS. Anexo, você encontrará o seu Certificado de Reconhecimento.<br><br>
+
+Compartilhe em suas redes sociais e marque a UNIDAS.<br><br>
+
+<a href='https://www.linkedin.com/company/unidas-autogestao' target='_blank' style='text-decoration:none; color:#000;'>
+  <img src='https://cdn-icons-png.flaticon.com/512/174/174857.png' alt='LinkedIn' style='vertical-align:middle; width:20px; height:20px;'>
+  unidas-autogestao
+</a><br><br>
+
+<a href='https://www.instagram.com/unidasautogestao' target='_blank' style='text-decoration:none; color:#000;'>
+  <img src='https://cdn-icons-png.flaticon.com/512/2111/2111463.png' alt='Instagram' style='vertical-align:middle; width:20px; height:20px;'>
+ @unidasautogestao
+</a><br><br>
+
+Atenciosamente,<br>
+<strong>Equipe UNIDAS</strong><br><br>
+
+<img src='https://www.unidas.org.br/wp-content/uploads/2024/04/pic-logo-unidas-1.webp' alt='Logo UNIDAS' style='width:150px;'><br><br>
+
+<small><strong>Obs:</strong> Não responder a este e-mail. Este e-mail está programado apenas para envio.</small>";
+
+
         $mail->AltBody = "Olá, $nome!\n\n
-                        Agradecemos pela sua presença em nosso evento. Em anexo, você encontrará o seu certificado de participação.\n\n
-                        Caso tenha dúvidas ou sugestões, fique à vontade para entrar em contato conosco. Será um prazer atender você.\n\n
-                        E-mail: institucional@unidas.org.br\n
-                        Telefone: (11) 3289-0855\n
-                        Endereço: Alameda Santos, 1000 – 8º Andar – São Paulo, SP\n\n
-                        Agradecemos mais uma vez e esperamos vê-lo(a) em futuros eventos da UNIDAS!\n\n
+                                                Agradecemos pela sua participação nas COMISSÕES TÉCNICAS UNIDAS. Anexo, você encontrará o seu Certificado de Reconhecimento.<br><br>
+.\n\n
+                        
                         Atenciosamente,\n
                         Equipe UNIDAS\n\n
-                        Obs: Não responder a este e-mail. Este e-mail está programado apenas para envio. Se tiver dúvidas, entre em contato pelo e-mail institucional@unidas.org.br ou telefone (11) 3289-0855.";
+                        Obs: Não responder a este e-mail. Este e-mail está programado apenas para envio.";
 
         // Anexar o certificado
         if (file_exists($arquivo)) {
@@ -100,9 +108,10 @@ function arquivarCertificados($ids, $conn) {
 }
 
 // Função para gerar certificado em PDF
+
 function gerarCertificadoPDF($nome, $modelo, $texto_certificado) {
     $output_dir = __DIR__ . '/SalvarPDF';
-    
+
     if (!is_dir($output_dir)) {
         if (!mkdir($output_dir, 0777, true)) {
             throw new Exception('Falha ao criar diretório: ' . $output_dir);
@@ -115,11 +124,9 @@ function gerarCertificadoPDF($nome, $modelo, $texto_certificado) {
         }
     }
 
-    // Criar o PDF
-    $pdf = new Fpdi('L', 'mm', 'A4');  // Use Fpdi aqui ao invés de TCPDF diretamente
+    $pdf = new Fpdi('L', 'mm', 'A4');  
     $pdf->SetAutoPageBreak(FALSE, 0);
 
-    // Importar o modelo de fundo
     $pageCount = $pdf->setSourceFile($modelo);
     for ($pageNo = 1; $pageNo <= $pageCount; $pageNo++) {
         $templateId = $pdf->importPage($pageNo);
@@ -127,18 +134,25 @@ function gerarCertificadoPDF($nome, $modelo, $texto_certificado) {
         $pdf->useTemplate($templateId, 0, 0, 297, 210);
     }
 
+    $pdf->SetTextColor(0, 26, 113);
 
-    // Adicionar textos e informações
-    $pdf->SetFont('helvetica', 'B', 24);
-    $pdf->SetTextColor(0, 0, 0);
+    // **Preservar as quebras de linha do texto original**
+    $texto_certificado = nl2br($texto_certificado);
 
-    // $pdf->SetXY(16.5, 75);
-    // $pdf->MultiCell(156.9, 14.3, $nome, 0, 'C', 0, 1);
+    // **Aplicar negrito apenas nas palavras em CAIXA ALTA**
+    $textoFormatado = preg_replace_callback('/\b([A-ZÀ-Ú]+(?:\s+[A-ZÀ-Ú]+)*)\b/u', function ($matches) {
+        return "<b>{$matches[1]}</b>"; // Aplica negrito corretamente
+    }, $texto_certificado);
 
-    $pdf->SetFont('helvetica', '', 14);
-    $pdf->SetXY(16.5, 89.6);
-    $pdf->MultiCell(156.9, 47.4, $texto_certificado, 0, 'C', 0, 1);
+    // **Definir posição correta**
+    $pdf->SetXY(50, 60);
+    $pdf->SetFont('helvetica', '', 17);
+    $largura_texto = 220;
 
+    // **Exibir texto com formatação preservada**
+    $pdf->writeHTMLCell($largura_texto, 0, 50, 60, $textoFormatado, 0, 1, false, true, 'C');
+
+    // **Data formatada e centralizada**
     $meses = array(
         '01' => 'janeiro', '02' => 'fevereiro', '03' => 'março',
         '04' => 'abril', '05' => 'maio', '06' => 'junho',
@@ -146,31 +160,18 @@ function gerarCertificadoPDF($nome, $modelo, $texto_certificado) {
         '10' => 'outubro', '11' => 'novembro', '12' => 'dezembro'
     );
     $data_atual = 'São Paulo, ' . date('d') . ' de ' . $meses[date('m')] . ' de ' . date('Y');
+
     $pdf->SetFont('helvetica', 'I', 12);
-    $pdf->SetXY(21.0, 157.3);
+    $pdf->SetXY(90, 140);
     $pdf->MultiCell(131.0, 8.1, $data_atual, 0, 'C', 0, 1);
 
-    // Salvar o PDF
+    // **Salvar o PDF**
     $output_file = $output_dir . '/certificado_' . str_replace(' ', '_', $nome) . '.pdf';
     $pdf->Output($output_file, 'F');
 
     return $output_file;
 }
 
-// Processa exclusão de certificados
-if (isset($_GET['delete_id'])) {
-    $id = intval($_GET['delete_id']);
-    $stmt = $conn->prepare("SELECT nome FROM nomes WHERE id = ?");
-    $stmt->execute([$id]);
-    $nome = $stmt->fetch(PDO::FETCH_ASSOC)['nome'] ?? null;
-
-    if ($nome) {
-        $arquivo = "SalvarPDF/certificado_" . str_replace(' ', '_', $nome) . ".pdf";
-        if (file_exists($arquivo)) unlink($arquivo);
-        $conn->prepare("DELETE FROM nomes WHERE id = ?")->execute([$id]);
-        echo "<div class='alert alert-success'>Certificado de {$nome} excluído com sucesso.</div>";
-    }
-}
 
 $error = null;
 $output = null;
@@ -284,14 +285,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $stmt->execute();
                     
                     // Inserir um registro na tabela de certificados gerados
-                    $stmt = $conn->prepare("
-                        INSERT INTO certificados_gerados (usuario_id, nome_evento, data_evento, data_geracao)
-                        VALUES (:usuario_id, :evento, :data_evento, NOW())
+                   $stmt = $conn->prepare("
+                        INSERT INTO certificados_gerados (usuario_id, nome_evento, data_evento, id_nome, data_geracao)
+                        VALUES (:usuario_id, :evento, :data_evento, :id_nome, NOW())
                     ");
                     $stmt->bindParam(':usuario_id', $_SESSION['user_id'], PDO::PARAM_INT);
                     $stmt->bindParam(':evento', $participante['evento'], PDO::PARAM_STR);
                     $stmt->bindParam(':data_evento', $participante['data_inicio'], PDO::PARAM_STR);
+                    $stmt->bindParam(':id_nome', $participante_id, PDO::PARAM_STR);
                     $stmt->execute();
+
                                    
 
                     // Gerar o URL do certificado
