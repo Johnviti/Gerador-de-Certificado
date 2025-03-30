@@ -55,23 +55,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['search_term'])) {
             $user_admin = $_SESSION['user_id'];
             
             $stmt = $conn->prepare("
-                SELECT 
-                    n.id, 
-                    n.nome, 
-                    n.cpf, 
-                    n.email, 
-                    n.certificado_gerado, 
-                    n.evento,
-                    n.data_inicio, 
-                    n.data_final, 
-                    n.admin_id,
-                    u.nome AS admin_nome 
-                FROM nomes n
-                LEFT JOIN usuarios u ON n.admin_id = u.id
-                WHERE (n.nome LIKE :search_term 
-                       OR n.cpf LIKE :search_term 
-                       OR n.email LIKE :search_term)
-                  AND n.admin_id = :user_admin
+            SELECT id, nome, cpf, email, certificado_gerado 
+            FROM nomes 
+            WHERE (nome LIKE :search_term 
+                   OR cpf LIKE :search_term 
+                   OR email LIKE :search_term)
+              AND admin_id = :user_admin;
             ");
             
             $stmt->bindParam(':search_term', $search_term);
@@ -84,22 +73,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['search_term'])) {
             $search_term = '%' . $_POST['search_term'] . '%';
 
             $stmt = $conn->prepare("
-                SELECT 
-                    n.id, 
-                    n.nome, 
-                    n.cpf, 
-                    n.email, 
-                    n.certificado_gerado, 
-                    n.evento,
-                    n.data_inicio, 
-                    n.data_final, 
-                    n.admin_id,
-                    u.nome AS admin_nome 
-                FROM nomes n
-                LEFT JOIN usuarios u ON n.admin_id = u.id
-                WHERE n.nome LIKE :search_term 
-                   OR n.cpf LIKE :search_term 
-                   OR n.email LIKE :search_term
+                SELECT id, nome, cpf, email, certificado_gerado 
+                FROM nomes 
+                WHERE nome LIKE :search_term 
+                   OR cpf LIKE :search_term 
+                   OR email LIKE :search_term
             ");
             
             $stmt->bindParam(':search_term', $search_term);
@@ -409,20 +387,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['search_term'])) {
                         <p class="detail-value"><?= htmlspecialchars($participante['data_inicio'] ?? 'Não informado') ?> ~ <?= htmlspecialchars($participante['data_final'] ?? 'Não informado') ?></p>
                     </div>
                 </div>
+                <div class="card-body">
+                    <p><strong>Nome:</strong> <?= htmlspecialchars($participante['nome']) ?></p>
+                    <p><strong>CPF:</strong> <?= htmlspecialchars($participante['cpf'] ?? 'Não informado') ?></p>
+                    <p><strong>Email:</strong> <?= htmlspecialchars($participante['email']) ?></p>
 
-                <?php if ($participante['certificado_gerado']): ?>
-                    <form method="POST">
-                        <input type="hidden" name="search_term" value="<?= htmlspecialchars($participante['email']) ?>">
-                        <button type="submit" name="enviar_email" class="button send-button">
-                            Enviar Certificado por Email
-                        </button>
-                    </form>
-                <?php else: ?>
-                    <p class="text-danger mt-3"><strong>Certificado:</strong> Não Gerado</p>
-                <?php endif; ?>
+                    <!-- Botão de Enviar Certificado -->
+                    <?php if ($participante['certificado_gerado']): ?>
+                        <form method="POST" class="mt-3">
+                            <input type="hidden" name="search_term" value="<?= htmlspecialchars($participante['email']) ?>">
+                            <button type="submit" name="enviar_email" class="btn btn-success">Enviar Certificado por Email</button>
+                        </form>
+                    <?php else: ?>
+                        <p class="text-danger mt-3"><strong>Certificado:</strong> Não Gerado</p>
+                    <?php endif; ?>
+                </div>
             </div>
         <?php endforeach; ?>
     <?php endif; ?>
 </div>
 </body>
 </html>
+
+
