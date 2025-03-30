@@ -180,7 +180,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['arquivo_csv'])) {
   <div class="dashboard-container">
     <div class="sidebar">
       <div class="sidebar-header">
-        <img src="/lovable-uploads/7500b379-16df-4ef0-b7f2-92436d4a873e.png" alt="UNIDAS" class="sidebar-logo">
+        <img src="/img/logo-unidas.png" alt="UNIDAS" class="sidebar-logo">
       </div>
       <nav class="sidebar-nav">
         <ul class="nav-list">

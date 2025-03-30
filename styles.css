@@ -192,7 +192,7 @@ label {
 /* Sidebar Styles */
 .sidebar {
   width: 260px;
-  background-color: #222E3C;
+  background-color: #002b78;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -242,7 +242,7 @@ label {
 }
 
 .nav-link:hover, .nav-item.active .nav-link {
-  background-color: #313D4F;
+  background-color: #0143a5;
   color: #fff;
 }
 
@@ -263,7 +263,7 @@ label {
 }
 
 .logout-button:hover {
-  background-color: #313D4F;
+  background-color: #0143a5;
   color: #fff;
 }
 
