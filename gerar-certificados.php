@@ -9,8 +9,6 @@ require_once('tcpdf/tcpdf.php');
 require_once('tcpdf/tcpdf_import.php');
 
 use setasign\Fpdi\Tcpdf\Fpdi;
-
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -340,93 +338,254 @@ $textos = $conn->query("SELECT id, nome_modelo AS titulo FROM textos_certificado
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciar Certificados</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        h1 {
-            font-size: 15px;
-        }
-        .table, .table td, .table th {
-            font-size: 12px;
-        }
-    </style>
+    <title>Gerar Certificados - UNIDAS</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-<div class="container mt-5">
-    <h1 class="text-center mb-4">Gerenciar Certificados</h1>
+<body class="bg-gray-100">
+  <div class="dashboard-container">
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <img src="/lovable-uploads/7500b379-16df-4ef0-b7f2-92436d4a873e.png" alt="UNIDAS" class="sidebar-logo">
+      </div>
+      <nav class="sidebar-nav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="dashboard.php" class="nav-link" data-page="dashboard">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="upload.php" class="nav-link" data-page="upload">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="17 8 12 3 7 8"></polyline>
+                <line x1="12" y1="3" x2="12" y2="15"></line>
+              </svg>
+              <span>Upload Nomes</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="modelos-certificados.php" class="nav-link" data-page="models">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="3" y1="9" x2="21" y2="9"></line>
+                <line x1="9" y1="21" x2="9" y2="9"></line>
+              </svg>
+              <span>Modelos Certificados</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="texto.php" class="nav-link" data-page="texts">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+              <span>Textos Certificados</span>
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a href="gerar-certificados.php" class="nav-link" data-page="generate">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                <rect x="6" y="14" width="12" height="8"></rect>
+              </svg>
+              <span>Gerar Certificados</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="pesquisar.php" class="nav-link" data-page="search">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <span>Pesquisar</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="logout.php" class="logout-button" id="logout-btn">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+          <span>Sair</span>
+        </a>
+      </div>
+    </div>
 
-    <?php if ($error): ?>
-        <div class="error">Erro: <?= htmlspecialchars($error) ?></div>
-    <?php endif; ?>
+    <div class="main-content">
+      <header class="header">
+        <div class="header-title">
+          <h1 id="page-title">Gerenciar Certificados</h1>
+        </div>
+        <div class="user-menu">
+          <span class="user-name"><?php echo htmlspecialchars($nome_usuario); ?></span>
+          <div class="user-avatar"><?php echo substr($nome_usuario, 0, 1); ?></div>
+        </div>
+      </header>
 
-    <form method="POST">
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <label style="font-size: 12px;">Selecione o Modelo:</label>
-                <select name="model_id" class="form-control">
-                    <option value="">Selecione</option>
+      <main class="content-area">
+        <div class="page-content">
+          <?php if ($error): ?>
+            <div class="alert-message">
+              Erro: <?php echo htmlspecialchars($error); ?>
+            </div>
+          <?php endif; ?>
+          
+          <form method="POST" id="certificate-form">
+            <!-- Filter Section -->
+            <div class="filter-section">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label>Selecione o Modelo:</label>
+                  <select name="model_id" class="form-select">
+                    <option value="" selected disabled>Selecione</option>
                     <?php foreach ($modelos as $modelo): ?>
-                        <option value="<?= $modelo['id'] ?>"><?= htmlspecialchars($modelo['nome']) ?></option>
+                      <option value="<?php echo $modelo['id']; ?>"><?php echo htmlspecialchars($modelo['nome']); ?></option>
                     <?php endforeach; ?>
-                </select>
-            </div>
-            <div class="col-md-6">
-                <label style="font-size: 12px;">Selecione o Texto:</label>
-                <select name="text_id" class="form-control">
-                    <option value="">Selecione</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Selecione o Texto:</label>
+                  <select name="text_id" class="form-select">
+                    <option value="" selected disabled>Selecione</option>
                     <?php foreach ($textos as $texto): ?>
-                        <option value="<?= $texto['id'] ?>"><?= htmlspecialchars($texto['titulo']) ?></option>
+                      <option value="<?php echo $texto['id']; ?>"><?php echo htmlspecialchars($texto['titulo']); ?></option>
                     <?php endforeach; ?>
-                </select>
+                  </select>
+                </div>
+              </div>
             </div>
-        </div>
-
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th><input type="checkbox" id="selectAll"></th>
-                    <th>Nome</th>
-                    <th>Email</th>
-                    <th>Enviado</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php while ($row = $result->fetch(PDO::FETCH_ASSOC)):
-                    $certificado = "SalvarPDF/certificado_" . str_replace(' ', '_', $row['nome']) . ".pdf";
-                    $whatsapp_message = urlencode("Olá {$row['nome']}, aqui está o seu certificado: https://certificados.unidasautogestao.com/{$certificado}");
-                    ?>
+            
+            <!-- Certificates Table -->
+            <div class="certificates-table-container">
+              <h2 class="section-title">Certificados Disponíveis</h2>
+              
+              <div class="certificates-table">
+                <table class="data-table">
+                  <thead>
                     <tr>
-                        <td><input type="checkbox" name="selected_ids[]" value="<?= $row['id'] ?>"></td>
-                        <td><?= htmlspecialchars($row['nome']) ?></td>
-                        <td><?= htmlspecialchars($row['email']) ?></td>
-                        <td><?= $row['enviado'] ? 'Sim' : 'Não' ?></td>
-                        <td>
-                            <?php if (file_exists($certificado)): ?>
-                                <a href="<?= $certificado ?>" target="_blank" class="btn btn-info btn-sm">Visualizar</a>
-                                <a href="https://api.whatsapp.com/send?text=<?= $whatsapp_message ?>" 
-                                   target="_blank" class="btn btn-success btn-sm">WhatsApp</a>
-                            <?php endif; ?>
-                            <a href="?delete_id=<?= $row['id'] ?>" 
-                               class="btn btn-danger btn-sm" 
-                               onclick="return confirm('Deseja excluir este certificado?');">Excluir</a>
-                        </td>
+                      <th class="check-column">
+                        <input type="checkbox" id="select-all" class="checkbox">
+                      </th>
+                      <th>Nome</th>
+                      <th>Email</th>
+                      <th>Enviado</th>
+                      <th>Ações</th>
                     </tr>
-                <?php endwhile; ?>
-            </tbody>
-        </table>
-
-        <div class="text-center">
-            <button type="submit" name="action" value="enviar" class="btn btn-primary">Selecionar e Enviar por E-mail</button>
-            <button type="submit" name="action" value="arquivar" class="btn btn-secondary">Arquivar Certificados</button>
+                  </thead>
+                  <tbody>
+                    <?php while ($row = $result->fetch(PDO::FETCH_ASSOC)):
+                      $certificado = "SalvarPDF/certificado_" . str_replace(' ', '_', $row['nome']) . ".pdf";
+                      $whatsapp_message = urlencode("Olá {$row['nome']}, aqui está o seu certificado: https://certificados.unidasautogestao.com/{$certificado}");
+                    ?>
+                      <tr>
+                        <td class="check-column">
+                          <input type="checkbox" name="selected_ids[]" value="<?php echo $row['id']; ?>" class="checkbox cert-checkbox">
+                        </td>
+                        <td><?php echo htmlspecialchars($row['nome']); ?></td>
+                        <td><?php echo htmlspecialchars($row['email']); ?></td>
+                        <td><?php echo $row['enviado'] ? 'Sim' : 'Não'; ?></td>
+                        <td class="actions-column">
+                          <?php if (file_exists($certificado)): ?>
+                            <a href="<?php echo $certificado; ?>" target="_blank" class="action-button view">
+                              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                              </svg>
+                              Visualizar
+                            </a>
+                            <a href="https://api.whatsapp.com/send?text=<?php echo $whatsapp_message; ?>" target="_blank" class="action-button whatsapp">
+                              WhatsApp
+                            </a>
+                          <?php endif; ?>
+                          <a href="?delete_id=<?php echo $row['id']; ?>" class="action-button delete" onclick="return confirm('Deseja excluir este certificado?');">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <polyline points="3 6 5 6 21 6"></polyline>
+                              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                              <line x1="10" y1="11" x2="10" y2="17"></line>
+                              <line x1="14" y1="11" x2="14" y2="17"></line>
+                            </svg>
+                            Excluir
+                          </a>
+                        </td>
+                      </tr>
+                    <?php endwhile; ?>
+                  </tbody>
+                </table>
+              </div>
+              
+              <div class="action-buttons">
+                <button type="submit" name="action" value="enviar" class="primary-button">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  Selecionar e Enviar por E-mail
+                </button>
+                <button type="submit" name="action" value="arquivar" class="secondary-button">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="21 8 21 21 3 21 3 8"></polyline>
+                    <rect x="1" y="3" width="22" height="5"></rect>
+                    <line x1="10" y1="12" x2="14" y2="12"></line>
+                  </svg>
+                  Arquivar Certificados
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
-    </form>
-</div>
+      </main>
+    </div>
+  </div>
 
-<script>
-    document.getElementById('selectAll').addEventListener('change', function() {
-        document.querySelectorAll('input[name="selected_ids[]"]').forEach(checkbox => checkbox.checked = this.checked);
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Select all checkbox functionality
+      document.getElementById('select-all').addEventListener('change', function() {
+        document.querySelectorAll('.cert-checkbox').forEach(checkbox => {
+          checkbox.checked = this.checked;
+        });
+      });
+      
+      // Form validation
+      document.getElementById('certificate-form').addEventListener('submit', function(e) {
+        const modelId = document.querySelector('select[name="model_id"]').value;
+        const textId = document.querySelector('select[name="text_id"]').value;
+        const selectedIds = document.querySelectorAll('input[name="selected_ids[]"]:checked');
+        
+        if (!modelId || !textId) {
+          e.preventDefault();
+          alert('Por favor, selecione um modelo e um texto para continuar.');
+          return false;
+        }
+        
+        if (selectedIds.length === 0) {
+          e.preventDefault();
+          alert('Por favor, selecione pelo menos um participante.');
+          return false;
+        }
+        
+        return true;
+      });
+      
+      // Logout button functionality
+      document.getElementById('logout-btn').addEventListener('click', function() {
+        window.location.href = 'logout.php';
+      });
     });
-</script>
+  </script>
 </body>
 </html>

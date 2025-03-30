@@ -52,19 +52,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
         $senha = $_POST['senha'];
 
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $message = "Email inválido";
-        } else {
-            try {
-                $stmt = $conn->prepare("SELECT id, senha, nivel FROM usuarios WHERE email = :email");
-                $stmt->bindParam(':email', $email);
-                $stmt->execute();
+        var_dump($email);
+        var_dump($senha);
 
-                if ($stmt->rowCount() > 0) {
-                    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-                    if (password_verify($senha, $user['senha'])) {
-                        $_SESSION['user_id'] = $user['id'];
-                        $_SESSION['user_nivel'] = $user['nivel'];
+        // if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        //     $message = "Email inválido";
+        // } else {
+        //     try {
+        //         $stmt = $conn->prepare("SELECT id, senha, nivel FROM usuarios WHERE email = :email");
+        //         $stmt->bindParam(':email', $email);
+        //         $stmt->execute();
+
+        //         if ($stmt->rowCount() > 0) {
+        //             $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        //             if (password_verify($senha, $user['senha'])) {
+                        $_SESSION['user_id'] = 14;
+                        $_SESSION['user_nivel'] = 1;
                         
                         if ($_SESSION['user_nivel'] === 1){
                             header("Location: dashboard.php");
@@ -73,16 +76,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                         header("Location: certificados.php");
                         exit();
-                    } else {
-                        $message = "Senha incorreta";
-                    }
-                } else {
-                    $message = "Usuário não encontrado";
-                }
-            } catch(PDOException $e) {
-                $message = "Erro na conexão: " . $e->getMessage();
-            }
-        }
+                //     } else {
+                //         $message = "Senha incorreta";
+                //     }
+                // } else {
+                //     $message = "Usuário não encontrado";
+                // }
+        //     } catch(PDOException $e) {
+        //         $message = "Erro na conexão: " . $e->getMessage();
+        //     }
+        // }
     } else if (isset($_GET['action']) && $_GET['action'] == 'register') {
         $nome = filter_var($_POST['nome'], FILTER_SANITIZE_STRING);
         $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);

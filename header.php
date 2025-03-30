@@ -80,10 +80,10 @@ session_start();
             <?php else: ?>
                 <a href="dashboard_users.php">Painel de Controle</a>
             <?php endif; ?>
-            <a href="certificados.php">Modelos de Certificados</a>
-            <a href="texto.php">Texto dos Certificados</a>
-            <a href="upload.php">Upload de Nomes</a>
-            <a href="gerar_certificado.php">Gerar Certificados</a>
+            <a href="modelos-certificados.php">Modelos de Certificados</a>
+            <a href="textos-certificados.php">Texto dos Certificados</a>
+            <a href="upload-nomes.php">Upload de Nomes</a>
+            <a href="gerar-certificados.php">Gerar Certificados</a>
             <a href="enviar.php">Pesquisar</a>
             <a href="logout.php" class="btn btn-danger mt-3">Logout</a>
         <?php else: ?>
