@@ -121,7 +121,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <title>Gerador de Certificados</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" integrity="sha384-WE4QcN87HOeF2KsH4k/pv/V7X7/kSLbKCS7HSsLFmpQZExr0X6Cp0zD6z2Sc3D" crossorigin="anonymous">
         <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="stylesheet" href="CSS/styles.css">
     </head>
     <body>
         <div class="container mt-5">

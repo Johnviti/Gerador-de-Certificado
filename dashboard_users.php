@@ -19,10 +19,11 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Configuração da conexão com o banco de dados
-$servername = "localhost";
-$username = "unidas90_admin";
-$password = "4dm1n@2025";
-$dbname = "unidas90_certificados";
+//banco desenvolvimento
+$servername = getenv('DB_HOST');
+$username = getenv('DB_USERNAME');
+$password = getenv('DB_PASSWORD');
+$dbname = getenv('DB_NAME');
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);

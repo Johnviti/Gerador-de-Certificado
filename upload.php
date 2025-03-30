@@ -87,11 +87,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['arquivo_csv'])) {
                 // Ignorar cabeçalho
                 fgetcsv($handle, 1000, $delimitador);
 
-                // Configurar conexão com o banco de dados
-                $hostname = "localhost";
-                $username = "unidas90_Leandro";
-                $password = "Le@ndro2101";
-                $database = "unidas90_comissoescertificados";
+                //banco desenvolvimento
+                $servername = getenv('DB_HOST');
+                $username = getenv('DB_USERNAME');
+                $password = getenv('DB_PASSWORD');
+                $dbname = getenv('DB_NAME');
 
                 $conn = new PDO("mysql:host=$hostname;dbname=$database;charset=utf8", $username, $password);
                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
