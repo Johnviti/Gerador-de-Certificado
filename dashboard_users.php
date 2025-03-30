@@ -18,12 +18,15 @@ if ($_SESSION['user_nivel'] != 2) {
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Configuração da conexão com o banco de dados
-//banco desenvolvimento
-$servername = getenv('DB_HOST');
-$username = getenv('DB_USERNAME');
-$password = getenv('DB_PASSWORD');
-$dbname = getenv('DB_NAME');
+// Carrega as variáveis do arquivo .env
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+// Agora use $_ENV ou getenv()
+$servername = $_ENV['DB_HOST'];
+$username = $_ENV['DB_USERNAME'];
+$password = $_ENV['DB_PASSWORD'];
+$dbname = $_ENV['DB_NAME'];
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);

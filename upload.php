@@ -87,11 +87,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['arquivo_csv'])) {
                 // Ignorar cabeçalho
                 fgetcsv($handle, 1000, $delimitador);
 
-                //banco desenvolvimento
-                $servername = getenv('DB_HOST');
-                $username = getenv('DB_USERNAME');
-                $password = getenv('DB_PASSWORD');
-                $dbname = getenv('DB_NAME');
+                // Carrega as variáveis do arquivo .env
+                $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+                $dotenv->load();
+
+                // Agora use $_ENV ou getenv()
+                $servername = $_ENV['DB_HOST'];
+                $username = $_ENV['DB_USERNAME'];
+                $password = $_ENV['DB_PASSWORD'];
+                $dbname = $_ENV['DB_NAME'];
+
 
                 $conn = new PDO("mysql:host=$hostname;dbname=$database;charset=utf8", $username, $password);
                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
