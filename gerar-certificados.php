@@ -106,7 +106,6 @@ function arquivarCertificados($ids, $conn) {
 }
 
 // Função para gerar certificado em PDF
-
 function gerarCertificadoPDF($nome, $modelo, $texto_certificado) {
     $output_dir = __DIR__ . '/SalvarPDF';
 
@@ -332,16 +331,15 @@ if ($_SESSION['user_nivel'] === 2) {
 $modelos = $conn->query("SELECT id, nome_modelo AS nome FROM modelos_certificados")->fetchAll(PDO::FETCH_ASSOC);
 $textos = $conn->query("SELECT id, nome_modelo AS titulo FROM textos_certificados")->fetchAll(PDO::FETCH_ASSOC);
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerar Certificados - UNIDAS</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerar Certificados - UNIDAS</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-gray-100">
   <div class="dashboard-container">
@@ -361,7 +359,7 @@ $textos = $conn->query("SELECT id, nome_modelo AS titulo FROM textos_certificado
             </a>
           </li>
           <li class="nav-item">
-            <a href="upload.php" class="nav-link" data-page="upload">
+            <a href="upload-nomes.php" class="nav-link" data-page="upload">
               <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                 <polyline points="17 8 12 3 7 8"></polyline>
@@ -426,9 +424,9 @@ $textos = $conn->query("SELECT id, nome_modelo AS titulo FROM textos_certificado
     </div>
 
     <div class="main-content">
-      <header class="header">
+      <header class="header shadow-sm bg-white">
         <div class="header-title">
-          <h1 id="page-title">Gerenciar Certificados</h1>
+          <h1 id="page-title" class="text-xl font-semibold text-gray-800">Gerenciar Certificados</h1>
         </div>
         <div class="user-menu">
           <span class="user-name"><?php echo htmlspecialchars($nome_usuario); ?></span>
@@ -437,20 +435,91 @@ $textos = $conn->query("SELECT id, nome_modelo AS titulo FROM textos_certificado
       </header>
 
       <main class="content-area">
-        <div class="page-content">
+        <!-- <div class="page-content px-6 py-8">
+          <!-- Stats Cards Row -->
+            <!-- <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+                <div class="stat-card bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                  <div class="p-5">
+                    <div class="flex items-center mb-1">
+                      <div class="w-10 h-10 rounded-lg bg-indigo-100 flex items-center justify-center mr-3">
+                        <svg class="w-5 h-5 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                          <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                        </svg>
+                      </div>
+                      <span class="text-gray-500 text-sm">Total Certificados</span>
+                    </div>
+                    <div class="flex items-end justify-between">
+                      <h3 class="text-2xl font-bold text-gray-800"><?php echo $totalCertificados; ?></h3>
+                      <span class="text-xs text-green-600 bg-green-50 px-2 py-1 rounded flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3 h-3 mr-1">
+                          <path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd" />
+                        </svg>
+                        18.2%
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="stat-card bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                  <div class="p-5">
+                    <div class="flex items-center mb-1">
+                      <div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center mr-3">
+                        <svg class="w-5 h-5 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                      </div>
+                      <span class="text-gray-500 text-sm">Taxa de Download</span>
+                    </div>
+                    <div class="flex items-end justify-between">
+                      <h3 class="text-2xl font-bold text-gray-800"><?php echo $downloadRatePercent; ?>%</h3>
+                      <span class="text-xs text-blue-600 bg-blue-50 px-2 py-1 rounded flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3 h-3 mr-1">
+                          <path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd" />
+                        </svg>
+                        5.3%
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="stat-card bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                  <div class="p-5">
+                    <div class="flex items-center mb-1">
+                      <div class="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center mr-3">
+                        <svg class="w-5 h-5 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                          <line x1="3" y1="9" x2="21" y2="9"></line>
+                          <line x1="9" y1="21" x2="9" y2="9"></line>
+                        </svg>
+                      </div>
+                      <span class="text-gray-500 text-sm">Participantes</span>
+                    </div>
+                    <div class="flex items-end justify-between">
+                      <h3 class="text-2xl font-bold text-gray-800"><?php echo $totalParticipantes; ?></h3>
+                      <span class="text-xs text-green-600 bg-green-50 px-2 py-1 rounded flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3 h-3 mr-1">
+                          <path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd" />
+                        </svg>
+                        12.5%
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+          
           <?php if ($error): ?>
-            <div class="alert-message">
+            <div class="alert-message bg-red-50 text-red-700 p-4 rounded-lg mb-6">
               Erro: <?php echo htmlspecialchars($error); ?>
             </div>
           <?php endif; ?>
           
           <form method="POST" id="certificate-form">
             <!-- Filter Section -->
-            <div class="filter-section">
-              <div class="form-grid">
+            <div class="filter-section bg-white p-6 rounded-xl shadow-sm mb-6 border border-gray-100">
+              <h2 class="text-lg font-semibold text-gray-800 mb-4">Filtros</h2>
+              <div class="form-grid grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="form-group">
-                  <label>Selecione o Modelo:</label>
-                  <select name="model_id" class="form-select">
+                  <label class="block text-sm font-medium text-gray-700 mb-2">Selecione o Modelo:</label>
+                  <select name="model_id" class="form-select w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
                     <option value="" selected disabled>Selecione</option>
                     <?php foreach ($modelos as $modelo): ?>
                       <option value="<?php echo $modelo['id']; ?>"><?php echo htmlspecialchars($modelo['nome']); ?></option>
@@ -458,8 +527,8 @@ $textos = $conn->query("SELECT id, nome_modelo AS titulo FROM textos_certificado
                   </select>
                 </div>
                 <div class="form-group">
-                  <label>Selecione o Texto:</label>
-                  <select name="text_id" class="form-select">
+                  <label class="block text-sm font-medium text-gray-700 mb-2">Selecione o Texto:</label>
+                  <select name="text_id" class="form-select w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
                     <option value="" selected disabled>Selecione</option>
                     <?php foreach ($textos as $texto): ?>
                       <option value="<?php echo $texto['id']; ?>"><?php echo htmlspecialchars($texto['titulo']); ?></option>
@@ -470,49 +539,58 @@ $textos = $conn->query("SELECT id, nome_modelo AS titulo FROM textos_certificado
             </div>
             
             <!-- Certificates Table -->
-            <div class="certificates-table-container">
-              <h2 class="section-title">Certificados Disponíveis</h2>
+            <div class="certificates-table-container bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+              <h2 class="text-lg font-semibold text-gray-800 mb-4">Certificados Disponíveis</h2>
               
-              <div class="certificates-table">
-                <table class="data-table">
+              <div class="certificates-table overflow-x-auto">
+                <table class="data-table w-full">
                   <thead>
-                    <tr>
-                      <th class="check-column">
-                        <input type="checkbox" id="select-all" class="checkbox">
+                    <tr class="bg-gray-50">
+                      <th class="check-column p-3 text-left">
+                        <input type="checkbox" id="select-all" class="checkbox rounded border-gray-300 text-blue-600 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
                       </th>
-                      <th>Nome</th>
-                      <th>Email</th>
-                      <th>Enviado</th>
-                      <th>Ações</th>
+                      <th class="p-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nome</th>
+                      <th class="p-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                      <th class="p-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Enviado</th>
+                      <th class="p-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Ações</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody class="divide-y divide-gray-200">
                     <?php while ($row = $result->fetch(PDO::FETCH_ASSOC)):
                       $certificado = "SalvarPDF/certificado_" . str_replace(' ', '_', $row['nome']) . ".pdf";
                       $whatsapp_message = urlencode("Olá {$row['nome']}, aqui está o seu certificado: https://certificados.unidasautogestao.com/{$certificado}");
                     ?>
-                      <tr>
-                        <td class="check-column">
-                          <input type="checkbox" name="selected_ids[]" value="<?php echo $row['id']; ?>" class="checkbox cert-checkbox">
+                      <tr class="hover:bg-gray-50">
+                        <td class="check-column p-3">
+                          <input type="checkbox" name="selected_ids[]" value="<?php echo $row['id']; ?>" class="checkbox cert-checkbox rounded border-gray-300 text-blue-600 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
                         </td>
-                        <td><?php echo htmlspecialchars($row['nome']); ?></td>
-                        <td><?php echo htmlspecialchars($row['email']); ?></td>
-                        <td><?php echo $row['enviado'] ? 'Sim' : 'Não'; ?></td>
-                        <td class="actions-column">
+                        <td class="p-3 text-sm text-gray-700"><?php echo htmlspecialchars($row['nome']); ?></td>
+                        <td class="p-3 text-sm text-gray-700"><?php echo htmlspecialchars($row['email']); ?></td>
+                        <td class="p-3 text-sm">
+                          <?php if ($row['enviado']): ?>
+                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Sim</span>
+                          <?php else: ?>
+                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-100 text-gray-800">Não</span>
+                          <?php endif; ?>
+                        </td>
+                        <td class="p-3 text-sm actions-column">
                           <?php if (file_exists($certificado)): ?>
-                            <a href="<?php echo $certificado; ?>" target="_blank" class="action-button view">
-                              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <a href="<?php echo $certificado; ?>" target="_blank" class="action-button view inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-md text-xs font-medium hover:bg-blue-100 mr-2">
+                              <svg class="icon w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                 <circle cx="12" cy="12" r="3"></circle>
                               </svg>
                               Visualizar
                             </a>
-                            <a href="https://api.whatsapp.com/send?text=<?php echo $whatsapp_message; ?>" target="_blank" class="action-button whatsapp">
+                            <a href="https://api.whatsapp.com/send?text=<?php echo $whatsapp_message; ?>" target="_blank" class="action-button whatsapp inline-flex items-center px-3 py-1 bg-green-50 text-green-700 rounded-md text-xs font-medium hover:bg-green-100 mr-2">
+                              <svg class="icon w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                              </svg>
                               WhatsApp
                             </a>
                           <?php endif; ?>
-                          <a href="?delete_id=<?php echo $row['id']; ?>" class="action-button delete" onclick="return confirm('Deseja excluir este certificado?');">
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <a href="?delete_id=<?php echo $row['id']; ?>" class="action-button delete inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md text-xs font-medium hover:bg-red-100" onclick="return confirm('Deseja excluir este certificado?');">
+                            <svg class="icon w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                               <polyline points="3 6 5 6 21 6"></polyline>
                               <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
                               <line x1="10" y1="11" x2="10" y2="17"></line>
@@ -527,16 +605,16 @@ $textos = $conn->query("SELECT id, nome_modelo AS titulo FROM textos_certificado
                 </table>
               </div>
               
-              <div class="action-buttons">
-                <button type="submit" name="action" value="enviar" class="primary-button">
-                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <div class="action-buttons mt-6 flex flex-wrap gap-4">
+                <button type="submit" name="action" value="enviar" class="primary-button inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                  <svg class="icon w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                     <polyline points="22,6 12,13 2,6"></polyline>
                   </svg>
                   Selecionar e Enviar por E-mail
                 </button>
-                <button type="submit" name="action" value="arquivar" class="secondary-button">
-                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <button type="submit" name="action" value="arquivar" class="secondary-button inline-flex items-center px-4 py-2 bg-gray-600 text-white rounded-lg shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+                  <svg class="icon w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="21 8 21 21 3 21 3 8"></polyline>
                     <rect x="1" y="3" width="22" height="5"></rect>
                     <line x1="10" y1="12" x2="14" y2="12"></line>

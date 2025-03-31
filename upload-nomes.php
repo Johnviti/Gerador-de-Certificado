@@ -194,7 +194,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['arquivo_csv'])) {
             </a>
           </li>
           <li class="nav-item active">
-            <a href="upload.php" class="nav-link" data-page="upload">
+            <a href="upload-nomes.php" class="nav-link" data-page="upload">
               <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                 <polyline points="17 8 12 3 7 8"></polyline>
@@ -299,7 +299,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['arquivo_csv'])) {
                 <div class="upload-container">
                   <h2 class="section-title">Selecione o arquivo CSV</h2>
                   
-                  <form action="upload.php" method="post" enctype="multipart/form-data" class="file-upload-section">
+                  <form action="upload-nomes.php" method="post" enctype="multipart/form-data" class="file-upload-section">
                     <div class="file-upload-group">
                       <input type="file" accept=".csv" id="arquivo_csv" name="arquivo_csv" class="file-input" required />
                       <button type="submit" class="upload-button">
@@ -322,7 +322,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['arquivo_csv'])) {
                 <div class="manual-form-container">
                   <h2 class="section-title">Adicionar ou Editar Manualmente</h2>
                   
-                  <form action="upload.php" method="post" class="manual-form">
+                  <form action="upload-nomes.php" method="post" class="manual-form">
                     <div class="form-grid">
                       <div class="form-group">
                         <label for="nome">Nome</label>

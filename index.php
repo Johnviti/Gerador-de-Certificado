@@ -115,40 +115,171 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="utf-8">
-    <meta name="author" content="Adriano Pina">
-    <title>Login - Gerador de Certificados</title>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="CSS/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificados - Login</title>
+  <link rel="stylesheet" href="login.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <div class="col-md-12 d-flex justify-content-center bordas">
-                    <a href="./index.php"><img src="img/logo.png" width="100px"></a>
-                </div>
-                <?php
-                if (isset($_GET['action']) && $_GET['action'] == 'register') {
-                    renderForm('register', $message);
-                } else {
-                    renderForm('login', $message);
-                }
-                ?>
-            </div>
+  <div class="login-container">
+    <!-- Formulário de login -->
+    <div class="login-form-container">
+      <div class="login-form-wrapper animate-fade-in">
+        <div class="login-header">
+          <img src="/img/logo-campus-unidas.png" alt="UNIDAS" class="sidebar-logo" width="250">
+          <p class="login-subtitle">Sistema de Geração de Certificados</p>
         </div>
+        
+        <form id="loginForm" class="login-form" action="index.php?action=login" method="post">
+          <div class="form-group">
+            <div class="form-label-container">
+              <label for="email" class="form-label">Email</label>
+            </div>
+            <div class="input-container">
+              <span class="input-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </span>
+              <input type="email" id="email" class="form-input" placeholder="Digite seu email" autocomplete="email">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <div class="form-label-container">
+              <label for="password" class="form-label">Senha</label>
+              <a href="#" class="forgot-password">Esqueceu a senha?</a>
+            </div>
+            <div class="input-container">
+              <span class="input-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </span>
+              <input type="password" id="password" class="form-input" placeholder="Digite sua senha" autocomplete="current-password">
+              <button type="button" id="togglePassword" class="toggle-password" aria-label="Mostrar senha">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
+          </div>
+          
+          <div class="remember-me">
+            <!-- <input type="checkbox" id="remember" class="checkbox">
+            <label for="remember" class="checkbox-label">Lembrar-me</label> -->
+          </div>
+          
+          <button type="submit" id="loginButton" class="login-button">Entrar</button>
+        </form>
+        
+        <div class="footer">
+          <p>© 2025 Unidas - Todos os direitos reservados</p>
+        </div>
+      </div>
     </div>
+    
+    <!-- Background animado -->
+    <div class="animated-background">
+      <!-- <div class="stars" id="stars-container"></div> -->
+    </div>
+  </div>
+  <div id="toast-container" class="toast-container"></div>
+  <script>
+    // Toggle password visibility
+    document.getElementById('togglePassword').addEventListener('click', function() {
+      const passwordInput = document.getElementById('password');
+      const icon = this.querySelector('svg');
+      
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        icon.outerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-off"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg>';
+      } else {
+        passwordInput.type = 'password';
+        icon.outerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>';
+      }
+    });
+
+
+    // Create shooting stars
+    function createShootingStars() {
+      const container = document.getElementById('stars-container');
+      
+      // Clear existing stars
+      const existingStars = container.querySelectorAll('.shooting-star');
+      existingStars.forEach(star => star.remove());
+      
+      // Create new stars
+      for (let i = 0; i < 4; i++) {
+        const star = document.createElement('div');
+        star.className = 'shooting-star';
+        
+        const delay = Math.random() * 15;
+        const duration = 1 + Math.random() * 2;
+        const top = Math.random() * 50;
+        const left = Math.random() * 20;
+        
+        star.style.top = `${top}%`;
+        star.style.left = `${left}%`;
+        star.style.animationDelay = `${delay}s`;
+        star.style.animationDuration = `${duration}s`;
+        
+        container.appendChild(star);
+      }
+    }
+    
+    // Create regular stars
+    function createStars() {
+      const container = document.getElementById('stars-container');
+      
+      for (let i = 0; i < 100; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        
+        const size = Math.random() * 2 + 1;
+        const top = Math.random() * 100;
+        const left = Math.random() * 100;
+        const opacity = Math.random() * 0.7 + 0.3;
+        const animationDuration = Math.random() * 3 + 2;
+        
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.top = `${top}%`;
+        star.style.left = `${left}%`;
+        star.style.opacity = opacity;
+        star.style.animationDuration = `${animationDuration}s`;
+        
+        container.appendChild(star);
+      }
+    }
+    
+    // Toast notification function
+    function showToast(message, type = 'info') {
+      const toast = document.createElement('div');
+      toast.className = `toast toast-${type}`;
+      toast.textContent = message;
+      
+      document.getElementById('toast-container').appendChild(toast);
+      
+      // Show toast
+      setTimeout(() => {
+        toast.classList.add('show');
+      }, 10);
+      
+      // Remove toast after 3 seconds
+      setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => {
+          toast.remove();
+        }, 300);
+      }, 3000);
+    }
+    
+    // Initialize
+    createStars();
+    createShootingStars();
+    
+    // Recreate shooting stars every 15 seconds
+    setInterval(createShootingStars, 15000);
+  </script>
 </body>
-<footer class="footer text-center mt-5"> 
-    <h6>&copy; 2023 | <?php echo date("Y")?> - <a href="./index.php">Gerador de Certificados</a> - Todos os direitos reservados.</h6>
-</footer>
 </html>
