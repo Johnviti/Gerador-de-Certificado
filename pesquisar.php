@@ -133,6 +133,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['search_term'])) {
         $error = 'Erro ao processar a solicitação: ' . $e->getMessage();
     }
 }
+
+// Obter nome do usuário logado
+$usuario_logado = $_SESSION['user_id'];
+$stmt = $conn->prepare("SELECT nome FROM usuarios WHERE id = ?");
+$stmt->execute([$usuario_logado]);
+$nome_usuario = $stmt->fetchColumn();
 ?>
 
 <!DOCTYPE html>
@@ -233,8 +239,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['search_term'])) {
           <h1 id="page-title">Pesquisar Participantes</h1>
         </div>
         <div class="user-menu">
-          <span class="user-name">Administrador</span>
-          <div class="user-avatar">A</div>
+          <span class="user-name text-gray-700"><?php echo htmlspecialchars($nome_usuario); ?></span>
+          <div class="user-avatar shadow-md bg-blue-600"><?php echo substr($nome_usuario, 0, 1); ?></div>
         </div>
       </header>
 

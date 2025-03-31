@@ -330,6 +330,13 @@ if ($_SESSION['user_nivel'] === 2) {
 // Atualiza as queries para buscar os modelos e textos
 $modelos = $conn->query("SELECT id, nome_modelo AS nome FROM modelos_certificados")->fetchAll(PDO::FETCH_ASSOC);
 $textos = $conn->query("SELECT id, nome_modelo AS titulo FROM textos_certificados")->fetchAll(PDO::FETCH_ASSOC);
+
+// Obter nome do usuário logado
+$usuario_logado = $_SESSION['user_id'];
+$stmt = $conn->prepare("SELECT nome FROM usuarios WHERE id = ?");
+$stmt->execute([$usuario_logado]);
+$nome_usuario = $stmt->fetchColumn();
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">

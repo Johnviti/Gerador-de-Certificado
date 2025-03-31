@@ -164,6 +164,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['arquivo_csv'])) {
         $messageType = "error";
     }
 }
+
+// Obter nome do usuário logado
+$usuario_logado = $_SESSION['user_id'];
+$stmt = $conn->prepare("SELECT nome FROM usuarios WHERE id = ?");
+$stmt->execute([$usuario_logado]);
+$nome_usuario = $stmt->fetchColumn();
 ?>
 
 <!DOCTYPE html>
@@ -264,8 +270,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['arquivo_csv'])) {
           <h1 id="page-title">Upload e Edição de Nomes</h1>
         </div>
         <div class="user-menu">
-          <span class="user-name">Administrador</span>
-          <div class="user-avatar">A</div>
+          <span class="user-name text-gray-700"><?php echo htmlspecialchars($nome_usuario); ?></span>
+          <div class="user-avatar shadow-md bg-blue-600"><?php echo substr($nome_usuario, 0, 1); ?></div>
         </div>
       </header>
 
@@ -278,13 +284,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['arquivo_csv'])) {
         
         <div class="page-content">
           <div class="mb-6">
-            <a href="https://unidas.digital/wp-content/uploads/2025/03/Modelo.csv" class="download-button" download>
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
-              Baixar Modelo Planilha Oficial
+            <a href="https://unidas.digital/wp-content/uploads/2025/03/Modelo.csv" class="text-center primary-button inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" download>
+              <svg class="icon w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Baixar Modelo CSV
             </a>
           </div>
 
@@ -302,8 +308,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['arquivo_csv'])) {
                   <form action="upload-nomes.php" method="post" enctype="multipart/form-data" class="file-upload-section">
                     <div class="file-upload-group">
                       <input type="file" accept=".csv" id="arquivo_csv" name="arquivo_csv" class="file-input" required />
-                      <button type="submit" class="upload-button">
-                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <button type="submit" class="primary-button inline-flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-semibold rounded-xl shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:from-blue-700 hover:to-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                           <polyline points="17 8 12 3 7 8"></polyline>
                           <line x1="12" y1="3" x2="12" y2="15"></line>
@@ -325,53 +331,53 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['arquivo_csv'])) {
                   <form action="upload-nomes.php" method="post" class="manual-form">
                     <div class="form-grid">
                       <div class="form-group">
-                        <label for="nome">Nome</label>
+                        <label class="w-full text-black" for="nome">Nome</label>
                         <input type="text" id="nome" name="nome" placeholder="Nome completo" class="form-input" required />
                       </div>
                       
                       <div class="form-group">
-                        <label for="cpf">CPF</label>
+                        <label class="w-full text-black" for="cpf">CPF</label>
                         <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" class="form-input" required />
                       </div>
                       
                       <div class="form-group">
-                        <label for="evento">Evento</label>
+                        <label class="w-full text-black" for="evento">Evento</label>
                         <input type="text" id="evento" name="evento" placeholder="Nome do evento" class="form-input" required />
                       </div>
                       
                       <div class="form-group">
-                        <label for="instituicao">Instituição</label>
+                        <label class="w-full text-black" for="instituicao">Instituição</label>
                         <input type="text" id="instituicao" name="instituicao" placeholder="Nome da instituição" class="form-input" required />
                       </div>
                       
                       <div class="form-group">
-                        <label for="data_inicio">Data de Início</label>
+                        <label class="w-full text-black" for="data_inicio">Data de Início</label>
                         <input type="date" id="data_inicio" name="data_inicio" class="form-input" required />
                       </div>
                       
                       <div class="form-group">
-                        <label for="data_final">Data Final</label>
+                        <label class="w-full text-black" for="data_final">Data Final</label>
                         <input type="date" id="data_final" name="data_final" class="form-input" required />
                       </div>
                       
                       <div class="form-group">
-                        <label for="carga_horaria">Carga Horária</label>
+                        <label class="w-full text-black" for="carga_horaria">Carga Horária</label>
                         <input type="number" id="carga_horaria" name="carga_horaria" placeholder="Ex: 40" class="form-input" required />
                       </div>
                       
                       <div class="form-group">
-                        <label for="telefone">Telefone</label>
+                        <label class="w-full text-black" for="telefone">Telefone</label>
                         <input type="text" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" class="form-input" />
                       </div>
                       
                       <div class="form-group">
-                        <label for="email">E-mail</label>
+                        <label class="w-full text-black" for="email">E-mail</label>
                         <input type="email" id="email" name="email" placeholder="email@exemplo.com" class="form-input" required />
                       </div>
                     </div>
                     
                     <div class="form-actions">
-                      <button type="submit" name="manual_submit" class="submit-button">Adicionar/Editar</button>
+                      <button type="submit" name="manual_submit" width="100" class=" mt-4 justify-center primary-button inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 w-full">Adicionar</button>
                     </div>
                   </form>
                 </div>
@@ -380,7 +386,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['arquivo_csv'])) {
           </div>
 
           <footer class="page-footer">
-            <p>© 2023 - <?php echo date('Y'); ?> | Gerador de Certificados - Todos os direitos reservados.</p>
+            <p>© 2023 - <?php echo date('Y'); ?> | Unidas - Gerador de Certificados - Todos os direitos reservados.</p>
           </footer>
         </div>
       </main>
@@ -417,4 +423,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['arquivo_csv'])) {
 </body>
 </html>
 
-<?php include('footer.php'); ?>
+ 

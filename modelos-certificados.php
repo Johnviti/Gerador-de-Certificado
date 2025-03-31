@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('header.php');
 include('db.php');
 
@@ -103,7 +104,7 @@ $nome_usuario = $stmt->fetchColumn();
     pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
   </script>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-50">
   <div class="dashboard-container">
     <div class="sidebar">
       <div class="sidebar-header">
@@ -186,93 +187,117 @@ $nome_usuario = $stmt->fetchColumn();
     </div>
 
     <div class="main-content">
-      <header class="header">
+      <header class="header shadow-sm bg-white">
         <div class="header-title">
-          <h1 id="page-title">Modelos de Certificados</h1>
+          <h1 id="page-title" class="text-xl font-semibold text-gray-800">Modelos de Certificados</h1>
         </div>
         <div class="user-menu">
-          <span class="user-name"><?php echo htmlspecialchars($nome_usuario); ?></span>
-          <div class="user-avatar"><?php echo substr($nome_usuario, 0, 1); ?></div>
+          <span class="user-name text-gray-700"><?php echo htmlspecialchars($nome_usuario); ?></span>
+          <div class="user-avatar shadow-md bg-blue-600"><?php echo substr($nome_usuario, 0, 1); ?></div>
         </div>
       </header>
 
       <main class="content-area">
-        <div class="page-content">
-          <?php if ($error): ?>
-            <div class="alert-message error">
-              <?php echo htmlspecialchars($error); ?>
-            </div>
-          <?php elseif ($success): ?>
-            <div class="alert-message success">
-              <?php echo htmlspecialchars($success); ?>
-            </div>
-          <?php endif; ?>
-          
-          <h2 class="section-title">Inserir Novos Modelos</h2>
-          
-          <!-- Upload Form -->
-          <div class="model-upload-form">
-            <form action="" method="POST" enctype="multipart/form-data">
+        <?php if ($error): ?>
+          <div class="alert-message bg-red-50 text-red-700 p-4 rounded-lg mb-6">
+            <?php echo htmlspecialchars($error); ?>
+          </div>
+        <?php endif; ?>
+        
+        <?php if ($success): ?>
+          <div class="alert-message bg-green-50 text-green-700 p-4 rounded-lg mb-6">
+            <?php echo htmlspecialchars($success); ?>
+          </div>
+        <?php endif; ?>
+
+        <div class="page-content px-6 py-8">
+          <!-- Formulário de Upload -->
+          <div class="filter-section bg-white p-6 rounded-xl shadow-sm mb-6 border border-gray-100">
+            <h2 class="text-lg font-semibold text-gray-800 mb-4">Upload de Modelo de Certificado</h2>
+            <form method="POST" enctype="multipart/form-data" class="form-grid grid grid-cols-1 md:grid-cols-2 gap-6">
               <div class="form-group">
-                <label for="nome_evento">Nome do Evento:</label>
-                <input id="nome_evento" name="nome_evento" type="text" placeholder="Digite o nome do evento" class="form-input" required />
+                <label for="nome_evento" class="block text-sm font-medium text-gray-700 mb-2">Nome do Evento</label>
+                <input type="text" name="nome_evento" id="nome_evento" class="form-input w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50" required>
               </div>
-              
               <div class="form-group">
-                <label>Escolha um arquivo PDF:</label>
-                <div class="file-upload-group">
-                  <input id="arquivo" name="arquivo" type="file" accept=".pdf" class="file-input" required />
-                </div>
-                <p class="upload-help-text">Apenas arquivos PDF são permitidos</p>
+                <label for="arquivo" class="block text-sm font-medium text-gray-700 mb-2">Arquivo PDF (Modelo)</label>
+                <input type="file" name="arquivo" id="arquivo" accept=".pdf" class="form-input w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50" required>
               </div>
-              
-              <button type="submit" class="upload-button">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                  <polyline points="17 8 12 3 7 8"></polyline>
-                  <line x1="12" y1="3" x2="12" y2="15"></line>
-                </svg>
-                Fazer Upload
-              </button>
+              <div class="col-span-2">
+                <button type="submit" class="primary-button inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                  <svg class="icon w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="17 8 12 3 7 8"></polyline>
+                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                  </svg>
+                  Fazer Upload
+                </button>
+              </div>
             </form>
           </div>
-          
-          <!-- Saved Models -->
-          <h2 class="section-title mt-8">Modelos Salvos</h2>
-          <div class="models-grid">
-            <?php foreach ($modelos as $modelo): ?>
-              <div class="model-card">
-                <div class="model-image">
-                  <canvas id="pdf-canvas-<?= $modelo['id']; ?>" width="150" height="80"></canvas>
-                </div>
-                <div class="model-content">
-                  <h3 class="model-title"><?= htmlspecialchars($modelo['nome_evento']); ?></h3>
-                  <div class="model-actions">
-                    <a href="certificados/<?= htmlspecialchars($modelo['arquivo_nome']); ?>" target="_blank" class="view-button">
-                      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                        <circle cx="12" cy="12" r="3"></circle>
-                      </svg>
-                      Visualizar
-                    </a>
-                    <a href="?delete_id=<?= $modelo['id']; ?>" class="delete-button" onclick="return confirm('Deseja excluir este modelo?');">
-                      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="3 6 5 6 21 6"></polyline>
-                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                        <line x1="10" y1="11" x2="10" y2="17"></line>
-                        <line x1="14" y1="11" x2="14" y2="17"></line>
-                      </svg>
-                      Excluir
-                    </a>
-                  </div>
-                </div>
-              </div>
-            <?php endforeach; ?>
+
+          <!-- Lista de Modelos -->
+          <div class="certificates-table-container bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+            <h2 class="text-lg font-semibold text-gray-800 mb-4">Modelos Cadastrados</h2>
+            
+            <div class="certificates-table overflow-x-auto">
+              <table class="data-table w-full">
+                <thead>
+                  <tr class="bg-gray-50">
+                    <th class="p-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
+                    <th class="p-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nome do Evento</th>
+                    <th class="p-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nome do Modelo</th>
+                    <th class="p-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Arquivo</th>
+                    <th class="p-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Ações</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                  <?php if (!empty($modelos)): ?>
+                    <?php foreach ($modelos as $modelo): ?>
+                      <tr class="hover:bg-gray-50">
+                        <td class="p-3 text-sm text-gray-700"><?php echo htmlspecialchars($modelo['id']); ?></td>
+                        <td class="p-3 text-sm text-gray-700"><?php echo htmlspecialchars($modelo['nome_evento']); ?></td>
+                        <td class="p-3 text-sm text-gray-700"><?php echo htmlspecialchars($modelo['nome_modelo']); ?></td>
+                        <td class="p-3 text-sm text-gray-700">
+                          <a href="certificados/<?php echo htmlspecialchars($modelo['arquivo_nome']); ?>" target="_blank" class="text-blue-600 hover:text-blue-800">
+                            Ver PDF
+                          </a>
+                        </td>
+                        <td class="p-3 text-sm actions-column">
+                          <a href="textos-certificados.php?modelo_id=<?php echo $modelo['id']; ?>" class="action-button edit inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-md text-xs font-medium hover:bg-blue-100 mr-2">
+                            <svg class="icon w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                              <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                            Editar Texto
+                          </a>
+                          <a href="?delete_id=<?php echo $modelo['id']; ?>" class="action-button delete inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md text-xs font-medium hover:bg-red-100" onclick="return confirm('Tem certeza que deseja excluir este modelo?');">
+                            <svg class="icon w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <polyline points="3 6 5 6 21 6"></polyline>
+                              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                              <line x1="10" y1="11" x2="10" y2="17"></line>
+                              <line x1="14" y1="11" x2="14" y2="17"></line>
+                            </svg>
+                            Excluir
+                          </a>
+                        </td>
+                      </tr>
+                    <?php endforeach; ?>
+                  <?php else: ?>
+                    <tr>
+                      <td colspan="5" class="p-3 text-sm text-gray-500 text-center">Nenhum modelo cadastrado.</td>
+                    </tr>
+                  <?php endif; ?>
+                </tbody>
+              </table>
+            </div>
           </div>
-          
-          <footer class="page-footer">
-            <p>© 2023 - 2025 | Gerador de Certificados - Todos os direitos reservados.</p>
-          </footer>
+
+          <!-- Visualizador de PDF -->
+          <div class="pdf-preview-container bg-white p-6 rounded-xl shadow-sm mt-6 border border-gray-100" style="display: none;">
+            <h2 class="text-lg font-semibold text-gray-800 mb-4">Visualização do Modelo</h2>
+            <div id="pdf-viewer" class="pdf-viewer border border-gray-200 rounded-lg overflow-hidden" style="height: 500px;"></div>
+          </div>
         </div>
       </main>
     </div>
@@ -285,54 +310,83 @@ $nome_usuario = $stmt->fetchColumn();
         window.location.href = 'logout.php';
       });
       
-      // PDF rendering
-      const pdfDirectory = "<?= $baseUrl; ?>certificados/";
-      const modelos = <?= json_encode($modelos); ?>;
-
-      modelos.forEach(modelo => {
-        const canvas = document.getElementById(`pdf-canvas-${modelo.id}`);
-        const pdfUrl = pdfDirectory + modelo.arquivo_nome;
-
-        if (canvas) {
-          const context = canvas.getContext('2d');
-          const scale = 1.5;
-
-          pdfjsLib.getDocument(pdfUrl).promise.then((pdf) => {
-            pdf.getPage(1).then((page) => {
+      // PDF preview functionality
+      const pdfLinks = document.querySelectorAll('a[href$=".pdf"]');
+      const pdfPreviewContainer = document.querySelector('.pdf-preview-container');
+      const pdfViewer = document.getElementById('pdf-viewer');
+      
+      pdfLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const pdfUrl = this.getAttribute('href');
+          
+          // Show the preview container
+          pdfPreviewContainer.style.display = 'block';
+          
+          // Scroll to the preview
+          pdfPreviewContainer.scrollIntoView({ behavior: 'smooth' });
+          
+          // Load the PDF
+          pdfjsLib.getDocument(pdfUrl).promise.then(function(pdf) {
+            // Clear previous content
+            pdfViewer.innerHTML = '';
+            
+            // Get the first page
+            pdf.getPage(1).then(function(page) {
               const viewport = page.getViewport({ scale: 1.5 });
-              canvas.width = viewport.width;
+              
+              // Prepare canvas
+              const canvas = document.createElement('canvas');
+              const context = canvas.getContext('2d');
               canvas.height = viewport.height;
-
-              const renderContext = {
+              canvas.width = viewport.width;
+              
+              // Render PDF page
+              pdfViewer.appendChild(canvas);
+              page.render({
                 canvasContext: context,
-                viewport: viewport,
-              };
-              page.render(renderContext).promise.then(() => {
-                console.log('PDF renderizado com sucesso!');
-              }).catch((err) => {
-                console.error('Erro ao renderizar a página:', err);
+                viewport: viewport
               });
             });
-          }).catch((err) => {
-            console.error('Erro ao carregar o PDF:', err);
+          }).catch(function(error) {
+            console.error('Error loading PDF:', error);
+            pdfViewer.innerHTML = '<p class="text-red-500 p-4">Erro ao carregar o PDF. Por favor, tente novamente.</p>';
           });
-        }
+        });
       });
       
-      // File input change event
-      const fileInput = document.getElementById('arquivo');
-      const fileHelpText = document.querySelector('.upload-help-text');
-      
-      if (fileInput && fileHelpText) {
-        fileInput.addEventListener('change', function() {
-          if (this.files.length > 0) {
-            fileHelpText.textContent = `Arquivo selecionado: ${this.files[0].name}`;
-          } else {
-            fileHelpText.textContent = 'Nenhum arquivo escolhido';
+      // Form validation
+      const uploadForm = document.querySelector('form[enctype="multipart/form-data"]');
+      if (uploadForm) {
+        uploadForm.addEventListener('submit', function(e) {
+          const fileInput = this.querySelector('input[type="file"]');
+          const nameInput = this.querySelector('input[name="nome_evento"]');
+          
+          if (fileInput.files.length === 0) {
+            e.preventDefault();
+            alert('Por favor, selecione um arquivo PDF.');
+            return false;
           }
+          
+          const fileName = fileInput.files[0].name;
+          if (!fileName.toLowerCase().endsWith('.pdf')) {
+            e.preventDefault();
+            alert('Por favor, selecione apenas arquivos PDF.');
+            return false;
+          }
+          
+          if (nameInput.value.trim() === '') {
+            e.preventDefault();
+            alert('Por favor, insira o nome do evento.');
+            return false;
+          }
+          
+          return true;
         });
       }
     });
   </script>
 </body>
 </html>
+
+<?php include('footer.php'); ?>
