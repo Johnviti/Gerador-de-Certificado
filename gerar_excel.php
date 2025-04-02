@@ -1,5 +1,6 @@
 <?php
-session_start();
+// session_start();
+
 require 'vendor/autoload.php';
 
 ini_set('display_errors', 1);
@@ -24,12 +25,26 @@ $username = $_ENV['DB_USERNAME'];
 $password = $_ENV['DB_PASSWORD'];
 $dbname = $_ENV['DB_NAME'];
 
+// Função para exibir mensagens de erro
+function showError($message) {
+    echo '<div style="background-color: #fee2e2; color: #b91c1c; border: 1px solid #fecaca; padding: 12px 16px; margin: 20px; border-radius: 8px; font-family: Arial, sans-serif;">';
+    echo '<strong>Erro:</strong> ' . $message;
+    echo '</div>';
+    exit;
+}
+
+// Função para exibir mensagens de sucesso
+function showSuccess($message) {
+    echo '<div style="background-color: #d1fae5; color: #065f46; border: 1px solid #a7f3d0; padding: 12px 16px; margin: 20px; border-radius: 8px; font-family: Arial, sans-serif;">';
+    echo '<strong>Sucesso:</strong> ' . $message;
+    echo '</div>';
+}
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-    die("Erro na conexão com o banco de dados: " . $e->getMessage());
+    showError("Erro na conexão com o banco de dados: " . $e->getMessage());
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user_id'])) {
@@ -59,8 +74,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user_id'])) {
     $dados = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     if (empty($dados)) {
-        die("Nenhum certificado encontrado para este usuário.");
+        showError("Nenhum certificado encontrado para este usuário.");
     }
+
+    // Mostrar mensagem de sucesso antes de gerar o Excel
+    showSuccess("Gerando relatório de certificados...");
 
     $spreadsheet = new Spreadsheet();
     $sheet = $spreadsheet->getActiveSheet();
@@ -120,6 +138,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user_id'])) {
     $writer->save('php://output');
     exit;
 } else {
-    die("Requisição inválida.");
+    showError("Requisição inválida.");
 }
 ?>

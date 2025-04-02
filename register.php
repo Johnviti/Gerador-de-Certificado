@@ -1,5 +1,6 @@
 <?php
-session_start();
+// session_start();
+
 require 'config.php'; // arquivo contendo a configuração do banco de dados
 
 function renderForm($type) {

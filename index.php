@@ -1,5 +1,6 @@
 <?php
-session_start();
+// session_start();
+
 require 'db.php';
 
 function renderForm($type, $message = '') {
@@ -48,26 +49,30 @@ function renderForm($type, $message = '') {
 $message = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    // Verificar se o formulário de login foi enviado
     if (isset($_GET['action']) && $_GET['action'] == 'login') {
         $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
         $senha = $_POST['senha'];
 
-        var_dump($email);
-        var_dump($senha);
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $message = "Email inválido";
+        } else {
+            try {
+                $stmt = $conn->prepare("SELECT id, senha, nivel FROM usuarios WHERE email = :email");
+                $stmt->bindParam(':email', $email);
+                $stmt->execute();
 
-        // if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        //     $message = "Email inválido";
-        // } else {
-        //     try {
-        //         $stmt = $conn->prepare("SELECT id, senha, nivel FROM usuarios WHERE email = :email");
-        //         $stmt->bindParam(':email', $email);
-        //         $stmt->execute();
+                // Remove debug var_dumps
+                // var_dump($stmt);
+                // var_dump($email);
+                // var_dump($senha);
 
-        //         if ($stmt->rowCount() > 0) {
-        //             $user = $stmt->fetch(PDO::FETCH_ASSOC);
-        //             if (password_verify($senha, $user['senha'])) {
-                        $_SESSION['user_id'] = 14;
-                        $_SESSION['user_nivel'] = 1;
+                if ($stmt->rowCount() > 0) {
+                    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+                    if (password_verify($senha, $user['senha'])) {
+                        $_SESSION['user_id'] = $user['id']; // Use actual user ID
+                        $_SESSION['user_nivel'] = $user['nivel'];
                         
                         if ($_SESSION['user_nivel'] === 1){
                             header("Location: dashboard.php");
@@ -76,16 +81,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                         header("Location: certificados.php");
                         exit();
-                //     } else {
-                //         $message = "Senha incorreta";
-                //     }
-                // } else {
-                //     $message = "Usuário não encontrado";
-                // }
-        //     } catch(PDOException $e) {
-        //         $message = "Erro na conexão: " . $e->getMessage();
-        //     }
-        // }
+                    } else {
+                        $message = "Senha incorreta";
+                    }
+                } else {
+                    $message = "Usuário não encontrado";
+                }
+            } catch(PDOException $e) {
+                $message = "Erro na conexão: " . $e->getMessage();
+            }
+        }
     } else if (isset($_GET['action']) && $_GET['action'] == 'register') {
         $nome = filter_var($_POST['nome'], FILTER_SANITIZE_STRING);
         $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
@@ -135,6 +140,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <p class="login-subtitle">Sistema de Geração de Certificados</p>
         </div>
         
+ 
+        
         <form id="loginForm" class="login-form" action="index.php?action=login" method="post">
           <div class="form-group">
             <div class="form-label-container">
@@ -144,7 +151,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <span class="input-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
               </span>
-              <input type="email" id="email" class="form-input" placeholder="Digite seu email" autocomplete="email">
+              <input type="email" id="email" name="email" class="form-input" placeholder="Digite seu email" autocomplete="email" required>
             </div>
           </div>
           
@@ -157,7 +164,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <span class="input-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
               </span>
-              <input type="password" id="password" class="form-input" placeholder="Digite sua senha" autocomplete="current-password">
+              <input type="password" id="password" class="form-input" placeholder="Digite sua senha" name="senha" autocomplete="current-password" required>
               <button type="button" id="togglePassword" class="toggle-password" aria-label="Mostrar senha">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
               </button>
@@ -168,12 +175,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <!-- <input type="checkbox" id="remember" class="checkbox">
             <label for="remember" class="checkbox-label">Lembrar-me</label> -->
           </div>
+
+          <?php if (!empty($message)): ?>
+          <div class="error-message">
+            <div class="error-content">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="error-icon">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+              <span><?php echo htmlspecialchars($message); ?></span>
+            </div>
+          </div>
+        <?php endif; ?>
           
           <button type="submit" id="loginButton" class="login-button">Entrar</button>
         </form>
         
         <div class="footer">
-          <p>© 2025 Unidas - Todos os direitos reservados</p>
+          <p>© <?php echo date('Y'); ?> Unidas - Todos os direitos reservados</p>
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 <?php
-session_start();
+// session_start();
+
 require 'db.php'; // Arquivo com configurações do banco de dados
 
 // Função para exibir erros amigáveis (opcional)
