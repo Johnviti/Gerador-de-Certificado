@@ -1,5 +1,5 @@
 <?php
-// session_start();
+session_start();
 
 require 'db.php';
 
@@ -128,6 +128,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Certificados - Login</title>
   <link rel="stylesheet" href="login.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -175,19 +176,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <!-- <input type="checkbox" id="remember" class="checkbox">
             <label for="remember" class="checkbox-label">Lembrar-me</label> -->
           </div>
-
+          
           <?php if (!empty($message)): ?>
-          <div class="error-message">
-            <div class="error-content">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="error-icon">
-                <circle cx="12" cy="12" r="10"></circle>
-                <line x1="12" y1="8" x2="12" y2="12"></line>
-                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            <?php 
+              // Determine if the message is an error or success
+              $isError = strpos(strtolower($message), 'erro') !== false || 
+                         strpos(strtolower($message), 'inválido') !== false || 
+                         strpos(strtolower($message), 'incorreta') !== false || 
+                         strpos(strtolower($message), 'não encontrado') !== false;
+              $alertClass = $isError ? 'bg-red-50 text-red-700' : 'bg-green-50 text-green-700';
+              $iconClass = $isError ? 'text-red-500' : 'text-green-500';
+            ?>
+            <div class="alert-message <?php echo $alertClass; ?> p-4 rounded-lg mb-4 flex items-center">
+              <svg class="w-5 h-5 mr-3 <?php echo $iconClass; ?>" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <?php if ($isError): ?>
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                <?php else: ?>
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                <?php endif; ?>
               </svg>
-              <span><?php echo htmlspecialchars($message); ?></span>
+              <?php echo htmlspecialchars($message); ?>
             </div>
-          </div>
-        <?php endif; ?>
+          <?php endif; ?>
           
           <button type="submit" id="loginButton" class="login-button">Entrar</button>
         </form>
